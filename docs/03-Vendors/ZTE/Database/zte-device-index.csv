@@ -1,0 +1,15 @@
+model,family,source_type,evidence,status,notes
+G7615,ZXHN,community,C,placeholder,device directory created for future tracking
+F7607,ZXHN,community,C,placeholder,device directory created for future tracking
+F7005,ZXHN,community,C,placeholder,device directory created for future tracking
+F600W,ZXHN,official,A,indexed,appears in official product map
+F612,ZXHN,official,A,indexed,appears in official product map
+F660,ZXHN,official+fcc,A,indexed,appears in official product map and FCC
+F670E,ZXHN,fcc,A,indexed,appears in FCC
+F671Y,ZXHN,official,A,indexed,appears in official product map
+F680,ZXHN,official,A,indexed,appears in official product map
+F680V9,ZXHN,fcc,A,indexed,appears in FCC
+H196A,ZXHN,official,A,indexed,appears in official product map
+H196Q,ZXHN,official,A,indexed,appears in official product map
+H199A,ZXHN,official,A,indexed,appears in official product map
+H388X V10,ZXHN,official,A,indexed,appears in official product map

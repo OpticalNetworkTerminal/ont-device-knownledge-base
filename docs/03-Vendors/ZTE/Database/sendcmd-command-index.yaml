@@ -1,0 +1,55 @@
+commands:
+  - name: DB all
+    syntax: "sendcmd 1 DB all"
+    domain: DB
+    purpose: list tables or objects
+    evidence: B
+    risk: read_only
+  - name: DB p
+    syntax: "sendcmd 1 DB p <table>"
+    domain: DB
+    purpose: print table records
+    evidence: B
+    risk: read_only
+  - name: DB set
+    syntax: "sendcmd 1 DB set <table> <row> <field> <value>"
+    domain: DB
+    purpose: change field value
+    evidence: B
+    risk: high
+  - name: DB delr
+    syntax: "sendcmd 1 DB delr <table> <row>"
+    domain: DB
+    purpose: delete one record
+    evidence: C
+    risk: critical
+  - name: DB save
+    syntax: "sendcmd 1 DB save"
+    domain: DB
+    purpose: persist current changes
+    evidence: B
+    risk: medium
+  - name: DB reboot
+    syntax: "sendcmd 1 DB reboot"
+    domain: system
+    purpose: reboot device
+    evidence: C
+    risk: medium
+  - name: DB rreset
+    syntax: "sendcmd 1 DB rreset"
+    domain: factory
+    purpose: reset to defaults
+    evidence: C
+    risk: critical
+  - name: DB decry
+    syntax: "sendcmd 1 DB decry <path>"
+    domain: config
+    purpose: device-side config decryption
+    evidence: C
+    risk: medium
+  - name: p all
+    syntax: "sendcmd 1 p all"
+    domain: debug
+    purpose: print debug related objects
+    evidence: D
+    risk: unknown

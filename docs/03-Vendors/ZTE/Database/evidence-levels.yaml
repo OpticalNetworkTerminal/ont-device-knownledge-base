@@ -1,0 +1,13 @@
+levels:
+  A:
+    name: official_or_verified
+    description: official documentation, official source, GPL source, or hands-on verification
+  B:
+    name: analyzed_or_multi_source
+    description: GPL analysis, source analysis, or multiple strong sources with consistent conclusion
+  C:
+    name: community_consensus
+    description: multiple community sources are broadly consistent
+  D:
+    name: weak_or_single_source
+    description: single forum, blog, anecdotal note, or unverified lead

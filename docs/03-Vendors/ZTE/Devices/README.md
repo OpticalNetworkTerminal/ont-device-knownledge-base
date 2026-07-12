@@ -1,35 +1,21 @@
 # Devices
 
-该目录用于收录中兴具体设备型号与型号索引。
+本目录采用“每个设备一个目录”的方式，避免把 `G7615`、`F7607`、`F7005` 等不同硬件/运营商版本混成一篇。
+
+## 设备目录模板
+
+每个设备目录后续至少包含：
+
+- `README.md`：设备概览、版本、Evidence、适用命令
+- `versions.md`：固件版本、主备版本、地区码、来源
+- `notes.md`：只属于该设备的观察记录
+
+## 当前入口
+
+- [G7615](./G7615/README.md)
+- [F7607](./F7607/README.md)
+- [F7005](./F7005/README.md)
 
 ## 型号索引
 
-以下索引优先收录中兴官方文档地图或 FCC 中已出现的用户端设备。
-
-| 型号 | 来源类型 | 当前状态 | 备注 |
-| --- | --- | --- | --- |
-| ZXHN F600W | 中兴官方文档地图 | 已验证 | 文档地图显示 `V9.2` |
-| ZXHN F612 | 中兴官方文档地图 | 已验证 | 文档地图显示 `V9.0` |
-| ZXHN F660 | 中兴官方文档地图 + FCC | 已验证 | FCC 可见用户手册与照片 |
-| ZXHN F670E | FCC | 已验证 | FCC 设备类别为 `GPON ONT` |
-| ZXHN F671Y | 中兴官方文档地图 | 已验证 | 文档地图显示 `V9.0` |
-| ZXHN F680 | 中兴官方文档地图 | 已验证 | 文档地图显示 `V2.0` |
-| ZXHN F680V9 | FCC | 已验证 | FCC 设备类别为 `GPON ONT` |
-| ZXHN H196A | 中兴官方文档地图 | 已验证 | 文档地图显示 `V9.1` |
-| ZXHN H196Q | 中兴官方文档地图 | 已验证 | 文档地图显示 `V9.1` |
-| ZXHN H199A | 中兴官方文档地图 | 已验证 | 文档地图显示 `V7.0` |
-| ZXHN H388X V10 | 中兴官方文档地图 | 已验证 | 偏家庭网关产品线 |
-
-## 待补充的型号页
-
-- F660 系列
-- F670/F670E/F670L 系列
-- F680 系列
-- H196/H199/H388X 系列
-
-## 主要来源
-
-- <https://support.zte.com.cn/support/docmap/00000455/en/product.html>
-- <https://fccid.io/Q78-ZXHNF660/User-Manual/Users-Manual-1606409>
-- <https://fccid.io/Q78-ZXHNF670E/User-Manual/Users-Manual-3705760>
-- <https://fccid.io/Q78-ZXHNF680V9/User-Manual/User-Manual-4762018>
+完整结构化清单见 [Database/zte-device-index.csv](../Database/zte-device-index.csv)。

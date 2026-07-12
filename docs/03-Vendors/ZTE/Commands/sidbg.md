@@ -1,5 +1,9 @@
 # sidbg
 
+## Evidence
+
+C
+
 ## 功能
 
 `sidbg` 是社区资料中常见的另一类 ZTE 调试/数据库访问入口，很多用法与 `sendcmd` 相近。
