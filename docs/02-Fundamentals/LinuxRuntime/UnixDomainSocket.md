@@ -14,17 +14,24 @@ Unix Domain Socket 是一种本地 IPC socket，常以路径名出现在文件�
 
 ## 工作原理
 
-一个进程在本地路径上创建 socket 节点后，其他进程可通过该路径连接；数据不经过外部网络接口。
+一个进程在本地路径上创建 socket 节点后，其他进程可通过该路径连接。数据不经过外部网络接口，而是在同一内核的本地通信机制中传递。
 
 ## 设计目的
 
-为本地 IPC 提供高效统一接口，并能结合文件路径和权限做访问控制。
+- 为本地 IPC 提供高效统一接口
+- 复用 socket 编程模型
+- 可结合文件路径和权限做访问控制
 
 ## 优缺点
 
-优点：轻量、本地通信开销低。
+优点：
 
-缺点：不适用于跨主机通信。
+- 轻量
+- 本地通信开销低
+
+缺点：
+
+- 不适用于跨主机通信
 
 ## 典型应用
 
@@ -56,7 +63,10 @@ ss -xl
 ls -l /var/run 2>/dev/null | head -n 30
 ```
 
-怎么看：找路径型 Unix socket，并结合 `ss -xl` 看本地套接字列表。
+怎么看：
+
+- `find -type s`：找路径型 Unix socket
+- `ss -xl`：看本地 Unix socket 列表
 
 ## 前置知识
 
@@ -75,20 +85,19 @@ ls -l /var/run 2>/dev/null | head -n 30
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：Unix socket 相关 man pages
+- GPL源码：后续结合 `/var/run`、`/tmp` 下 socket 验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux Unix Domain Socket 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时 IPC 实践整理
 
 作者：Codex

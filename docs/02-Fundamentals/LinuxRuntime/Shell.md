@@ -2,7 +2,7 @@
 
 ## 简介
 
-本文说明 shell 在 Linux 运行时中的角色，以及为什么 shell 不只是命令解释器，还是脚本编排和系统 glue 的重要入口。
+本文说明 shell 在 Linux 运行时中的角色，以及为什么 shell 不只是“命令解释器”，还是脚本编排和系统 glue 的重要入口。
 
 ## 背景
 
@@ -10,7 +10,12 @@
 
 ## 基本概念
 
-shell 负责读取命令、启动子进程、管理重定向和管道、执行脚本。
+shell 负责：
+
+- 读取命令
+- 启动子进程
+- 管理重定向、管道和环境继承
+- 执行脚本
 
 ## 工作原理
 
@@ -22,9 +27,14 @@ shell 通过 fork/exec 启动子进程，并管理前台后台作业、标准输
 
 ## 优缺点
 
-优点：灵活，适合快速编排。
+优点：
 
-缺点：复杂逻辑写成 shell 后可维护性一般。
+- 灵活
+- 适合快速编排和调试
+
+缺点：
+
+- 复杂逻辑写成 shell 后可维护性一般
 
 ## 典型应用
 
@@ -53,12 +63,16 @@ OpenWrt 中 shell 广泛用于 init 脚本、热插拔脚本和现场维护。
 
 ```bash
 echo $SHELL
-ps -ef | grep "[s]h"
-cat /proc/$$/cmdline | tr "\0" " "
+ps -ef | grep '[s]h'
+cat /proc/$$/cmdline | tr '\0' ' '
 env | head
 ```
 
-怎么看：看当前默认 shell、实际 shell 进程和其启动方式。
+怎么看：
+
+- `$SHELL`：看当前默认 shell
+- `ps`：看 shell 进程
+- `/proc/$$/cmdline`：看当前 shell 实际启动方式
 
 ## 前置知识
 
@@ -76,20 +90,19 @@ env | head
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：BusyBox `https://git.busybox.net/busybox/`
+- 标准：POSIX shell 相关资料
+- GPL源码：后续结合 init 脚本与维护脚本验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：Bootlin `https://bootlin.com/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux shell 运行时通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：BusyBox / 运行时实践整理
 
 作者：Codex

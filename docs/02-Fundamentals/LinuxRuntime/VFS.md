@@ -2,7 +2,7 @@
 
 ## 简介
 
-本文说明 VFS 的作用，以及为什么 Linux 能把磁盘文件系统、`/proc`、`/sys`、socket、设备节点都统一放进文件语义里。
+本文说明 VFS 的作用，以及为什么 Linux 能把磁盘文件系统、`/proc`、`/sys`、socket、设备节点都统一放进“文件”语义里。
 
 ## 背景
 
@@ -18,13 +18,20 @@ VFS 即虚拟文件系统层，是内核中统一抽象不同文件系统和文�
 
 ## 设计目的
 
-提供统一文件接口，解耦用户态与具体文件系统实现，让“万物皆文件”在工程上成立。
+- 提供统一文件接口
+- 解耦用户态与具体文件系统实现
+- 让“万物皆文件”在工程上成立
 
 ## 优缺点
 
-优点：接口统一，便于扩展特殊对象。
+优点：
 
-缺点：统一语义不代表底层行为完全一致。
+- 用户态接口统一
+- 便于扩展特殊对象
+
+缺点：
+
+- 统一语义不代表底层行为完全一致
 
 ## 典型应用
 
@@ -57,7 +64,10 @@ find / -type s 2>/dev/null | head
 cat /proc/mounts | head -n 30
 ```
 
-怎么看：比较真实文件系统和伪文件系统挂载类型，观察 `s` 类型 socket 文件。
+怎么看：
+
+- 比较真实文件系统和伪文件系统挂载类型
+- 观察 `s` 类型 socket 文件
 
 ## 前置知识
 
@@ -76,20 +86,19 @@ cat /proc/mounts | head -n 30
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
+- 官方文档：Kernel VFS/filesystems docs `https://docs.kernel.org/filesystems/index.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合 Rootfs 中多类对象验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux VFS 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：Kernel 文档与运行时实践整理
 
 作者：Codex

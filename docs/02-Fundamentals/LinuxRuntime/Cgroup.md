@@ -6,11 +6,16 @@
 
 ## 背景
 
-namespace 解决看见什么的问题，cgroup 更偏向解决能用多少的问题。没有资源控制，容器和复杂服务治理很难稳定运行。
+namespace 解决“看见什么”的问题，cgroup 更偏向解决“能用多少”的问题。没有资源控制，容器和复杂服务治理很难稳定运行。
 
 ## 基本概念
 
-cgroup 用于对一组进程进行资源分组和限制，例如 CPU、内存、I/O、进程数。
+cgroup 用于对一组进程进行资源分组和限制，例如：
+
+- CPU
+- 内存
+- I/O
+- 进程数
 
 ## 工作原理
 
@@ -18,13 +23,19 @@ cgroup 用于对一组进程进行资源分组和限制，例如 CPU、内存、
 
 ## 设计目的
 
-控制资源分配，做服务和容器资源治理。
+- 控制资源分配
+- 做服务和容器资源治理
 
 ## 优缺点
 
-优点：粒度清晰，与容器协作良好。
+优点：
 
-缺点：模型较复杂。
+- 粒度清晰
+- 与服务管理和容器协作良好
+
+缺点：
+
+- 模型较复杂
 
 ## 典型应用
 
@@ -55,7 +66,10 @@ cat /proc/self/cgroup
 ls /sys/fs/cgroup 2>/dev/null | head -n 30
 ```
 
-怎么看：看当前进程属于哪些 cgroup，以及系统暴露了哪些控制器。
+怎么看：
+
+- `/proc/self/cgroup`：看当前进程属于哪些 cgroup
+- `/sys/fs/cgroup`：看控制器与层级
 
 ## 前置知识
 
@@ -73,20 +87,19 @@ ls /sys/fs/cgroup 2>/dev/null | head -n 30
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
+- 官方文档：Kernel docs `https://docs.kernel.org/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合 `/sys/fs/cgroup` 与容器配置验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux cgroup 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时挂载与 Kernel 文档整理
 
 作者：Codex

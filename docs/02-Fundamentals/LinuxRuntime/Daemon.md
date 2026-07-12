@@ -22,9 +22,14 @@ daemon 一般由 init 或服务管理器拉起，之后长期等待连接、消�
 
 ## 优缺点
 
-优点：结构清晰，易独立管理。
+优点：
 
-缺点：服务多时资源开销增加。
+- 结构清晰
+- 易独立管理
+
+缺点：
+
+- 服务多时资源开销增加
 
 ## 典型应用
 
@@ -56,7 +61,10 @@ ps -ef | head -n 30
 ss -lntup
 ```
 
-怎么看：`ps` 找长期驻留进程，`ss` 看哪些 daemon 正在监听。
+怎么看：
+
+- `ps`：找长期驻留进程
+- `ss`：看哪些 daemon 正在监听
 
 ## 前置知识
 
@@ -74,20 +82,19 @@ ss -lntup
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
+- 官方文档：systemd(1) `https://man7.org/linux/man-pages/man1/init.1.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合监听端口与后台服务验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux daemon 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时服务与 man7 整理
 
 作者：Codex

@@ -6,7 +6,7 @@
 
 ## 背景
 
-现代 Linux 中，`/dev` 常建立在 devtmpfs 之上，并与内核设备发现过程联动，而不是靠人工长期维护静态节点。
+现代 Linux 中，`/dev` 常建立在 devtmpfs 之上，并与内核设备发现过程联动，而不是靠人工长期维护一堆静态节点。
 
 ## 基本概念
 
@@ -18,13 +18,19 @@ devtmpfs 是内核维护的设备文件系统，用于为设备节点提供一�
 
 ## 设计目的
 
-让系统早期就拥有可用设备节点，避免完全依赖用户态创建设备文件。
+- 让系统早期就拥有可用设备节点
+- 避免完全依赖用户态创建设备文件
 
 ## 优缺点
 
-优点：启动早期即可用。
+优点：
 
-缺点：复杂命名仍需用户态辅助。
+- 启动早期即可用
+- 与设备发现联动
+
+缺点：
+
+- 复杂命名仍需用户态辅助
 
 ## 典型应用
 
@@ -52,12 +58,15 @@ OpenWrt 同样依赖现代设备节点管理，但保持较轻的用户态策略
 ## 实践操作
 
 ```bash
-mount | grep " /dev "
+mount | grep ' /dev '
 ls -l /dev | head -n 30
 ls -l /dev/pts 2>/dev/null | head
 ```
 
-怎么看：看 `/dev` 挂载类型，观察字符设备、块设备和伪终端。
+怎么看：
+
+- `mount`：看 `/dev` 挂载类型
+- `ls -l /dev`：看字符设备、块设备和符号链接
 
 ## 前置知识
 
@@ -75,20 +84,19 @@ ls -l /dev/pts 2>/dev/null | head
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
+- 官方文档：Kernel filesystems docs `https://docs.kernel.org/filesystems/index.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合 `/dev` 挂载与设备节点验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：Bootlin `https://bootlin.com/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux devtmpfs 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时挂载与设备节点实践整理
 
 作者：Codex

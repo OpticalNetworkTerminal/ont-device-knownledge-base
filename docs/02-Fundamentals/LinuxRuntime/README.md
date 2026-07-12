@@ -2,15 +2,28 @@
 
 ## 简介
 
-本目录用于整理 Linux 系统启动完成后的运行机制，重点解释系统里到底有哪些对象在运行，以及它们为什么以 `/proc`、`/sys`、`/dev`、socket、mount、namespace、cgroup 这些形式出现。
+本目录用于整理 Linux 系统启动完成后的运行机制，解释系统中到底有哪些对象正在运行，以及它们为什么会以 `/proc`、`/sys`、`/dev`、socket、mount、namespace、cgroup 这些形式出现。
 
 ## 背景
 
-后续分析 Buildroot、OpenWrt、光猫、路由器、LXC、Docker 时，都会反复遇到同一批基础问题：`ps` 为什么这样显示，`/proc` 为什么没有真实文件，`/sys` 为什么能改行为，容器里为什么还有 `/proc`、`/sys`、`/dev`。
+后续分析 Buildroot、OpenWrt、光猫、路由器、LXC、Docker 时，都会反复遇到同一批基础问题：
+
+- 为什么 `ps` 看到的是进程树
+- 为什么 `/proc` 没有真正文件
+- 为什么 `/sys` 写一个值会改变驱动行为
+- 为什么 mount 之后目录内容像被“换掉”
+- 为什么 socket 也能表现为文件
+- 为什么容器里还有 `/proc`、`/sys`、`/dev`
 
 ## 基本概念
 
-本目录主要覆盖五条主线：启动后是谁把系统带起来、运行中的程序是什么、用户态如何进入内核、内核如何把状态暴露给用户态、系统如何做隔离与权限控制。
+本目录主要覆盖五条主线：
+
+- 启动后系统是谁带起来的：`PID 1`、init、daemon
+- 运行中的程序是什么：进程、线程、session、TTY、shell
+- 用户态如何进入内核：system call、signal、environment
+- 内核如何向用户态暴露状态：`/proc`、`/sys`、`/dev`、mount、VFS
+- 系统如何做隔离与约束：namespace、cgroup、权限、capability
 
 ## 工作原理
 
@@ -19,19 +32,25 @@ flowchart TD
     A[Kernel] --> B[PID 1 / Init]
     B --> C[挂载 /proc /sys /dev]
     C --> D[启动 daemon]
-    D --> E[提供 shell socket IPC Web]
+    D --> E[提供 shell / socket / IPC / Web]
     E --> F[namespace cgroup 权限模型约束运行时]
 ```
 
 ## 设计目的
 
-为后续 Buildroot、OpenWrt、DBus、LXC 章节提供统一运行时底座，避免重复解释 Linux 基础。
+目标不是讲 Linux 命令怎么用，而是解释 Linux 为什么这样设计，从而为后续章节提供统一引用基础。
 
 ## 优缺点
 
-优点：能把运行时对象串成整体。
+优点：
 
-缺点：内容偏底层，第一次接触会比应用框架更抽象。
+- 把运行时对象串成一个整体
+- 后续写 DBus、LXC、OpenWrt 时不必重复解释基础概念
+
+缺点：
+
+- 偏底层
+- 对只熟悉应用框架的读者来说抽象度较高
 
 ## 典型应用
 
@@ -49,7 +68,7 @@ OpenWrt 同样依赖这些机制，只是用户态更多围绕 `procd`、`ubus`�
 
 ## 在光猫中的体现
 
-光猫中的 Web 管理、CLI、TR-069、DBus、容器和网络守护进程，全部建立在这些运行机制之上。
+光猫中的 Web 管理、CLI、TR-069、DBus、容器、网络守护进程，全部建立在这些运行机制之上。
 
 ## 实际案例
 
@@ -67,7 +86,12 @@ ls /dev | head
 find / -type s 2>/dev/null | head
 ```
 
-怎么看：`ps` / `pstree` 看进程树，`mount` 看运行时挂载，`/proc`、`/sys`、`/dev` 看内核暴露面，`find -type s` 看本地 Unix socket。
+怎么看：
+
+- `ps` / `pstree`：看系统运行成了什么进程树
+- `mount`：看哪些目录是运行时挂上去的
+- `/proc`、`/sys`、`/dev`：看内核如何把状态暴露给用户态
+- `find -type s`：看本地 Unix socket 如何表现为文件
 
 ## 前置知识
 
@@ -90,10 +114,9 @@ find / -type s 2>/dev/null | head
 - 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
 - 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合 init 脚本、socket、容器配置验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
 - 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
 
 ## 最后验证时间
 

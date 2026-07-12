@@ -2,11 +2,11 @@
 
 ## 简介
 
-本文说明 tmpfs 的作用，以及为什么 `/run`、`/tmp` 等目录经常是重启即失的内存文件系统。
+本文说明 tmpfs 的作用，以及为什么 `/run`、`/tmp` 等目录经常是“重启即失”的内存文件系统。
 
 ## 背景
 
-嵌入式设备常常不适合把所有运行时数据写回 Flash。tmpfs 为运行时状态和临时文件提供可写但非持久的空间。
+嵌入式设备常常不适合把所有运行时数据写回 Flash。tmpfs 为运行时状态和临时文件提供了可写但非持久的空间。
 
 ## 基本概念
 
@@ -18,13 +18,22 @@ tmpfs 是以内存为主的临时文件系统，常用于保存运行时状态�
 
 ## 设计目的
 
-提供快速可写空间，避免频繁写 Flash，并为 PID 文件、socket 文件、临时缓存提供位置。
+- 提供快速可写空间
+- 避免频繁写 Flash
+- 适合 PID 文件、socket 文件、临时缓存
 
 ## 优缺点
 
-优点：快、可写、重启自动清空。
+优点：
 
-缺点：占用内存，不适合持久化。
+- 快
+- 可写
+- 重启自动清空
+
+缺点：
+
+- 占用内存
+- 不适合持久化
 
 ## 典型应用
 
@@ -55,7 +64,10 @@ mount | grep tmpfs
 df -h | grep tmpfs
 ```
 
-怎么看：看哪些路径挂了 tmpfs，以及它们的容量与使用情况。
+怎么看：
+
+- `mount`：看哪些路径挂了 tmpfs
+- `df -h`：看容量和使用情况
 
 ## 前置知识
 
@@ -73,20 +85,19 @@ df -h | grep tmpfs
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
+- 官方文档：Kernel filesystems docs `https://docs.kernel.org/filesystems/index.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
 - 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- GPL源码：后续结合 `/run`、`/tmp` 挂载验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：Bootlin `https://bootlin.com/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux tmpfs 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时挂载实践整理
 
 作者：Codex

@@ -10,7 +10,10 @@
 
 ## 基本概念
 
-socket 是通信端点，可用于网络通信和本机进程间通信。
+socket 是通信端点，可用于：
+
+- 网络通信
+- 本机进程间通信
 
 ## 工作原理
 
@@ -22,9 +25,14 @@ socket 是通信端点，可用于网络通信和本机进程间通信。
 
 ## 优缺点
 
-优点：接口统一。
+优点：
 
-缺点：抽象较强，初学者容易忽略其文件描述符本质。
+- 接口统一
+- 易组合多种通信模式
+
+缺点：
+
+- 抽象较强，初学者容易忽略其文件描述符本质
 
 ## 典型应用
 
@@ -56,7 +64,11 @@ find / -type s 2>/dev/null | head -n 30
 lsof -i 2>/dev/null | head -n 30
 ```
 
-怎么看：看监听 socket、路径型 Unix socket 和进程对应关系。
+怎么看：
+
+- `ss`：看监听 socket
+- `find -type s`：看 Unix socket 文件
+- `lsof`：看进程和 socket 的对应关系
 
 ## 前置知识
 
@@ -74,20 +86,19 @@ lsof -i 2>/dev/null | head -n 30
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：socket 相关 man pages
+- GPL源码：后续结合监听端口与本地 socket 验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux socket 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：运行时 socket 实践整理
 
 作者：Codex

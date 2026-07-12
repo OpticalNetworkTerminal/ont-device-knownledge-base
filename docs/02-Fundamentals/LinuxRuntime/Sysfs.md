@@ -6,25 +6,32 @@
 
 ## 背景
 
-`/sys` 经常被误认为另一个配置目录。其实它是内核对象模型向用户态暴露的接口，和普通磁盘文件不是同一种东西。
+`/sys` 经常被误认为“另一个配置目录”。其实它是内核对象模型向用户态暴露的接口，和普通磁盘文件不是同一种东西。
 
 ## 基本概念
 
-sysfs 是基于内存的文件系统，用于导出内核数据结构、属性以及对象之间的联系，并与 kobject 基础设施紧密相关。
+Kernel 文档说明，sysfs 是基于内存的文件系统，用于导出内核数据结构、属性以及对象之间的联系，并与 kobject 基础设施紧密相关。
 
 ## 工作原理
 
-读 `/sys` 文件时，用户态触发内核属性的 show 回调；写 `/sys` 文件时，触发 store 回调。
+读 `/sys` 文件时，用户态触发的是内核属性的 show 回调；写 `/sys` 文件时，触发的是 store 回调。
 
 ## 设计目的
 
-统一导出设备模型与驱动属性，让用户态能查看和调整设备相关状态。
+- 统一导出设备模型与驱动属性
+- 让用户态能查看和调整设备相关状态
 
 ## 优缺点
 
-优点：接口统一，易脚本访问。
+优点：
 
-缺点：不是稳定内部 ABI，误写可能改系统行为。
+- 接口统一
+- 易于脚本访问
+
+缺点：
+
+- 不是稳定内部 ABI
+- 误写可能改变系统行为
 
 ## 典型应用
 
@@ -56,7 +63,10 @@ ls /sys/class | head -n 30
 ls /sys/block | head -n 30
 ```
 
-怎么看：`/sys/class` 看逻辑设备分类，`/sys/block` 看块设备。
+怎么看：
+
+- `/sys/class`：看逻辑设备分类
+- `/sys/block`：看块设备
 
 ## 前置知识
 
@@ -74,20 +84,19 @@ ls /sys/block | head -n 30
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：sysfs docs `https://docs.kernel.org/filesystems/sysfs.html`、sysfs rules `https://docs.kernel.org/admin-guide/sysfs-rules.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：Kernel documentation
+- GPL源码：后续结合设备属性导出路径验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux sysfs 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：Kernel sysfs 文档整理
 
 作者：Codex

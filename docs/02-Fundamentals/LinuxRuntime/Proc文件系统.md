@@ -18,13 +18,20 @@ Kernel 文档和 `proc(5)` 都强调，procfs 是内核数据结构的接口。�
 
 ## 设计目的
 
-让用户态以统一文件接口读取内核状态，让脚本和工具可以轻量观察系统。
+- 让用户态以统一文件接口读取内核状态
+- 让脚本和工具可以轻量观察系统
 
 ## 优缺点
 
-优点：通用、易脚本化。
+优点：
 
-缺点：不是普通文件语义。
+- 通用
+- 易脚本化
+
+缺点：
+
+- 不是普通文件语义
+- 部分接口可写，误写可能影响系统
 
 ## 典型应用
 
@@ -58,7 +65,11 @@ cat /proc/mounts | head -n 30
 cat /proc/self/maps | head -n 20
 ```
 
-怎么看：数字目录通常对应 PID，`/proc/mounts` 看挂载状态，`/proc/self/maps` 看当前进程内存映射。
+怎么看：
+
+- 数字目录通常对应 PID
+- `/proc/mounts`：看挂载状态
+- `/proc/self/maps`：看当前进程内存映射
 
 ## 前置知识
 
@@ -76,20 +87,19 @@ cat /proc/self/maps | head -n 20
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Kernel procfs docs `https://docs.kernel.org/filesystems/proc.html`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：proc(5) `https://man7.org/linux/man-pages/man5/proc.5.html`
+- GPL源码：后续结合 Rootfs 中基于 `/proc` 的脚本验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux procfs 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：Kernel 文档与 man7 整理
 
 作者：Codex

@@ -2,7 +2,7 @@
 
 ## 简介
 
-本文说明 namespace 的作用，以及为什么容器里还能看到 `/proc`、`/dev`、`/sys`，同时又像拥有自己的系统视图。
+本文说明 namespace 的作用，以及为什么容器里还能看到 `/proc`、`/dev`、`/sys`，同时又像拥有“自己的系统视图”。
 
 ## 背景
 
@@ -10,14 +10,22 @@
 
 ## 基本概念
 
-常见 namespace 包括 PID、mount、network、UTS、IPC、user、cgroup。
+常见 namespace 包括：
+
+- PID
+- mount
+- network
+- UTS
+- IPC
+- user
+- cgroup
 
 ## 工作原理
 
 ```mermaid
 flowchart TD
     A[同一个 Linux Kernel] --> B[Namespace 隔离]
-    B --> C[容器 A 看见自己的 PID mount net]
+    B --> C[容器 A 看见自己的 PID / mount / net]
     B --> D[容器 B 看见另一套视图]
 ```
 
@@ -27,9 +35,15 @@ flowchart TD
 
 ## 优缺点
 
-优点：轻量、启动快。
+优点：
 
-缺点：不是完整虚拟机隔离，仍共享同一内核。
+- 轻量
+- 启动快
+
+缺点：
+
+- 不是完整虚拟机隔离
+- 仍共享同一内核
 
 ## 典型应用
 
@@ -47,11 +61,11 @@ OpenWrt 和其他嵌入式系统若支持容器或更强隔离，也会依赖 na
 
 ## 在光猫中的体现
 
-复杂光猫或网关若引入 LXC 或应用隔离，常通过 namespace 提供视图隔离。
+复杂网关若引入 LXC 或应用隔离，常通过 namespace 提供视图隔离。
 
 ## 实际案例
 
-为什么容器里还有 `/proc`、`/sys`、`/dev`？因为容器共享同一内核，只是看到按 namespace 和挂载视图组织后的 API 文件系统实例。
+为什么容器里还有 `/proc`、`/sys`、`/dev`？因为容器共享同一内核，只是看到的是按 namespace 和挂载视图组织后的 API 文件系统实例。
 
 ## 实践操作
 
@@ -62,7 +76,10 @@ ps
 mount
 ```
 
-怎么看：看当前进程属于哪些 namespace，并比较不同环境里的 `ps` 和 `mount` 视图。
+怎么看：
+
+- `/proc/self/ns`：看当前进程属于哪些 namespace
+- `ps`、`mount`：在不同容器里比较可见视图
 
 ## 前置知识
 
@@ -82,20 +99,19 @@ mount
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：user_namespaces(7) `https://man7.org/linux/man-pages/man7/user_namespaces.7.html`
+- GPL源码：后续结合容器配置与挂载视图验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux namespace 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：man7、LXC 文档、运行时实践整理
 
 作者：Codex

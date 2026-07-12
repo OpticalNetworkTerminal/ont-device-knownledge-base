@@ -10,7 +10,11 @@
 
 ## 基本概念
 
-capability 是一组可独立授予或剥夺的特权能力，例如网络管理、挂载、修改系统时间。
+capability 是一组可独立授予或剥夺的特权能力，例如：
+
+- 网络管理
+- 挂载
+- 修改系统时间
 
 ## 工作原理
 
@@ -22,9 +26,14 @@ capability 是一组可独立授予或剥夺的特权能力，例如网络管理
 
 ## 优缺点
 
-优点：粒度更细。
+优点：
 
-缺点：比经典权限更复杂。
+- 粒度更细
+- 适合现代隔离场景
+
+缺点：
+
+- 比经典权限更复杂
 
 ## 典型应用
 
@@ -53,7 +62,9 @@ OpenWrt 的服务隔离和容器场景同样会受 capability 影响。
 cat /proc/self/status | grep Cap
 ```
 
-怎么看：`CapEff`、`CapPrm` 等字段展示当前进程能力集合。
+怎么看：
+
+- `CapEff`、`CapPrm` 等字段展示当前进程能力集合
 
 ## 前置知识
 
@@ -72,20 +83,19 @@ cat /proc/self/status | grep Cap
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：capabilities 相关 man pages
+- GPL源码：后续结合容器与服务权限验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux capability 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：man7 与 `/proc` 状态实践整理
 
 作者：Codex

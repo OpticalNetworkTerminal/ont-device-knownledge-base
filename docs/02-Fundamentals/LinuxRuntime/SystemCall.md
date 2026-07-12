@@ -24,13 +24,21 @@ flowchart TD
 
 ## 设计目的
 
-保护内核，提供统一资源访问边界，解耦用户态与内核实现细节。
+- 保护内核
+- 提供统一资源访问边界
+- 解耦用户态与内核实现细节
 
 ## 优缺点
 
-优点：边界明确、接口统一。
+优点：
 
-缺点：调试需要看用户态和内核态两边。
+- 安全边界明确
+- 接口统一
+
+缺点：
+
+- 进入内核有成本
+- 调试需要看用户态和内核态两边
 
 ## 典型应用
 
@@ -65,7 +73,10 @@ cat /proc/self/syscall 2>/dev/null
 strace -V 2>/dev/null
 ```
 
-怎么看：`/proc/self/syscall` 可看当前线程系统调用状态，`strace` 可观察用户态进入内核的过程。
+怎么看：
+
+- `/proc/self/syscall`：某些系统可看到当前线程所处系统调用信息
+- `strace`：若可用，可直接观察程序在调用哪些系统调用
 
 ## 前置知识
 
@@ -83,20 +94,19 @@ strace -V 2>/dev/null
 
 ## 参考资料
 
-- 官方文档：Linux Kernel Docs `https://docs.kernel.org/`、Buildroot Manual `https://buildroot.org/manual.html`、OpenWrt Docs `https://openwrt.org/docs/start`
-- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`、OpenWrt `https://github.com/openwrt/openwrt`
-- 标准：Linux man-pages `https://man7.org/linux/man-pages/`
-- GPL源码：后续结合 Rootfs、init 脚本、socket、容器配置和运行时目录验证
+- 官方文档：Linux man-pages `https://man7.org/linux/man-pages/`
+- 官方源码：Linux kernel `https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git`
+- 标准：syscall 相关 man pages
+- GPL源码：后续结合系统服务行为验证
 - 论坛：恩山无线论坛 `https://www.right.com.cn/forum/`、ChinaDSL `https://www.chinadsl.net/`、吾爱破解 `https://www.52pojie.cn/`
-- 博客：Bootlin `https://bootlin.com/`、LWN `https://lwn.net/`
-
+- 博客：LWN `https://lwn.net/`
 
 ## 最后验证时间
 
 更新时间：2026-07-12
 
-适用版本：Linux 系统运行机制通用知识
+适用版本：Linux system call 通用知识
 
-验证环境：Kernel 文档、man7、Buildroot / OpenWrt 文档整理
+验证环境：man7 与运行时实践整理
 
 作者：Codex
