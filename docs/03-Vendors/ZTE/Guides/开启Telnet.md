@@ -43,6 +43,40 @@ sendcmd 1 DB set TelnetCfg 0 TS_Enable 1
 sendcmd 1 DB set TelnetCfg 0 Lan_EnableAfterOlt 1
 ```
 
+## 使用 zteOnu 工具开启
+
+对于支持对应 factory mode 流程的机型，社区现在常直接使用 `zteOnu` 这类工具先打开工厂模式，再拿到临时 Telnet，最后固化为长期可用入口。
+
+### 当前整理共识
+
+- `Septrum101/zteOnu` 是公开可获取的中兴 ONT factory mode / Telnet 开启工具之一。
+- 恩山 G1610 讨论中，有用户直接给出 `./zteOnu -i 光猫IP` 的使用方式。
+- GitHub Releases 可确认该工具持续发布版本，且 `v0.0.3` 的发布说明中出现过 `Add -telnet param to permanent telnet`。
+- 对 `zteOnu` 的分析文章认为其流程大致是：激活工厂接口、进入 factory mode、获取临时 Telnet、再用多条 `sendcmd` 写回 `TelnetCfg` 并重启固化。
+
+### 常见用法
+
+```sh
+./zteOnu -i 192.168.1.1
+```
+
+部分资料还提到：
+
+- 可先恢复出厂后再尝试
+- 某些新版固件需要配合特定网卡 MAC 或新版固件模式
+- 临时 Telnet 开启后，仍建议用 `sendcmd 1 DB save` 一类方式做持久化
+
+### 风险与限制
+
+- 工具是否适用，强依赖具体型号、固件代际和运营商定制
+- 成功拿到临时 Telnet 不等于已经永久固化
+- 切地区、恢复出厂或运营商下发配置后，Telnet 仍可能再次关闭
+
+### 工具来源
+
+- GitHub 仓库：<https://github.com/Septrum101/zteOnu>
+- GitHub Releases：<https://github.com/Septrum101/zteOnu/releases>
+
 ## 验证
 
 ```sh
@@ -64,6 +98,16 @@ reboot
 
 ## 交叉引用
 
-- 命令参考见 [../Commands/telnet.md](../Commands/telnet.md)
+- 命令参考见 [../Commands/sendcmd.md#telnet](../Commands/sendcmd.md#telnet)
+- 地区码与 `upgradetest sdefconf` 见 [../Commands/sendcmd.md#地区码显示修改与恢复](../Commands/sendcmd.md#地区码显示修改与恢复)
 - `sendcmd` 见 [../Commands/sendcmd.md](../Commands/sendcmd.md)
-- 表索引见 [../Database/配置表索引.md](../Database/配置表索引.md)
+- 表索引见 [../Commands/sendcmd.md#db](../Commands/sendcmd.md#db)
+- `zteOnu` 研究背景见 [../Research/Community/index.md](../Research/Community/index.md)
+
+## 来源
+
+- <https://github.com/Septrum101/zteOnu>
+- <https://github.com/Septrum101/zteOnu/releases>
+- <https://www.right.com.cn/forum/thread-8401446-1-1.html>
+- <https://hackliu.com/?p=258>
+- <https://blog.csdn.net/weixin_46337464/article/details/153938831>

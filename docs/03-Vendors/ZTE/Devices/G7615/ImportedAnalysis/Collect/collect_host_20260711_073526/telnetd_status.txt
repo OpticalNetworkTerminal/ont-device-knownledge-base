@@ -1,0 +1,52 @@
+Name:	telnetd
+Umask:	0000
+State:	S (sleeping)
+Tgid:	1638
+Ngid:	0
+Pid:	1638
+PPid:	1123
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	64
+Groups:	 
+NStgid:	1638
+NSpid:	1638
+NSpgid:	864
+NSsid:	864
+VmPeak:	   44164 kB
+VmSize:	   44164 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    1752 kB
+VmRSS:	    1752 kB
+RssAnon:	     304 kB
+RssFile:	    1368 kB
+RssShmem:	      80 kB
+VmData:	   33504 kB
+VmStk:	     132 kB
+VmExe:	      68 kB
+VmLib:	    2900 kB
+VmPTE:	      64 kB
+VmSwap:	       0 kB
+CoreDumping:	0
+Threads:	5
+SigQ:	0/1729
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000001002
+SigIgn:	0000000000010002
+SigCgt:	00000001c18024fc
+CapInh:	0000000000000000
+CapPrm:	0000003ffff7ffff
+CapEff:	0000003ffff7ffff
+CapBnd:	0000003ffff7ffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Speculation_Store_Bypass:	unknown
+Cpus_allowed:	2
+Cpus_allowed_list:	1
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	197212
+nonvoluntary_ctxt_switches:	196720

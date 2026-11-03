@@ -1,0 +1,106 @@
+{
+  "source": "userconfig/cfg/db_default_cfg.xml",
+  "size": 6328,
+  "outer_header": {
+    "magic": "0x01020304",
+    "magic_valid": true,
+    "version": 3,
+    "raw_words": [
+      16909060,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "reserved_nonzero": []
+  },
+  "outer_blocks": [
+    {
+      "index": 0,
+      "header_offset": 60,
+      "payload_offset": 72,
+      "plain_len": 6251,
+      "stored_len": 6256,
+      "next": 0
+    }
+  ],
+  "inner": {
+    "header": {
+      "magic": "0x01020304",
+      "magic_valid": true,
+      "version": 0,
+      "raw_words": [
+        16909060,
+        0,
+        69850,
+        5322,
+        65536,
+        1337437634,
+        1618683111,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reserved_nonzero": [
+        {
+          "offset": 8,
+          "value": "0x000110da"
+        },
+        {
+          "offset": 12,
+          "value": "0x000014ca"
+        },
+        {
+          "offset": 16,
+          "value": "0x00010000"
+        },
+        {
+          "offset": 20,
+          "value": "0x4fb7adc2"
+        },
+        {
+          "offset": 24,
+          "value": "0x607b24e7"
+        }
+      ]
+    },
+    "declared_total_len": 69850,
+    "unknown_0x0c": 5322,
+    "split_size": 65536,
+    "content_crc32": "0x4fb7adc2",
+    "header_crc32": "0x607b24e7",
+    "blocks": [
+      {
+        "index": 0,
+        "header_offset": 60,
+        "raw_len": 65536,
+        "packed_len": 5250,
+        "next": 5322,
+        "codec": "zlib"
+      },
+      {
+        "index": 1,
+        "header_offset": 5322,
+        "raw_len": 4314,
+        "packed_len": 917,
+        "next": 0,
+        "codec": "zlib"
+      }
+    ]
+  }
+}

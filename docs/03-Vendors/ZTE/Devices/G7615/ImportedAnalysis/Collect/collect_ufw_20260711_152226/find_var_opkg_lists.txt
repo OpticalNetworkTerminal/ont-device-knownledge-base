@@ -1,0 +1,3 @@
+### CMD: sh -c find /var/opkg-lists -maxdepth 2 | sort
+
+find: unrecognized: -maxdepth

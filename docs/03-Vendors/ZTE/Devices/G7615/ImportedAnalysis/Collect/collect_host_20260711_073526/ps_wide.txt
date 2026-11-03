@@ -1,0 +1,123 @@
+### CMD: ps w 2>/dev/null || ps
+
+  PID USER       VSZ      RSS   STAT  CPU  COMMAND
+    1  root      5808    1024  S    <1>  init
+    2  root         0       0  SW   <3>  [kthreadd]
+    3  root         0       0  IW<  <0>  [rcu_gp]
+    4  root         0       0  IW<  <0>  [rcu_par_gp]
+    5  root         0       0  IW   <0>  [kworker/0:0-eve]
+    6  root         0       0  IW<  <0>  [kworker/0:0H-kb]
+    8  root         0       0  IW<  <0>  [mm_percpu_wq]
+    9  root         0       0  SW   <0>  [ksoftirqd/0]
+   10  root         0       0  IW   <3>  [rcu_sched]
+   11  root         0       0  IW   <0>  [rcu_bh]
+   12  root         0       0  SW   <0>  [migration/0]
+   13  root         0       0  SW   <0>  [cpuhp/0]
+   14  root         0       0  SW   <1>  [cpuhp/1]
+   15  root         0       0  SW   <1>  [migration/1]
+   16  root         0       0  SW   <1>  [ksoftirqd/1]
+   18  root         0       0  IW<  <1>  [kworker/1:0H-kb]
+   19  root         0       0  SW   <2>  [cpuhp/2]
+   20  root         0       0  SW   <2>  [migration/2]
+   21  root         0       0  SW   <2>  [ksoftirqd/2]
+   23  root         0       0  IW<  <2>  [kworker/2:0H-kb]
+   24  root         0       0  SW   <3>  [cpuhp/3]
+   25  root         0       0  SW   <3>  [migration/3]
+   26  root         0       0  SW   <3>  [ksoftirqd/3]
+   28  root         0       0  IW<  <3>  [kworker/3:0H-kb]
+   29  root         0       0  SW   <3>  [kdevtmpfs]
+   30  root         0       0  IW<  <1>  [netns]
+   36  root         0       0  IW   <2>  [kworker/2:1-mm_]
+   48  root         0       0  IW   <3>  [kworker/3:1-mm_]
+   56  root         0       0  SW   <2>  [klogfile]
+   57  root         0       0  DW   <2>  [ksuperlog]
+  308  root         0       0  SW   <2>  [oom_reaper]
+  309  root         0       0  IW<  <2>  [writeback]
+  310  root         0       0  IW   <1>  [kworker/1:1-mm_]
+  312  root         0       0  SW   <3>  [kcompactd0]
+  313  root         0       0  IW<  <3>  [crypto]
+  315  root         0       0  IW<  <3>  [kblockd]
+  344  root         0       0  SW   <2>  [watchdogd]
+  439  root         0       0  SW   <3>  [kswapd0]
+  509  root         0       0  IW<  <2>  [kworker/u9:0]
+  517  root         0       0  IW<  <1>  [cifsiod]
+  518  root         0       0  IW<  <0>  [cifsoplockd]
+  676  root         0       0  SW   <3>  [spi0]
+  682  root         0       0  SW   <3>  [spi1]
+  777  root         0       0  IW<  <1>  [ipv6_addrconf]
+  868  root         0       0  SWN  <0>  [jffs2_gcd_mtd3]
+  916  root         0       0  SWN  <0>  [jffs2_gcd_mtd5]
+  920  root         0       0  SW<  <2>  [loop0]
+  922  root         0       0  IW<  <1>  [kworker/1:1H-kb]
+  929  root         0       0  SW   <3>  [ubi_bgt0d]
+  935  root         0       0  SW   <0>  [ubifs_bgt0_0]
+  946  root         0       0  SW<  <0>  [loop1]
+  950  root         0       0  SWN  <2>  [jffs2_gcd_mtd4]
+ 1052  root         0       0  SW   <0>  [gpondrv_scan_th]
+ 1054  root         0       0  SW   <3>  [gpondrv_task]
+ 1060  root         0       0  SW   <2>  [sw_port_alarm_k]
+ 1123  root      3912     952  S    <1>  pc
+ 1126  root      2692      68  S    <1>  /bin/shellproxy ttyAMA0 115200 /etc/init.d/rcS /dev/ttyp0
+ 1128  root      2692     220  S    <1>  /bin/shellproxy_getty ttyp0
+ 1129  root      3000    1604  S    <1>  dbus-daemon --system --nofork
+ 1130  root      185m   10408  S    <1>  cspd
+ 1267  root     58380    2768  S    <1>  ctsgw_proxyd
+ 1354  root     54104   21028  S    <1>  xpondrvARM32.bin
+ 1634  root     58244    2824  S    <1>  buservice
+ 1636  root     98144    8808  S    <1>  httpd
+ 1637  root     50184    4376  S    <1>  scpd
+ 1638  root     44164    1752  S    <1>  telnetd
+ 1639  root      127m    4716  S    <1>  voip
+ 1640  root     65296    1344  S    <1>  upnpd
+ 1641  root     67692    2808  S    <1>  nas_main
+ 1642  root     43156    1320  S    <1>  simulation
+ 1643  root     77904    3396  S    <1>  stb
+ 1644  root     48768    2840  S    <1>  ossagentproc
+ 1645  root     48060    3096  S    <1>  svcabi
+ 1646  root     49204    2604  S    <1>  segspdagent
+ 1647  root     78188    5516  S    <1>  mqttd
+ 1754  root      2684      68  S    <1>  iperf3 -s -i 1 -D -B 192.168.1.1
+ 1792  root     77868    5056  S    <1>  multiapd
+ 1841  root      110m    5548  S    <1>  gpon_omci
+ 1929  root      6368    2472  S    <1>  smbd -D -f /var/run/smbd.pid
+ 1932  root      4580    1416  S    <1>  nmbd -D -n smbshare -f /var/run/nmbd.pid
+ 1959  root      7488    3048  S    <1>  dnsmasq -r /var/tmp/default_resolv.conf -M 0 -T 6 -P 3 -U 0 -regioncode 310 -F 0 -O -1 -V
+ 1982  root      7560    1920  S    <1>  pppd 0 oe normal file /var/tmp/ppp/options.oe0 nbif1
+ 1986  root      164m   11512  S    <1>  gdbus-server bootfirst
+ 2150  root         0       0  SW   <0>  [RtmpCmdQTask]
+ 2151  root         0       0  SW   <0>  [RtmpWscTask]
+ 2152  root         0       0  SW   <0>  [HwCtrlTask]
+ 2153  root         0       0  SW   <0>  [ser_task]
+ 2154  root         0       0  SW   <0>  [RtmpMlmeTask]
+ 2194  root     25836    2516  S    <1>  ufwmg service 9 10 11
+ 2205  root     25964    2444  S    <0>  ufwmg service 9 10 11
+ 2206  root      2472    1672  S    <2>  /sbin/procd -S -d 4
+ 2207  root         0       0  IW<  <2>  [kworker/2:1H-kb]
+ 2208  root         0       0  IW<  <3>  [kworker/3:1H-kb]
+ 2209  root         0       0  IW<  <0>  [kworker/0:1H-kb]
+ 2245  root      2148    1476  S    <2>  /sbin/ubusd
+ 2297  root      2556     436  S    <2>  /sbin/rpcd
+ 2306  root     17780    3620  S    <2>  /sbin/log
+ 2315  root     57708    5560  S    <0>  /sbin/hpsrv
+ 2324  root     37868    4824  S    <2>  /sbin/proxy
+ 2333  root     47408    2856  S    <0>  /sbin/local
+ 2342  root     38136    3252  S    <2>  /sbin/pushd
+ 2351  root     37728    3100  S    <2>  /sbin/taskd
+ 2360  root     47848    5860  S    <0>  /sbin/uappd
+ 2377  root      3028    1516  S    <3>  /usr/sbin/telnetd -p 223 -l /bin/ash
+ 2409  root     57836    4916  S    <2>  /sbin/hpsrv
+ 2410  root      3192     480  S    <3>  //sbin/init.lxc -n cuinform --quiet -- /files/cuinform
+ 2411  root     10860    1580  S    <3>  /files/cuinform
+ 2414  root     74420   25472  S    <0>  cuinform-inner -A /tmp/.uci//cuinform-inner.alive
+ 2664  root         0       0  IW   <2>  [kworker/2:2-mm_]
+ 2713  root         0       0  IW   <0>  [kworker/u8:0-ev]
+ 2841  root         0       0  IW   <3>  [kworker/3:2]
+ 2848  root         0       0  IW   <1>  [kworker/1:2]
+ 2959  root         0       0  IW   <0>  [kworker/0:1-mm_]
+ 2980  root      5936    2132  S    <1>  /bin/sh -lproduction
+ 2981  root         0       0  IW   <3>  [kworker/u8:2-ev]
+ 3069  root         0       0  IW   <0>  [kworker/0:2-mm_]
+ 3154  root         0       0  IW   <2>  [kworker/u8:1-ev]
+ 3156  root      5808    1940  S    <1>  /bin/sh ./host.sh
+ 3164  root      5808     900  S    <1>  sh -c ps w 2>/dev/null || ps
+ 3165  root      5936    1900  R    <1>  ps w

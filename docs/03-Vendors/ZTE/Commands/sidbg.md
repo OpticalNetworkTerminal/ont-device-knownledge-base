@@ -8,6 +8,12 @@ C
 
 `sidbg` 是社区资料中常见的另一类 ZTE 调试/数据库访问入口，很多用法与 `sendcmd` 相近。
 
+## 当前定位
+
+- 作为 `sendcmd` 的并列入口保留
+- 重点记录它“在哪里出现、典型语法是什么、和 `sendcmd` 有什么关系”
+- 不再把 `sidbg` 单独扩写成一整套重复的 Telnet / TR-069 / 桥接指南
+
 ## 语法
 
 ```sh
@@ -43,6 +49,13 @@ sidbg 1 DB save
 
 - 社区资料显示见于部分中兴 ONT
 - 与 `sendcmd` 的覆盖面是否完全一致，待验证
+- 社区中存在“`sendcmd not found`，但 `sidbg` 可用”的说法
+
+## 与 sendcmd 的关系
+
+- 两者都常用于访问“表 + 行 + 字段”的配置数据库模型
+- `TelnetCfg`、`DevAuthInfo`、`TelnetUser` 等对象在两套命令样本中都出现过
+- 若要看更完整的主题整理，优先参考 [sendcmd](./sendcmd.md)
 
 ## 风险等级
 

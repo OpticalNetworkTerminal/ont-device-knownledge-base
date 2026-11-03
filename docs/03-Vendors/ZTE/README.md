@@ -1,21 +1,28 @@
 # ZTE
 
-本目录改为维护中兴 ONT / 家庭网关知识体系的长期 Reference，而不是继续堆积零散教程。组织目标参考 ArchWiki、OpenWrt Wiki、命令参考手册和长期研究笔记的组合形态。
+本目录现在按“维护手册”组织，中兴 ONT 的正式入口统一收敛到几本手册里；`Devices/`、`Research/`、`Database/` 继续分别承担型号差异、资料仓库和结构化数据的职责。
 
-## 设计原则
+## 手册入口
 
-- `Platform`：放平台、产品线、软件架构、启动、升级、恢复、运营商定制等稳定背景知识。
-- `Devices`：每个型号一个目录，记录型号边界、已知版本、适用命令、待验证点。
-- `Guides`：解决“怎么做”，只收录已经具备可重复路径的操作主题。
-- `Commands`：解决“这个命令是什么”，按功能、语法、风险、证据等级进行命令参考整理。
-- `DBus`：只放 IPC / D-Bus / 私有总线相关结论，不再把配置表索引混放到这里。
-- `Database`：放配置表索引、命令索引、型号清单等结构化资料。
-- `Research`：放论坛资料、GPL 分析、实验记录、猜测、待验证内容，原则上不删除。
-- `FAQ`：放常见问题与术语。
+- [Architecture](./Architecture.md)
+- [Filesystem](./Filesystem.md)
+- [Configuration](./Configuration.md)
+- [Commands](./Commands.md)
+- [PracticalGuide](./PracticalGuide.md)
+- [ReverseEngineering](./ReverseEngineering.md)
+- [Devices](./Devices/README.md)
+- [Research](./Research/README.md)
+- [Database](./Database/README.md)
+
+## 设计目标
+
+- 用 `Architecture` 统一承接平台、软件架构、启动恢复、运营商定制和 IPC 背景。
+- 用 `Configuration` 统一承接配置数据库、配置文件和持久化线索。
+- 用 `Commands` 统一承接 `sendcmd`、`sidbg`、串口等入口，而不是再把 Telnet/FTP/TFTP 拆成独立页。
+- 用 `PracticalGuide` 统一承接 Telnet、改密、恢复出厂、SN/MAC/LOID、桥接、Mesh 等实际操作主题。
+- 用 `ReverseEngineering` 承接研究入口和逆向资料导航。
 
 ## Evidence Level
-
-Evidence Level 用于保留信息，而不是在未实机验证时直接删除。
 
 | 等级 | 含义 |
 | --- | --- |
@@ -25,47 +32,3 @@ Evidence Level 用于保留信息，而不是在未实机验证时直接删除�
 | D | 单一论坛、博客、经验贴、未交叉验证记录 |
 
 详细说明见 [Research/README](./Research/README.md) 与 [Database/evidence-levels.yaml](./Database/evidence-levels.yaml)。
-
-## 目录导航
-
-- [Platform](./Platform/README.md)
-- [Devices](./Devices/README.md)
-- [Guides](./Guides/README.md)
-- [Commands](./Commands/README.md)
-- [DBus](./DBus/README.md)
-- [Database](./Database/README.md)
-- [Research](./Research/README.md)
-- [FAQ](./FAQ/README.md)
-
-## 当前重构重点
-
-- 建立命令参考与操作指南的分层
-- 建立 `Research -> Guides / Commands` 的升级路径
-- 建立 `sendcmd` 的分域索引，而不是把所有资料压成一篇长文
-- 为后续 `G7615`、`F7607`、`F7005` 等设备目录预留固定结构
-
-## 当前已升级为 Reference 的主题
-
-- [Platform/平台架构](./Platform/平台架构.md)
-- [Platform/软件架构](./Platform/软件架构.md)
-- [Commands/sendcmd](./Commands/sendcmd.md)
-- [Commands/telnet](./Commands/telnet.md)
-- [Database/配置表索引](./Database/配置表索引.md)
-
-## 当前保留在 Research 的主题
-
-- [高权限账户与工厂模式](./Research/高权限账户与工厂模式.md)
-- [修改SN](./Research/修改SN.md)
-- [修改MAC](./Research/修改MAC.md)
-- [修改LOID](./Research/修改LOID.md)
-- [桥接](./Research/桥接.md)
-- [Mesh](./Research/Mesh.md)
-- [LED控制](./Research/LED控制.md)
-- [双模切换](./Research/双模切换.md)
-- [sendcmd 社区命令收集](./Research/sendcmd社区命令收集.md)
-
-## 来源策略
-
-- 本轮优先使用你提供的昨天资料作为初始知识库。
-- 对网络公开资料仅保留现有仓库已整理过的引用，不额外扩写新结论。
-- 存在冲突时，保留多种观点并标注 Evidence，而不强行下统一结论。

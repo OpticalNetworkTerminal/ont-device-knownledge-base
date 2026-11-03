@@ -1,95 +1,72 @@
 # Commands
 
-本页先建设“命令索引 + 统一条目格式”，仅收录与天邑（T&W）相关的入口、页面与 CLI 命令。
+本页整理天邑设备的命令、隐藏 CGI、对象接口与高频维护入口。目标是形成可维护的索引，而不是只保留碎片化帖子。
 
-## 命令索引
+## 入口索引
 
-| 功能 | 命令/入口 | 状态 | 备注 |
-| --- | --- | --- | --- |
-| 备份配置到 U 盘 | `usbbackup.cmd?action=backupeble&sessionKey=...` | 已验证 | GitHub 项目可直接确认 |
-| 开启 Web Telnet 页面 | `/enableTelnet.html` | 已验证 | 见 `jonirrings/xor` README |
-| 通过对象接口开启 Telnet | `POST /setObjs` | 已验证 | 目前仅能确认 TEWA-872G 示例 |
-| 开启 Telnet/FTP | `telandftpcfg.cmd?action=add&...&set3_sessionKey=...` | 待验证 | 多社区来源，需实机验证 |
-| 提取超级管理员密码 | `telecomadmin get` | 待验证 | 多社区来源，返回值未统一 |
-| 提取超级管理员密码 | `CUAdmin get` | 待验证 | 老型号社区说法 |
-| 进入 BusyBox 或高权限环境 | `su` | 待验证 | 密码算法与型号相关 |
-| 保存数据库 | `sendcmd 1 DB save` | 待验证 | 社区资料 |
-| 异步保存数据库 | `sendcmd 1 DB saveasy` | 待验证 | 社区资料，拼写需继续确认 |
-| 查看当前用户 | `echo $USER` | 已验证 | GitHub Issue 可确认 |
-| 开启 root 共享目录 | `echo '[ty_root]' >> /var/samba/smb.conf` 等 | 已验证 | TEWA-1000E 线索 |
-| 启动 SSH 服务 | `/opt/upt/apps/ssh/start_ssh.sh` | 已验证 | GitHub Issue 可确认 |
-| 自启动 SSH | 替换 `ommonitord` | 待验证 | 单线索，风险高 |
-| 开放 IPv6 SSH 端口 | `ip6tables -I INPUT ... --dport 22 -j ACCEPT` | 已验证 | TEWA-1000E 线索 |
+| 类别 | 入口/命令 | 常见用途 | 适用型号 | 状态 |
+| --- | --- | --- | --- | --- |
+| Web 隐藏页 | `/usbbackup.cmd?action=backupeble&sessionKey=...` | 导出配置 | `TEWA-708E`，相近型号待扩展 | 已整理 |
+| Web 隐藏页 | `/enableTelnet.html` | 开启 Telnet | `TEWA-708E` | 已整理 |
+| Web CGI | `telandftpcfg.cmd?action=add...` | 开启 Telnet/FTP | `TEWA-707G`、`766G`、`750/708/768/800/1000` 一类社区样本 | 社区资料 |
+| Web 对象接口 | `POST /setObjs` | 写对象开 Telnet | `TEWA-872G` | 已整理 |
+| 设备命令 | `telecomadmin get` | 提取超管 | `TEWA-1006G`，其它型号待验证 | 社区资料 |
+| 设备命令 | `CUAdmin get` | 提取超管 | 早期型号 | 社区资料 |
+| 设备命令 | `sendcmd 1 DB save` | 保存数据库 | 未明确 | 社区资料 |
+| 设备命令 | `sendcmd 1 DB saveasy` | 异步保存数据库 | 未明确 | 社区资料 |
+| shell | `su` | 进入更高权限环境 | `TEWA-1000E`、`1006G` 等 | 社区资料 |
+| shell | `echo $USER` | 判断当前用户 | `TEWA-1000E` | 已整理 |
+| shell | `/opt/upt/apps/ssh/start_ssh.sh` | 启动 SSH | `TEWA-1000E` | 已整理 |
+| shell | `ip6tables -I INPUT ... --dport 22 -j ACCEPT` | 放行 IPv6 SSH | `TEWA-1000E` | 已整理 |
 
-## 统一条目
+## Web 入口
 
-### 1. `usbbackup.cmd?action=backupeble&sessionKey=...`
+### `usbbackup.cmd`
 
-- 功能: 调出隐藏备份页面，将配置文件导出到 U 盘。
-- 参数:
-  - `action=backupeble`
-  - `sessionKey=<页面内获取的 sessionKey>`
-- 返回值:
-  - 正常情况下会进入备份界面，生成类似 `ctce8_TEWA-708E.cfg` 的配置文件。
-  - 部分固件中按钮可能灰显，需结合页面脚本或前端变量处理。
-- 示例:
-```text
-http://192.168.1.1:8080/usbbackup.cmd?action=backupeble&sessionKey=729136729
-```
-- 适用型号:
+这是目前最有代表性的天邑隐藏页之一，常用于导出 CFG 配置。
+
+- 常见形态:
+  - `usbbackup.cmd?action=backupeble&sessionKey=...`
+- 关联线索:
+  - `sessionKey`
+  - U 盘挂载点
+  - 导出的 `ctce8_*.cfg`
+- 已知用途:
+  - 导出配置
+  - 后续搜索 `TeleComAccount`、宽带账号、电话参数等
+- 常见适用机型:
   - `TEWA-708E`
-  - 社区资料还提到 `TEWA-1000E`、`TEWA-800E`、`TEWA-768G`
-- 风险等级: 中
-- 来源:
-  - 已验证: [`jonirrings/xor`](https://github.com/jonirrings/xor)
-  - 社区资料: [恩山 thread-4060480](https://www.right.com.cn/forum/thread-4060480-24-1.html)
+  - `TEWA-768G`
+  - 社区还常提到 `TEWA-1000E`、`TEWA-800E`
 
-### 2. `/enableTelnet.html`
+#### 来源
 
-- 功能: 在已获得高权限 Web 登录后启用 Telnet。
-- 参数: 无公开参数，通常直接访问页面。
-- 返回值:
-  - 社区资料显示访问后即可启用 Telnet。
-- 示例:
-```text
-http://192.168.1.1:8080/enableTelnet.html
-```
-- 适用型号:
+- GitHub: `jonirrings/xor`
+- 恩山
+- ChinaDSL
+
+### `/enableTelnet.html`
+
+这是最常被提及的天邑 Web 隐藏页之一。
+
+- 常见用途:
+  - 在已获得高权限 Web 会话后启用 Telnet
+- 已知机型:
   - `TEWA-708E`
-  - 其它 TY/TEWA 型号待验证
-- 风险等级: 中
-- 来源:
-  - 已验证: [`jonirrings/xor`](https://github.com/jonirrings/xor)
+- 备注:
+  - 其它型号是否保留相同路径，当前没有统一结论。
 
-### 3. `POST /setObjs`
+#### 来源
 
-- 功能: 通过对象写入接口启用 Telnet，并设置 Telnet 用户名与密码。
-- 参数:
-  - `TelnetEnable`
-  - `TelnetWANEnable`
-  - `TelnetUserName`
-  - `TelnetPassword`
-  - `fullPath=InternetGatewayDevice.DeviceInfo.X_CMCC_ServiceManage.`
-- 返回值:
-  - 成功时应写入设备对象，具体返回 JSON 结构待补。
-- 示例:
-```text
-curl 'http://192.168.1.1/setObjs' \
-  -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
-  -H 'Cookie: token=<token>' \
-  --data-raw '[{"TelnetEnable":true,"TelnetWANEnable":false,"TelnetUserName":"user","TelnetPassword":"!q12345678","fullPath":"InternetGatewayDevice.DeviceInfo.X_CMCC_ServiceManage."}]'
-```
-- 适用型号:
-  - `TEWA-872G`
-- 风险等级: 高
-- 来源:
-  - 已验证: [GitHub Issue #23](https://github.com/jonirrings/xor/issues/23)
-  - 说明: 目前仅验证到“请求示例存在”，未验证所有字段与返回值在其它型号通用。
+- GitHub: `jonirrings/xor`
 
-### 4. `telandftpcfg.cmd?action=add&...`
+### `telandftpcfg.cmd`
 
-- 功能: 同时开启 Telnet 与 FTP。
-- 参数:
+这是社区资料中频率很高的一个入口，通常和 `set3_sessionKey` 一起出现。
+
+- 常见用途:
+  - 同时打开 Telnet 与 FTP
+- 常见参数:
   - `telusername`
   - `telpwd`
   - `telport`
@@ -99,120 +76,175 @@ curl 'http://192.168.1.1/setObjs' \
   - `ftpport`
   - `ftpenable`
   - `set3_sessionKey`
-- 返回值:
-  - 社区资料称会显示 Telnet 设置界面，并开启对应服务。
-- 示例:
-```text
-http://192.168.1.1:8080/telandftpcfg.cmd?action=add&telusername=admin&telpwd=admin&telport=23&telenable=1&ftpusername=useradmin&ftppwd=ftpadmin&ftpport=21&ftpenable=1&set3_sessionKey=set3_sessionKey_XXX
-```
-- 适用型号:
-  - 社区资料提到 `TEWA-750/708/768/800/1000`
-- 风险等级: 高
-- 来源:
-  - 社区资料: [恩山 thread-5128686](https://www.right.com.cn/forum/thread-5128686-1-1.html)
-  - 社区资料: [ChinaDSL thread-169557](https://www.chinadsl.net/thread-169557-1-1.html)
+- 常见适用范围:
+  - `TEWA-707G`
+  - `TEWA-766G`
+  - 社区常泛化到 `750/708/768/800/1000` 一组
 
-### 5. `telecomadmin get`
+#### 待验证
 
-- 功能: 在特定命令上下文中读取超级管理员密码。
-- 参数: 无。
-- 返回值:
-  - 社区资料称会输出超级管理员密码。
-- 示例:
-```text
-telecomadmin get
-```
-- 适用型号:
-  - 社区资料提到 `TEWA-708E`、`TEWA-1000E`、`TEWA-1006G`
-- 风险等级: 高
-- 来源:
-  - 社区资料: [恩山 thread-5128686](https://www.right.com.cn/forum/thread-5128686-1-1.html)
-  - 社区资料: [ChinaDSL thread-177433](https://www.chinadsl.net/thread-177433-1-1.html)
+- 是否所有天邑新固件都保留该 CGI。
+- `set2_sessionKey` 与 `set3_sessionKey` 的差异。
+- CGI 是否只是前端入口，背后仍走同一对象树。
 
-### 6. `CUAdmin get`
+#### 来源
 
-- 功能: 老型号中用于读取超级管理员密码的命令。
-- 参数: 无。
-- 返回值:
-  - 社区资料称可直接输出超管密码。
-- 示例:
-```text
-CUAdmin get
-```
-- 适用型号:
-  - 社区资料提到 `TEWA-300/500/600/700/750` 一类较早型号
-- 风险等级: 中
-- 来源:
-  - 社区资料: [恩山 thread-5128686](https://www.right.com.cn/forum/thread-5128686-1-1.html)
+- ChinaDSL
+- 恩山
 
-### 7. `su`
+### `POST /setObjs`
 
-- 功能: 进入 BusyBox 或更高权限 shell。
-- 参数:
-  - 需要设备对应 `su` 密码。
-- 返回值:
-  - 成功后进入更高权限命令环境。
-- 示例:
-```text
-su
-```
-- 适用型号:
-  - `TEWA-708E`
+这是当前天邑资料里最接近“对象模型写配置”的案例。
+
+- 已知对象路径:
+  - `InternetGatewayDevice.DeviceInfo.X_CMCC_ServiceManage.`
+- 已知字段:
+  - `TelnetEnable`
+  - `TelnetWANEnable`
+  - `TelnetUserName`
+  - `TelnetPassword`
+- 已知机型:
+  - `TEWA-872G`
+- 研究价值:
+  - 与 TR-069 / TR-181 风格对象树高度相关。
+  - 对中国移动定制机型的管理模型研究价值很高。
+
+#### 来源
+
+- GitHub Issue #23
+
+## 设备命令
+
+### `telecomadmin get`
+
+- 常见用途:
+  - 在已进入 Telnet 或设备命令环境后读取超级管理员密码
+- 常见关联机型:
+  - `TEWA-1006G`
+  - 社区还把它扩展到 `708E / 1000E`
+- 现状:
+  - 社区资料较多，但返回格式、适用固件与前置条件不完全统一。
+
+#### 来源
+
+- ChinaDSL
+- 恩山
+
+### `CUAdmin get`
+
+- 常见用途:
+  - 较早期天邑设备中读取超管密码
+- 常见关联机型:
+  - `TEWA-300/500/600/700/750` 一类
+- 现状:
+  - 主要见于“早期设备”和“老分代”经验总结。
+
+#### 来源
+
+- 恩山
+
+### `sendcmd 1 DB save`
+
+- 常见用途:
+  - 触发数据库保存
+- 现状:
+  - 经常与 `saveasy` 一起出现。
+  - 目前缺少公开样本确认其真实后端与返回值。
+
+#### 来源
+
+- 恩山相关帖子汇总
+
+### `sendcmd 1 DB saveasy`
+
+- 常见用途:
+  - 异步保存数据库
+- 现状:
+  - `saveasy` 拼写本身就值得保留，因为社区资料里经常原样出现。
+  - 暂不改写成其它拼写，等待后续 GPL 或固件样本确认。
+
+#### 来源
+
+- 恩山相关帖子汇总
+
+## shell 与高权限入口
+
+### `su`
+
+- 用途:
+  - 进入更高权限 shell
+- 典型关联:
+  - `TEWA-1006G`
   - `TEWA-1000E`
-  - 其他型号待验证
-- 风险等级: 高
-- 来源:
-  - 社区资料: [恩山 thread-5128686](https://www.right.com.cn/forum/thread-5128686-1-1.html)
-  - 已验证: [GitHub Issue #24](https://github.com/jonirrings/xor/issues/24)
+- 社区常见说法:
+  - `su` 密码与 MAC、SN、设备算法有关
+  - 不同型号和出厂分代算法不同
 
-### 8. `echo $USER`
+#### 来源
 
-- 功能: 确认当前 Telnet/SSH 会话用户。
-- 参数: 无。
-- 返回值:
-  - GitHub Issue 示例中默认返回 `telnet-user`。
-- 示例:
-```text
-echo $USER
-```
-- 适用型号:
+- ChinaDSL
+- 恩山
+- GitHub Issue #24
+
+### `echo $USER`
+
+- 用途:
+  - 判断当前环境是受限用户、`telnet-user` 还是更高权限用户
+- 典型关联:
   - `TEWA-1000E`
-- 风险等级: 低
-- 来源:
-  - 已验证: [GitHub Issue #24](https://github.com/jonirrings/xor/issues/24)
 
-### 9. `sendcmd 1 DB save`
+#### 来源
 
-- 功能: 保存数据库。
-- 参数:
-  - `1`: 社区资料中常见目标实例号。
-  - `DB save`: 保存动作。
-- 返回值:
-  - 未见稳定返回样例。
-- 示例:
-```text
-sendcmd 1 DB save
-```
-- 适用型号:
-  - 未明确
-- 风险等级: 高
-- 来源:
-  - 社区资料: 恩山相关 TEWA 帖子汇总
+- GitHub Issue #24
 
-### 10. `sendcmd 1 DB saveasy`
+### `/opt/upt/apps/ssh/start_ssh.sh`
 
-- 功能: 异步保存数据库。
-- 参数: 同上。
-- 返回值:
-  - 未见稳定返回样例。
-- 示例:
-```text
-sendcmd 1 DB saveasy
-```
-- 适用型号:
-  - 未明确
-- 风险等级: 高
-- 来源:
-  - 社区资料: 恩山相关 TEWA 帖子汇总
-  - 备注: `saveasy` 拼写可能来自固件内部命令名，待 GPL/固件文件验证。
+- 用途:
+  - 启动社区自建的 SSH 服务
+- 典型关联:
+  - `TEWA-1000E`
+- 关联路径:
+  - `/opt/upt/apps/ssh/`
+  - `/var/samba/smb.conf`
+  - `/var/group`
 
+#### 来源
+
+- GitHub Issue #24
+
+### `ip6tables -I INPUT ... --dport 22 -j ACCEPT`
+
+- 用途:
+  - 放行 IPv6 SSH 入站
+- 典型关联:
+  - `TEWA-1000E`
+
+#### 来源
+
+- GitHub Issue #24
+
+## 命令与入口的使用方式
+
+从目前资料看，天邑的入口大致可分成四层：
+
+1. Web 隐藏页
+2. Web CGI / 对象接口
+3. Telnet 受限命令环境
+4. 更高权限 shell / 自建 SSH
+
+不同型号会停留在不同层，不一定都能贯通。
+
+## 待验证
+
+- `telecomadmin get` 是否在所有 `TEWA-708E / 1000E / 1006G` 分支通用。
+- `CUAdmin get` 是否只适用于旧设备。
+- `sendcmd` 的真实命令空间、权限要求与数据库后端。
+- `telandftpcfg.cmd` 是否只是 Web 前端，而非真正核心能力入口。
+- `;` 触发 root 的行为究竟属于命令注入、调试残留还是设备命令层设计缺陷。
+
+## 来源
+
+- GitHub / GitHub Issues
+- 恩山无线论坛
+- ChinaDSL
+- 详细索引见 [Research/Commands](../Research/Commands/README.md)

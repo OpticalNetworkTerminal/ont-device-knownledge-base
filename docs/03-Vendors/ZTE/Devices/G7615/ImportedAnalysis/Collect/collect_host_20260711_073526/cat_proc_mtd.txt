@@ -1,0 +1,17 @@
+### CMD: cat /proc/mtd
+
+dev:    size   erasesize  name
+mtd0: 10000000 00020000 "whole flash"
+mtd1: 00300000 00020000 "u-boot"
+mtd2: 00200000 00020000 "others"
+mtd3: 00200000 00020000 "parameter tags"
+mtd4: 00200000 00020000 "wlan"
+mtd5: 00800000 00020000 "usercfg"
+mtd6: 00600000 00020000 "preplugin"
+mtd7: 03000000 00020000 "kernel1"
+mtd8: 03000000 00020000 "kernel2"
+mtd9: 01000000 00020000 "framework"
+mtd10: 01000000 00020000 "framework1"
+mtd11: 06800000 00020000 "plugin_data"
+mtd12: 03000000 00020000 "rootfs1"
+mtd13: 02ae0000 00020000 "rootfs2"

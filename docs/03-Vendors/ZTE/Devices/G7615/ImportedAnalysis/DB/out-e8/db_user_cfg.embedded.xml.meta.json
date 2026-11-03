@@ -1,0 +1,158 @@
+{
+  "source": "out-e8/db_user_cfg.embedded.xml",
+  "size": 41272,
+  "outer_header": {
+    "magic": "0x01020304",
+    "magic_valid": true,
+    "version": 4,
+    "raw_words": [
+      16909060,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "reserved_nonzero": []
+  },
+  "outer_blocks": [
+    {
+      "index": 0,
+      "header_offset": 60,
+      "payload_offset": 72,
+      "plain_len": 41198,
+      "stored_len": 41200,
+      "next": 0
+    }
+  ],
+  "key_material": {
+    "source": "/Users/builduser/tmp/g7615/all/db-tools/db_keys.json",
+    "profile": "user"
+  },
+  "inner": {
+    "header": {
+      "magic": "0x01020304",
+      "magic_valid": true,
+      "version": 0,
+      "raw_words": [
+        16909060,
+        0,
+        492475,
+        36078,
+        65536,
+        441379640,
+        3098040935,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reserved_nonzero": [
+        {
+          "offset": 8,
+          "value": "0x000783bb"
+        },
+        {
+          "offset": 12,
+          "value": "0x00008cee"
+        },
+        {
+          "offset": 16,
+          "value": "0x00010000"
+        },
+        {
+          "offset": 20,
+          "value": "0x1a4eeb38"
+        },
+        {
+          "offset": 24,
+          "value": "0xb8a85a67"
+        }
+      ]
+    },
+    "declared_total_len": 492475,
+    "unknown_0x0c": 36078,
+    "split_size": 65536,
+    "content_crc32": "0x1a4eeb38",
+    "header_crc32": "0xb8a85a67",
+    "blocks": [
+      {
+        "index": 0,
+        "header_offset": 60,
+        "raw_len": 65536,
+        "packed_len": 5707,
+        "next": 5779,
+        "codec": "zlib"
+      },
+      {
+        "index": 1,
+        "header_offset": 5779,
+        "raw_len": 65536,
+        "packed_len": 5748,
+        "next": 11539,
+        "codec": "zlib"
+      },
+      {
+        "index": 2,
+        "header_offset": 11539,
+        "raw_len": 65536,
+        "packed_len": 7914,
+        "next": 19465,
+        "codec": "zlib"
+      },
+      {
+        "index": 3,
+        "header_offset": 19465,
+        "raw_len": 65536,
+        "packed_len": 2193,
+        "next": 21670,
+        "codec": "zlib"
+      },
+      {
+        "index": 4,
+        "header_offset": 21670,
+        "raw_len": 65536,
+        "packed_len": 1794,
+        "next": 23476,
+        "codec": "zlib"
+      },
+      {
+        "index": 5,
+        "header_offset": 23476,
+        "raw_len": 65536,
+        "packed_len": 4575,
+        "next": 28063,
+        "codec": "zlib"
+      },
+      {
+        "index": 6,
+        "header_offset": 28063,
+        "raw_len": 65536,
+        "packed_len": 8003,
+        "next": 36078,
+        "codec": "zlib"
+      },
+      {
+        "index": 7,
+        "header_offset": 36078,
+        "raw_len": 33723,
+        "packed_len": 5108,
+        "next": 0,
+        "codec": "zlib"
+      }
+    ]
+  }
+}

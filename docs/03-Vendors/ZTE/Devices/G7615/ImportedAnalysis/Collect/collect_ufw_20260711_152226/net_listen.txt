@@ -1,0 +1,36 @@
+### CMD: sh -c netstat -lnptu 2>/dev/null || ss -lnptu 2>/dev/null || true
+
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      -
+tcp        0      0 192.168.1.1:17998       0.0.0.0:*               LISTEN      124/local
+tcp        0      0 192.168.1.1:17999       0.0.0.0:*               LISTEN      124/local
+tcp        0      0 0.0.0.0:18991           0.0.0.0:*               LISTEN      -
+tcp        0      0 10.141.28.89:58000      0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -
+tcp        0      0 192.168.1.1:5201        0.0.0.0:*               LISTEN      -
+tcp        0      0 192.168.1.1:23          0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:18999           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:23003           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:40000           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:4737            0.0.0.0:*               LISTEN      -
+tcp        0      0 :::139                  :::*                    LISTEN      -
+tcp        0      0 :::80                   :::*                    LISTEN      -
+tcp        0      0 fe80::1:23              :::*                    LISTEN      -
+tcp        0      0 :::445                  :::*                    LISTEN      -
+tcp        0      0 :::223                  :::*                    LISTEN      168/telnetd
+udp        0      0 192.168.1.1:137         0.0.0.0:*                           -
+udp        0      0 0.0.0.0:137             0.0.0.0:*                           -
+udp        0      0 192.168.1.1:138         0.0.0.0:*                           -
+udp        0      0 0.0.0.0:138             0.0.0.0:*                           -
+udp        0      0 0.0.0.0:49066           0.0.0.0:*                           -
+udp        0      0 0.0.0.0:8887            0.0.0.0:*                           -
+udp        0      0 127.0.0.1:34567         0.0.0.0:*                           -
+udp        0      0 0.0.0.0:53              0.0.0.0:*                           -
+udp        0      0 0.0.0.0:67              0.0.0.0:*                           -
+udp        0      0 127.0.0.1:55420         0.0.0.0:*                           -
+udp        0      0 0.0.0.0:4737            0.0.0.0:*                           -
+udp        0      0 fe80::ea43:68ff:fea9:9cf7:546 :::*                                -
+udp        0      0 :::547                  :::*                                -
+udp        0      0 fe80::1:53              :::*                                -

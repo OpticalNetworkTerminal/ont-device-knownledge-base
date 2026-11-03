@@ -1,0 +1,154 @@
+{
+  "source": "live-root/userconfig/cfg/db_backup_cfg.xml",
+  "size": 45240,
+  "outer_header": {
+    "magic": "0x01020304",
+    "magic_valid": true,
+    "version": 4,
+    "raw_words": [
+      16909060,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "reserved_nonzero": []
+  },
+  "outer_blocks": [
+    {
+      "index": 0,
+      "header_offset": 60,
+      "payload_offset": 72,
+      "plain_len": 45156,
+      "stored_len": 45168,
+      "next": 0
+    }
+  ],
+  "inner": {
+    "header": {
+      "magic": "0x01020304",
+      "magic_valid": true,
+      "version": 0,
+      "raw_words": [
+        16909060,
+        0,
+        519879,
+        35008,
+        65536,
+        2854845233,
+        3094231200,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "reserved_nonzero": [
+        {
+          "offset": 8,
+          "value": "0x0007eec7"
+        },
+        {
+          "offset": 12,
+          "value": "0x000088c0"
+        },
+        {
+          "offset": 16,
+          "value": "0x00010000"
+        },
+        {
+          "offset": 20,
+          "value": "0xaa297b31"
+        },
+        {
+          "offset": 24,
+          "value": "0xb86e38a0"
+        }
+      ]
+    },
+    "declared_total_len": 519879,
+    "unknown_0x0c": 35008,
+    "split_size": 65536,
+    "content_crc32": "0xaa297b31",
+    "header_crc32": "0xb86e38a0",
+    "blocks": [
+      {
+        "index": 0,
+        "header_offset": 60,
+        "raw_len": 65536,
+        "packed_len": 5395,
+        "next": 5467,
+        "codec": "zlib"
+      },
+      {
+        "index": 1,
+        "header_offset": 5467,
+        "raw_len": 65536,
+        "packed_len": 6012,
+        "next": 11491,
+        "codec": "zlib"
+      },
+      {
+        "index": 2,
+        "header_offset": 11491,
+        "raw_len": 65536,
+        "packed_len": 7935,
+        "next": 19438,
+        "codec": "zlib"
+      },
+      {
+        "index": 3,
+        "header_offset": 19438,
+        "raw_len": 65536,
+        "packed_len": 2255,
+        "next": 21705,
+        "codec": "zlib"
+      },
+      {
+        "index": 4,
+        "header_offset": 21705,
+        "raw_len": 65536,
+        "packed_len": 1802,
+        "next": 23519,
+        "codec": "zlib"
+      },
+      {
+        "index": 5,
+        "header_offset": 23519,
+        "raw_len": 65536,
+        "packed_len": 4532,
+        "next": 28063,
+        "codec": "zlib"
+      },
+      {
+        "index": 6,
+        "header_offset": 28063,
+        "raw_len": 65536,
+        "packed_len": 6933,
+        "next": 35008,
+        "codec": "zlib"
+      },
+      {
+        "index": 7,
+        "header_offset": 35008,
+        "raw_len": 61127,
+        "packed_len": 10136,
+        "next": 0,
+        "codec": "zlib"
+      }
+    ]
+  }
+}

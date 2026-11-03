@@ -1,0 +1,21 @@
+### CMD: ps
+
+  PID USER       VSZ STAT COMMAND
+    1 root      2472 S    /sbin/procd -S -d 4
+   36 root      2148 S    /sbin/ubusd
+   88 root      2556 S    /sbin/rpcd
+   97 root     17780 S    /sbin/log
+  106 root     57708 S    /sbin/hpsrv
+  115 root     37868 S    /sbin/proxy
+  124 root     47408 S    /sbin/local
+  133 root     38136 S    /sbin/pushd
+  142 root     37728 S    /sbin/taskd
+  151 root     47848 S    /sbin/uappd
+  168 root      3028 S    /usr/sbin/telnetd -p 223 -l /bin/ash
+  200 root     57836 S    /sbin/hpsrv
+  201 root      3192 S    //sbin/init.lxc -n cuinform --quiet -- /files/cuinform
+  202 root     10860 S    /files/cuinform
+  205 root     74360 S    cuinform-inner -A /tmp/.uci//cuinform-inner.alive
+  327 root      3028 S    /bin/ash
+  331 root      2900 S    /bin/sh ./ufw.sh
+  338 root      3028 R    ps

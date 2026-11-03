@@ -1,0 +1,5 @@
+src/gz openwrt_core http://downloads.openwrt.org/releases/19.07.7/targets/zte/zte_132_K419_hgu_fttr/packages
+src/gz openwrt_base http://downloads.openwrt.org/releases/19.07.7/packages/arm_zte_ZX279132K419_F/base
+src/gz openwrt_luci http://downloads.openwrt.org/releases/19.07.7/packages/arm_zte_ZX279132K419_F/luci
+src/gz openwrt_packages http://downloads.openwrt.org/releases/19.07.7/packages/arm_zte_ZX279132K419_F/packages
+src/gz openwrt_routing http://downloads.openwrt.org/releases/19.07.7/packages/arm_zte_ZX279132K419_F/routing

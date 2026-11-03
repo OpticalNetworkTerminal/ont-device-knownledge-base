@@ -33,9 +33,9 @@ C/D
 
 - `saveasy` 在较老资料中出现，但语义并未统一确认
 - `-task`、`-socket` 目前只看到零散样本，先保留为研究线索
-- 后续如果能明确子命令语法和输出，再升级到 `Commands/debug.md`
+- 后续如果能明确子命令语法和输出，再升级到 `Commands/sendcmd.md`
 
 ## 来源
 
-- 用户提供资料：`/Users/jonhy/Downloads/zte-ont-telnet-sendcmd-command-reference-v2.md`
+- 用户提供资料：`/Users/builduser/Downloads/zte-ont-telnet-sendcmd-command-reference-v2.md`
 - 现有仓库中的论坛/GitHub 引用

@@ -1,0 +1,5 @@
+### CMD: opkg print-architecture
+
+arch all 1
+arch noarch 1
+arch arm_zte_ZX279132K419_F 10

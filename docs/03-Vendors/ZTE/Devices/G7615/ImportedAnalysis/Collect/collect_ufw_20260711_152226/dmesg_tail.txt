@@ -1,0 +1,302 @@
+### CMD: sh -c dmesg 2>/dev/null | tail -n 300 || true
+
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+memory Write failed 
+ERROR: (nfcdrvSetWifiInfoAdapter:355) Write NDEF file fail!
+nfcdrv_execute Failure l_ret = -1
+set_netdev_type dev (wlan4) type (1) 
+set_netdev_type dev (wlan7) type (1) 
+br0: port 8(wlan4) entered blocking state
+br0: port 8(wlan4) entered disabled state
+device wlan4 entered promiscuous mode
+br0: port 8(wlan4) entered blocking state
+br0: port 8(wlan4) entered forwarding state
+set_netdev_type dev (wlan4) type (801) 
+br0: port 9(wlan7) entered blocking state
+br0: port 9(wlan7) entered disabled state
+device wlan7 entered promiscuous mode
+br0: port 9(wlan7) entered blocking state
+br0: port 9(wlan7) entered forwarding state
+set_netdev_type dev (wlan7) type (801) 
+: Ret = 1
+cgroup: cgroup: disabling cgroup2 socket matching due to net_prio or net_cls activation
+kmodloader: no module folders for kernel version 4.19.136 found
+cgroup: hpsrv (2409) created nested cgroup for controller "memory" which has incomplete hierarchy support. Nested cgroups may change behavior in the future.
+cgroup: "memory" requires setting use_hierarchy to 1 on the root
+device br0 entered promiscuous mode
+: Ret = 1
+  AP Beacon OFF!!!
+  AP Beacon OFF!!!
+  AP Beacon OFF!!!
+Wlan_operate_init and switch channel for : wlan0
+[RDM]: wdev is not 5G.
+  AP Beacon OFF!!!
+  AP Beacon OFF!!!
+: Ret = 1
+: Ret = 1
+11931:31:19 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+sh (2493): drop_caches: 3
+sh (2497): drop_caches: 3
+sh (2501): drop_caches: 3
+sh (2504): drop_caches: 3
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+br0: port 7(wlan0) entered disabled state
+wlan0 down
+wifi_sys_open():band0 group_idx[0]=0, bw_grp=16 omac=0
+(ret = 0)
+(ret = 0)
+not A band
+[41m ACS is disable !![m
+set wrong parameters
+:Ret = 1
+PrintSrCmd:
+u1CmdSubId = 1, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 5, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 3, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 23, u1ArgNum = 0, u1DbdcIdx = 0, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+wlan0 up
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band0 group_idx[0]=0, bw_grp=16 omac=0
+[RDM]: wdev is not 5G.
+Set_Bh_Bss_Proc wlan0 bandIdx = 0 ,DevOwnRole 0x20
+bssid:11, a4_conn:0
+set success
+Set_Fh_Bss_Proc wlan0 wdev->MAPCfg.DevOwnRole 0x20
+Set_RTSThreshold_Proc: set wdev0 rts length threshold=2347(0x92b)
+Set_FragThreshold_Proc::set wdev0 FragThreshold=2346)
+[RDM]: wdev is not 5G.
+set target_gi(800)
+[42m: ACSCheckTime[0]=600 seconds[m
+SetPowerDropCtrl: ucPowerDrop = 100
+sync for : wlan0
+sync for : wlan4
+sync for : wlan7
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band0 group_idx[0]=0, bw_grp=16 omac=0
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band0 group_idx[0]=0, bw_grp=16 omac=0
+Set_AutoChannelSel_Proc Alg=3
+[42mSet_AutoChannelSel_Proc: Alg = 3 [m
+  AP Beacon OFF!!!
+  AP Beacon OFF!!!
+Wlan_operate_init and switch channel for : wlan0
+[RDM]: wdev is not 5G.
+wait channel setting success.
+IOCTL::(iwpriv) Command not Support [DisableUpdateTxop=0]
+IOCTL::(iwpriv) Command not Support [spectplinkEn=0]
+IOCTL::(iwpriv) Command not Support [BSSBETP=1:1:2:94]
+IOCTL::(iwpriv) Command not Support [TPMACADDR=6c:e8:73:c2:c9:7e]
+IOCTL::(iwpriv) Command not Support [autoenhance=0]
+IOCTL::(iwpriv) Command not Support [autoedcca=0]
+IOCTL::(iwpriv) Command not Support [veriwaveEn=0]
+SetThermalProtectDutyCfg(): band_idx: 0, level_idx: 0, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 0, level_idx: 1, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 0, level_idx: 2, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 0, level_idx: 3, duty: 100
+SetThermalProtectDisable(): band_idx: 0, protection_type: 1, trigger_type: 1
+ZTE_WLAN_Temperature_Protection_Set_Enable(155) WLAN TEMPERATURE PROTECT DISABLE
+IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+br0: port 7(wlan0) entered blocking state
+br0: port 7(wlan0) entered forwarding state
+
+Wrire Ntag5 Start!
+
+ssid_len:0xc, netkey_len:0x8
+
+offset:0x52
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+memory Write failed 
+ERROR: (nfcdrvSetWifiInfoAdapter:355) Write NDEF file fail!
+nfcdrv_execute Failure l_ret = -1
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+br0: port 8(wlan4) entered disabled state
+wlan4 down
+wifi_sys_open():band1 group_idx[4]=4, bw_grp=16 omac=0
+(ret = 0)
+(ret = 0)
+zero-wait DFS is not enabled
+[41m ACS is disable !![m
+:Ret = 1
+PrintSrCmd:
+u1CmdSubId = 1, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 5, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 3, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+PrintSrCmd:
+u1CmdSubId = 23, u1ArgNum = 0, u1DbdcIdx = 1, u1Status = 0
+u1DropTaIdx = 0, u1StaIdx = 0, u4Value = 0
+br0: port 8(wlan4) entered blocking state
+br0: port 8(wlan4) entered forwarding state
+wlan4 up
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band1 group_idx[4]=4, bw_grp=16 omac=0
+Set_Bh_Bss_Proc wlan4 bandIdx = 1 ,DevOwnRole 0x20
+bssid:11, a4_conn:0
+set success
+Set_Fh_Bss_Proc wlan4 wdev->MAPCfg.DevOwnRole 0x20
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band1 group_idx[7]=25, bw_grp=16 omac=17
+Set_Bh_Bss_Proc wlan7 bandIdx = 1 ,DevOwnRole 0x40
+bssid:14, a4_conn:1
+set success
+Set_Fh_Bss_Proc wlan7 wdev->MAPCfg.DevOwnRole 0x40
+Set_RTSThreshold_Proc: set wdev4 rts length threshold=2347(0x92b)
+Set_FragThreshold_Proc::set wdev4 FragThreshold=2346)
+set target_gi(800)
+[42m: ACSCheckTime[1]=600 seconds[m
+SetPowerDropCtrl: ucPowerDrop = 100
+sync for : wlan0
+sync for : wlan4
+sync for : wlan7
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band1 group_idx[4]=4, bw_grp=16 omac=0
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band1 group_idx[7]=25, bw_grp=16 omac=17
+  AP Beacon OFF!!!
+BUG::EID(0x2a), CmdResult.u4Status = 0xc00000bb
+wifi_sys_open():band1 group_idx[4]=4, bw_grp=16 omac=0
+Set_AutoChannelSel_Proc Alg=3
+[42mSet_AutoChannelSel_Proc: Alg = 3 [m
+  AP Beacon OFF!!!
+  AP Beacon OFF!!!
+wait channel setting success.
+IOCTL::(iwpriv) Command not Support [enackq=0]
+IOCTL::(iwpriv) Command not Support [veriwaveEn=0]
+SetThermalProtectDutyCfg(): band_idx: 1, level_idx: 0, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 1, level_idx: 1, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 1, level_idx: 2, duty: 100
+SetThermalProtectDutyCfg(): band_idx: 1, level_idx: 3, duty: 100
+SetThermalProtectDisable(): band_idx: 1, protection_type: 1, trigger_type: 1
+ZTE_WLAN_Temperature_Protection_Set_Enable(155) WLAN TEMPERATURE PROTECT DISABLE
+
+Wrire Ntag5 Start!
+
+ssid_len:0xc, netkey_len:0x8
+
+offset:0x52
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+zx_i2c 14f04000.i2c: xfer err -6, res 0 
+memory Write failed 
+ERROR: (nfcdrvSetWifiInfoAdapter:355) Write NDEF file fail!
+nfcdrv_execute Failure l_ret = -1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+11931:44:06 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11931:44:06 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+sh (2513): drop_caches: 3
+sh (2521): drop_caches: 3
+: Ret = 1
+11931:45:42 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11931:45:42 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+: Ret = 1
+11932:03:18 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+11932:05:32 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11932:09:17 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11932:11:07 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11932:14:19 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+11933:13:21 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+11933:16:45 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+11933:17:02 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11933:24:05 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+: Ret = 1
+11933:43:42 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+: Ret = 1
+: Ret = 1
+11934:03:36 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+11934:03:36 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+: Ret = 1
+: Ret = 1
+: Ret = 1
+: Ret = 1
+11934:32:56 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+sh (2659): drop_caches: 3
+sh (2662): drop_caches: 3
+11935:20:05 [KMLDSNP][Error] [br_mld.c(2087)sub_handle_mld_] mld_snp: pkt invalid: type=BLOCK_OLD_SOURCES,but src is null
+sh (2720): drop_caches: 3
+sh (2724): drop_caches: 3
+sh (2728): drop_caches: 3
+sh (2731): drop_caches: 3
+sh (2835): drop_caches: 3
+sh (2839): drop_caches: 3
+: Ret = 1

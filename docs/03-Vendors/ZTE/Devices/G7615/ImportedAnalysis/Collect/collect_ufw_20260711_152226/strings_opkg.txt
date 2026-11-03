@@ -1,0 +1,98 @@
+### CMD: sh -c strings -a /bin/opkg | grep -E "opkg|signature|usign|architecture|dest "
+
+opkg_cmd_find
+opkg_message
+opkg_download
+pkg_get_architecture
+opkg_cmd_exec
+opkg_download_pkg
+opkg_configure
+opkg_conf_deinit
+opkg_upgrade_pkg
+opkg_remove_pkg
+opkg_install_pkg
+opkg_conf_write_status_files
+opkg_verify_integrity
+opkg_state_changed
+pkg_name_version_and_architecture_compare
+pkg_set_architecture
+opkg_prepare_url_for_install
+opkg_conf_init
+opkg_install_by_name
+opkg_verify_file
+opkg_conf_load
+usage: opkg [options...] sub-command [arguments...]
+	print-architecture	List installable package architectures
+	-f <conf_file>		Use <conf_file> as the opkg configuration file
+	--dest <dest_name>	package installation, removal, upgrading.
+				<dest_name> should be a defined dest name from
+	--add-arch <arch>:<prio>	Register architecture with given priority
+	--add-dest <name>:<path>	Register destination with given path
+	--force-downgrade	Allow opkg to downgrade packages
+ e.g. opkg info 'libstd*' or opkg search '*libop*' or opkg remove 'libncur*'
+opkg version %s
+/etc/opkg.conf
+opkg must have one sub-command argument
+print-architecture
+print_architecture
+print-installation-architecture
+print_installation_architecture
+force-signature
+force_signature
+opkg_download_cmd
+opkg_compare_versions_cmd
+opkg_files_cmd
+opkg_prep_intercepts
+opkg_install_cmd
+opkg_configure_packages
+opkg_finalize_intercepts
+%s/opkg/intercept:%s
+%s/opkg-intercept-XXXXXX
+%s: opkg compare_versions <v1> <op> <v2>
+opkg_recurse_pkgs_in_order
+opkg_remove_cmd
+opkg_update_cmd
+opkg_flag_cmd
+opkg_info_status_cmd
+opkg_conf_deinit
+opkg_conf_write_status_files
+opkg_conf_set_option
+No priority given for architecture %s,defaulting to 10
+/etc/opkg
+%s/etc/opkg/*.conf
+/var/lock/opkg.lock
+opkg-XXXXXX
+/usr/lib/opkg/lists
+%s: Unknown dest name: `%s'.
+check_signature
+opkg_conf_parse_file
+opkg_conf_load
+opkg_configure
+opkg_download_cache
+opkg_download_pkg
+/usr/sbin/opkg-key
+opkg_prepare_url_for_install
+opkg_verify_integrity
+opkg_download
+opkg_install_by_name
+opkg_install_pkg
+-opkg.backup
+%s: INTERNAL ERROR: architecture %s for pkg %s is unsupported.
+%s: Failed to download %s. Perhaps you need to run 'opkg update'?
+%s: Failed to verify the signature of %s.
+%s: Signature file is missing for %s. Perhaps you need to run 'opkg update'?
+%s: Checksum or size mismatch for package %s. Either the opkg or the package index are corrupt. Try 'opkg update'.
+%s-opkg
+%s: Calling opkg_install_pkg.
+mentioned above do not yet exist (try 'opkg update'). To proceed in spite
+opkg_message
+	you enjoy that kind of pain, you can force opkg to proceed against
+opkg_remove_pkg
+opkg_remove_dependent_pkgs
+opkg_upgrade_pkg
+pkg_name_version_and_architecture_compare
+%s: Internal error: too many different architectures
+pkg_set_architecture
+%s: Packages for %s found, but incompatible with the architectures configured
+Package %s version %s has no valid architecture, ignoring.
+/usr/lib/opkg

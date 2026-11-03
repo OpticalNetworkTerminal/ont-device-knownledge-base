@@ -1,0 +1,16 @@
+### CMD: ls -l /etc/init.d
+
+-rwxr-xr-x    1 root     root          1462 Sep  1  2023 boot
+-rwxr-xr-x    1 root     root           290 Nov  4  2023 done
+-rwxr-xr-x    1 root     root           232 Sep  1  2023 hpsrv
+-rwxr-xr-x    1 root     root           232 Sep  1  2023 local
+-rwxr-xr-x    1 root     root           238 Sep  1  2023 log
+-rwxr-xr-x    1 root     root           232 Sep  1  2023 proxy
+-rwxr-xr-x    1 root     root           233 Sep  1  2023 pushd
+-rwxr-xr-x    1 root     root           249 Sep  1  2023 rpcd
+-rwxr-xr-x    1 root     root          1045 Sep  1  2023 system
+-rwxr-xr-x    1 root     root           232 Sep  1  2023 taskd
+-rwxr-xr-x    1 root     root           232 Sep  1  2023 uappd
+-rwxr-xr-x    1 root     root          4809 Sep  1  2023 uhttpd
+-rwxr-xr-x    1 root     root           106 Sep  1  2023 umount
+-rwxr-xr-x    1 root     root           240 Sep  1  2023 urandom_seed

@@ -1,0 +1,68 @@
+collect-device-20260712-120000/
+├── elf
+│   ├── index.tsv
+│   ├── reports
+│   │   ├── bin_busybox.txt
+│   │   └── usr_bin_ubus.txt
+│   └── scanned-paths.txt
+├── environment.detected.txt
+├── environment.txt
+├── filesystem
+│   ├── configs
+│   ├── executables
+│   ├── logs
+│   ├── overlay.md
+│   ├── summary.md
+│   └── tree
+├── firmware
+│   └── README.txt
+├── host
+│   ├── cpu
+│   │   ├── cpuinfo.txt
+│   │   └── lscpu.stdout
+│   ├── dbus
+│   ├── environment
+│   ├── filesystem
+│   ├── flash
+│   ├── kernel
+│   ├── memory
+│   ├── mount
+│   ├── network
+│   ├── process
+│   ├── system
+│   ├── tools
+│   ├── ubus
+│   ├── vendor-tools
+│   └── versions
+├── logs
+│   ├── collector.log
+│   ├── commands.log
+│   ├── failures.log
+│   ├── host_cpu
+│   ├── host_network
+│   ├── host_process
+│   └── plugins.txt
+├── lxc
+│   ├── dbus
+│   ├── filesystem
+│   ├── network
+│   ├── packages
+│   ├── process
+│   ├── procd
+│   ├── runtime
+│   ├── ubus
+│   ├── uci
+│   └── wireless
+├── summary.json
+├── summary.md
+├── sendcmd
+│   ├── logs
+│   ├── summary.md
+│   ├── tables
+│   └── tables.txt
+├── supported-tools.txt
+└── ubus
+    ├── logs
+    ├── objects
+    ├── objects.txt
+    └── summary.md

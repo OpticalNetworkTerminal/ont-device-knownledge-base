@@ -1,0 +1,331 @@
+#!/bin/sh
+#	$Id: rcS,v 1.7 2007/10/25 21:58:06 jwessel Exp $
+# This is a minmal rcS file for target startup
+# Make sure that /proc is mounted.
+mount -a
+
+#
+#	Assign an address to the loopback device.
+#
+PATH="/sbin:/usr/sbin:/usr/bin:/bin:/dbus/bin:/dbus/sbin:/dbus/usr/bin:/dbus/usr/sbin:/usr/ovs/bin:/usr/ovs/sbin:/var/tmp/wireless"
+#LD_LIBRARY_PATH="/usr/lib/glib-2.0:/usr/ovs/lib"
+LD_LIBRARY_PATH="/lib:/usr/lib:/usr/lib/glib-2.0"
+runlevel=S
+prevlevel=N
+umask 022
+export PATH runlevel prevlevel LD_LIBRARY_PATH
+
+export OVS_PATH="/usr/ovs"
+export OVSDB_PATH="/userconfig/cfg"
+export OVS_RUNDIR="/var/ovs/run"
+export CFGDB="$OVSDB_PATH/conf.db"
+
+export OVSDB_SERVER=$OVS_PATH/sbin/ovsdb-server
+export OVS_VSWITCHD=$OVS_PATH/sbin/ovs-vswitchd
+export OVSDB_TOOL=$OVS_PATH/bin/ovsdb-tool
+
+#
+#	Source defaults.
+#
+. /etc/default/rcS
+export VERBOSE
+
+. /etc/default/S00tagparam
+
+#
+#	Trap CTRL-C &c only in this shell so we can interrupt subprocesses.
+#
+trap ":" INT QUIT TSTP
+
+#
+#	check and mount /userconfig
+#
+. /etc/default/S01userconfig
+
+if [ -f /userconfig/upgrade_status ]; then
+bsp_upgrade_status=`cat /userconfig/upgrade_status`
+echo "bsp_upgrade_status is $bsp_upgrade_status"
+#6 represent upgrading,then power off
+if [ $bsp_upgrade_status -eq 8 ]; then	
+    rm -rf /userconfig/upgrade_status
+    if [ -f /opt/upt/apps/saf-starttime ]; then
+        rm -rf /opt/upt/apps/saf-starttime
+    fi
+fi
+fi
+
+mount -o loop /kmoduletmp/kmodule.img /kmodule -t squashfs
+
+#
+#	Call all parts in order.
+#
+for i in /etc/rcS.d/S??*
+do
+	# Ignore dangling symlinks for now.
+	[ ! -f "$i" ] && continue
+
+	case "$i" in
+		*.sh)
+			# Source shell script for speed.
+			(
+				trap - INT QUIT TSTP
+				set start
+				. $i
+			)
+			;;
+		*)
+			# No sh extension, so fork subprocess.
+			$i start
+
+			;;
+	esac
+done
+
+#
+# Create log flag file
+#
+if [ ! -f /userconfig/cfg/flag_usrfs ]; then
+	echo `ls -l /userconfig/`  
+	echo `date` > /userconfig/cfg/flag_usrfs
+fi
+
+#
+# Resume default configuration file
+# 0 - Default, 1 - Russia, 2 - Lithuania, 3 - Romania, 4 - Singapore
+#
+USR_DB_CFG_TYPE_MAX=300
+USR_DB_DEFAULT_CFG_XML=/userconfig/cfg/db_default_cfg.xml
+USR_DB_USER_CFG_XML=$USR_DB_USER_CFG_XML
+USR_DB_BACKUP_CFG_XML=/userconfig/cfg/db_backup_cfg.xml
+USR_CFG_TYPE_FILE=/userconfig/flag_type
+USR_CFG_ERR_FILE=/userconfig/regioncode_error.log
+
+### 国家码
+ETC_DB_DEFAULT_CFG_XML=/etc/db_default_cfg.xml
+ETC_DB_RUSSIA_CFG_XML=/etc/db_default_Russia_cfg.xml
+ETC_DB_LITHUANIA_CFG_XML=/etc/db_default_Lithuania_cfg.xml
+ETC_DB_ROMANIA_CFG_XML=/etc/db_default_Romania_cfg.xml
+ETC_DB_SINGAPORE_CFG_XML=/etc/db_default_Singapore_cfg.xml
+
+### 地区码, 江苏、新疆、海南电信、四川、湖北、上海、重庆、北京、安徽、山东、广东
+ETC_DB_JIANGSU_CFG_XML=/etc/db_default_Jiangsu_cfg.xml
+ETC_DB_XINJIANG_CFG_XML=/etc/db_default_Xinjiang_cfg.xml
+ETC_DB_HAINANDIANXIN_CFG_XML=/etc/db_default_Hainandianxin_cfg.xml
+ETC_DB_SICHUAN_CFG_XML=/etc/db_default_Sichuan_cfg.xml
+ETC_DB_HUBEI_CFG_XML=/etc/db_default_Hubei_cfg.xml
+ETC_DB_SHANGHAI_CFG_XML=/etc/db_default_Shanghai_cfg.xml
+ETC_DB_CHONGQING_CFG_XML=/etc/db_default_Chongqing_cfg.xml
+ETC_DB_BEIJING_CFG_XML=/etc/db_default_Beijing_cfg.xml
+ETC_DB_ANHUI_CFG_XML=/etc/db_default_Anhui_cfg.xml
+ETC_DB_SHANDONG_CFG_XML=/etc/db_default_Shandong_cfg.xml
+ETC_DB_GUANGDONG_CFG_XML=/etc/db_default_Guangdong_cfg.xml
+ETC_DB_SUZHOU_CFG_XML=/etc/db_default_Suzhou_cfg.xml
+
+ETC_DB_GUIZHOU_CFG_XML=/etc/db_default_Guizhou_cfg.xml
+ETC_DB_SHANXI2_CFG_XML=/etc/db_default_Shanxi2_cfg.xml
+ETC_DB_HEBEI_CFG_XML=/etc/db_default_Hebei_cfg.xml
+ETC_DB_NINGXIA_CFG_XML=/etc/db_default_Ningxia_cfg.xml
+ETC_DB_GUANGXI_CFG_XML=/etc/db_default_Guangxi_cfg.xml
+ETC_DB_JIANGXI_CFG_XML=/etc/db_default_Jiangxi_cfg.xml
+ETC_DB_GANSU_CFG_XML=/etc/db_default_Gansu_cfg.xml
+ETC_DB_QINGHAI_CFG_XML=/etc/db_default_Qinghai_cfg.xml
+ETC_DB_XIAN_CFG_XML=/etc/db_default_Xian_cfg.xml
+ETC_DB_LIAONING_CFG_XML=/etc/db_default_Liaoning_cfg.xml
+ETC_DB_JILIN_CFG_XML=/etc/db_default_Jilin_cfg.xml
+ETC_DB_NEIMENG_CFG_XML=/etc/db_default_Neimeng_cfg.xml
+ETC_DB_HENAN_CFG_XML=/etc/db_default_Henan_cfg.xml
+
+ETC_DB_SHANXI_CFG_XML=/etc/db_default_Shanxi_cfg.xml
+ETC_DB_TIANJIN_CFG_XML=/etc/db_default_Tianjin_cfg.xml
+ETC_DB_FUJIAN_CFG_XML=/etc/db_default_Fujian_cfg.xml
+ETC_DB_ZHEJIANG_CFG_XML=/etc/db_default_Zhejiang_cfg.xml
+ETC_DB_YUNNAN_CFG_XML=/etc/db_default_Yunnan_cfg.xml
+ETC_DB_XIZANG_CFG_XML=/etc/db_default_Xizang_cfg.xml
+ETC_DB_HEILONGJIANG_CFG_XML=/etc/db_default_Heilongjiang_cfg.xml
+ETC_DB_HAINANDIANXIN_CFG_XML=/etc/db_default_Hainandianxin_cfg.xml
+
+ETC_DB_REGIONCODE=/etc/init.d/regioncode
+
+# 如果db_default_xxx_cfg.xml文件不存在，则读取gpon、epon标志，如果是gpon，则拷贝db_default_xxx_gpon.xml,如果是epon，则拷贝db_default_xxx_egpon.xml
+# 该部分修改针对EPON和GPON合一版本
+#PON_MODE_FILE=/proc/capability/ponmode 
+copy_cfgfile_by_ponmode() {
+	regionname=$1
+	if [ -z  "$regionname" ]; then
+		return 1
+	fi
+	#ponmod=`cat $PON_MODE_FILE | grep 'ponmode' | sed -e 's/^ponmode: /\1/'`
+	#EPON&GPON union new ver
+	ponmode=`cat /proc/capability/portinfo | grep 'wan' | cut -d ':' -f 2`
+	# emsk=$((16#1a0))
+	# gmsk=$((16#e40))
+	# gpon mask : 0x40 0x200 0x400 0x800
+	# epon mask : 0x20 0x80  0x100
+	echo "ponmode is $ponmode"
+	for e in 32 128 256
+	do
+		if [ $e -eq $ponmode ]
+		then
+			 echo "load db_default_${regionname}_epon_cfg.xml"
+			 ETC_DB_CFG_PON_XML=/etc/db_default_${regionname}_epon_cfg.xml
+			 break
+		fi
+	done
+
+	for g in 64 512 1024 2048
+	do
+		 if [ $g -eq $ponmode ]
+		 then
+			  echo "load db_default_${regionname}_gpon_cfg.xml"
+			  ETC_DB_CFG_PON_XML=/etc/db_default_${regionname}_gpon_cfg.xml
+			  break
+		 fi
+	done
+
+	if [ -f "$ETC_DB_CFG_PON_XML" ]; then
+		busybox cmp $ETC_DB_CFG_PON_XML $USR_DB_DEFAULT_CFG_XML 1>/dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			echo "USR_DB_DEFAULT_CFG is different from ETC_DB_CFG!"
+			echo "cp $ETC_DB_CFG_PON_XML to $USR_DB_DEFAULT_CFG_XML "
+			cp -f $ETC_DB_CFG_PON_XML  $USR_DB_DEFAULT_CFG_XML
+		else
+			echo "USER_CFG is same as ETC_CFG, donot need copy"
+		fi
+	else
+		echo "ponmode=cat /proc/capability/portinfo | grep 'wan' rcS read failed!"
+		return 1
+	fi
+}
+
+copy_CFGFILE_by_REGIONCODE() {
+	regioncode=$1
+	regionname=`busybox awk -F: -v regioncode="$regioncode" '$1==regioncode {print $2}' $ETC_DB_REGIONCODE`
+	echo "==================================================================="
+	echo "region code:$regioncode"
+	echo "region name:$regionname"
+	ETC_DB_CFG_XML=/etc/db_default_${regionname}_cfg.xml
+	if [ -f "$ETC_DB_CFG_XML" ]; then
+		busybox cmp $ETC_DB_CFG_XML $USR_DB_DEFAULT_CFG_XML 1>/dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			echo "USR_DB_DEFAULT_CFG is different from ETC_DB_CFG!"
+			echo "cp $ETC_DB_CFG_XML to $USR_DB_DEFAULT_CFG_XML "
+			cp -f $ETC_DB_CFG_XML  $USR_DB_DEFAULT_CFG_XML
+		else
+			echo "USER_CFG is same as ETC_CFG, donot need copy"
+		fi
+	else
+		copy_cfgfile_by_ponmode $regionname # 函数调用
+		if [ $? -eq 1 ]; then
+			echo "$regioncode unsupported!! ETC_CFG not exist! " > $USR_CFG_ERR_FILE
+		fi
+	fi
+	echo "==================================================================="
+}
+
+if [ ! -f $USR_DB_DEFAULT_CFG_XML ]; then
+	cp -f $ETC_DB_DEFAULT_CFG_XML $USR_DB_DEFAULT_CFG_XML
+	if [ -f $USR_DB_BACKUP_CFG_XML ]; then
+		echo "  $USR_DB_BACKUP_CFG_XML found, deleted"
+		rm -f $USR_DB_BACKUP_CFG_XML
+	fi
+fi
+  
+if [ ! -f $USR_CFG_TYPE_FILE ]; then
+	echo "current : 0" > $USR_CFG_TYPE_FILE
+	cp -f $ETC_DB_DEFAULT_CFG_XML $USR_DB_DEFAULT_CFG_XML
+else
+	idx=`cat $USR_CFG_TYPE_FILE | grep 'current' | sed -e 's/^current \: /\1/'`
+	if [ -n "$idx" ]; then
+		copy_CFGFILE_by_REGIONCODE $idx
+		
+		if [ $idx -gt $USR_DB_CFG_TYPE_MAX ]; then
+			echo "$idx unsupported!! out of bounds" > $USR_CFG_ERR_FILE
+		fi
+	else
+		echo "cat $USR_CFG_TYPE_FILE failed!" > $USR_CFG_ERR_FILE
+	fi
+	
+	idx=`cat $USR_CFG_TYPE_FILE | grep 'current' | sed -e 's/^current \: /\1/'`
+	if [ $idx -eq 0 ]; then
+		busybox cmp $ETC_DB_DEFAULT_CFG_XML $USR_DB_DEFAULT_CFG_XML 1>/dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			echo "USR_DB_DEFAULT_CFG is different from ETC_DB_CFG!"
+			echo "cp $ETC_DB_DEFAULT_CFG_XML to $USR_DB_DEFAULT_CFG_XML "
+			cp -f $ETC_DB_DEFAULT_CFG_XML $USR_DB_DEFAULT_CFG_XML
+		else
+			echo "USER_CFG is same as ETC_CFG, donot need copy"
+		fi
+	fi
+fi
+echo "  Database default setting is [`cat $USR_CFG_TYPE_FILE`]"
+if [ ! -f /opt/cu/apps/CuInformUpper ]; then
+mkdir -p /opt/cu/apps/CuInformUpper
+fi
+if [ ! -f /opt/cu/apps/CuInformWork ]; then
+mkdir -p /opt/cu/apps/CuInformWork
+fi
+
+count=`ls -l /opt/cu/apps/CuInformWork/work/|wc -l`
+if [ $count -gt 0 ]; then
+    rm -rf /opt/cu/apps/CuInformWork/work/*
+fi
+
+host_name=`cat /proc/csp/boardtype`
+mount -t overlay overlay -o lowerdir=/usr/pre_plugin/pre_CuInform_$host_name,upperdir=/opt/cu/apps/CuInformUpper,workdir=/opt/cu/apps/CuInformWork /CuInform
+
+if [ ! -f /CuInform/tmp ]; then
+mkdir -p /CuInform/tmp
+fi
+mount -t tmpfs -o rw,nosuid,size=5240k tmpfs /CuInform/tmp
+
+#
+# copy some files to /var/tmp/linux-igd, used by UPNP and SNTP
+#
+mkdir -p /var/tmp/linux-igd
+cp -f  /etc/gatedesc.skl     /var/tmp/linux-igd/gatedesc.skl
+cp -f  /etc/gateinfoSCPD.xml /var/tmp/linux-igd/gateinfoSCPD.xml
+cp -f  /etc/gateicfgSCPD.xml /var/tmp/linux-igd/gateicfgSCPD.xml
+cp -f  /etc/gateconnSCPD.xml /var/tmp/linux-igd/gateconnSCPD.xml
+
+#
+# auto-start dbus
+#
+. /etc/init.d/dbus-rcS
+
+supportkmemleakstr=`grep kmemleak_scan_thread /proc/kallsyms`
+if [ x != x"${supportkmemleakstr}" ];then
+    echo "==== support kmemleak, start mount ===="
+    mount -t debugfs nodev /sys/kernel/debug
+else
+    echo "==== not support kmemleak ===="
+fi
+
+echo "exec_getkerpdinfo_start"
+getkerpdinfo
+echo "exec_getkerpdinfo_end"
+
+regionidx=`cat $USR_CFG_TYPE_FILE | grep 'current' | sed -e 's/^current \: /\1/'`
+if [ $regionidx == "334" ];then
+echo 1 > /sys/devices/system/cpu/cpufreq/boost
+echo 1200000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+fi
+
+if [ $regionidx != "334" ];then
+lowpower rgmii
+lowpower ipsec
+#lowpower nand
+#lowpower sdio
+#lowpower i2s
+#lowpower tdm0
+fi
+#
+# auto-start pc
+#
+pc&
+
+#
+# hostname
+#
+hostname -F /proc/csp/boardtype
+
+mkdir /var/lock

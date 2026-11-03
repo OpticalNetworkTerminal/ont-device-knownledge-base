@@ -1,0 +1,3 @@
+### CMD: sh -c find /etc/config -maxdepth 2 | sort
+
+find: unrecognized: -maxdepth

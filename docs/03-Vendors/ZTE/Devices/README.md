@@ -16,6 +16,21 @@
 - [F7607](./F7607/README.md)
 - [F7005](./F7005/README.md)
 
-## 型号索引
+## 当前型号索引
 
-完整结构化清单见 [Database/zte-device-index.csv](../Database/zte-device-index.csv)。
+| 型号 | 当前状态 | 资料类型 | 备注 |
+| --- | --- | --- | --- |
+| G7615 | 已建目录 | 社区/运营商定制资料为主 | 移动/联通相关资料较活跃 |
+| F7607 | 已建目录 | 社区资料为主 | 常与 F7607P 一类资料混用 |
+| F7005 | 已建目录 | 社区资料为主 | 常见于 sendcmd / Telnet 适用范围描述 |
+| F600W | 已收录索引 | 官方文档地图 + GitHub config 样本 | 尚未建设备目录 |
+| F612 | 已收录索引 | 官方文档地图 | 尚未建设备目录 |
+| F660 | 已收录索引 | 官方文档地图 + FCC + OpenWrt | 平台资料最完整 |
+| F670E | 已收录索引 | FCC | 尚未建设备目录 |
+| F671Y | 已收录索引 | 官方文档地图 | 尚未建设备目录 |
+| F680 / F680V9 | 已收录索引 | 官方文档地图 + FCC + GitHub issue | `db_user_cfg.xml` 资料较多 |
+| H196A / H196Q | 已收录索引 | 官方文档地图 + FCC | 偏家庭网关 / Mesh 线索 |
+| H199A | 已收录索引 | 官方文档地图 | 尚未建设备目录 |
+| H388X V10 | 已收录索引 | 官方文档地图 | 偏家庭网关产品线 |
+
+完整结构化清单见 [Database/zte-device-index.csv](../Database/zte-device-index.csv) 与 [Research/Models/index.md](../Research/Models/index.md)。

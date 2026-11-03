@@ -1,0 +1,27 @@
+lxc.rootfs.path = overlayfs:/opt/cu/framework/ufw/rootfs:/opt/cu/apps/apps
+lxc.signal.halt = SIGUSR1
+lxc.uts.name = ufw
+lxc.tty.max = 1
+lxc.pty.max = 1024
+lxc.apparmor.profile = lxc-container-default-with-nesting
+lxc.apparmor.allow_nesting = 1
+lxc.apparmor.allow_incomplete = 1
+
+lxc.net.0.type = none
+lxc.mount.entry = sysfs sys sysfs defaults 0 0
+lxc.mount.auto = cgroup-full:rw:force
+lxc.mount.entry = proc proc proc defaults 0 0
+lxc.mount.entry = shm /dev/shm tmpfs defaults 0 0
+lxc.mount.entry = tmpfs tmp tmpfs size=24m,mode=0777
+lxc.mount.entry = /tmp hgutmp none rw,rbind 0 0
+lxc.mount.entry = /mnt mnt none rw,rbind 0 0
+lxc.mount.entry = /var/run/dbus var/run/dbus none rw,bind 0 0
+lxc.mount.entry = /opt/cu/apps/etc/dbus-1 etc/dbus-1 none rw,bind 0 0
+lxc.mount.entry = /opt/cu/framework/ufw/rootfs opt/rootfs none rw,bind 0 0
+lxc.mount.entry = /opt/cu/apps/info opt/info none rw,bind 0 0
+lxc.mount.entry = /lib map/lib none ro,bind 0 0
+lxc.mount.entry = /usr/lib map/usr/lib none ro,bind 0 0
+lxc.mount.entry = /proc map/proc none ro,bind 0 0
+lxc.mount.entry = /sys map/sys none ro,bind 0 0
+lxc.mount.entry = /var map/var none ro,bind 0 0
+lxc.cgroup.cpu.shares = 512

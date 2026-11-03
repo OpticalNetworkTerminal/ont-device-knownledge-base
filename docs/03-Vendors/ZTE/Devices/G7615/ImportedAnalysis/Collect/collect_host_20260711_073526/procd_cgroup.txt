@@ -1,0 +1,9 @@
+9:net_prio:/lxc.payload.ufw
+8:net_cls:/lxc.payload.ufw
+7:memory:/lxc.payload.ufw
+6:freezer:/lxc.payload.ufw
+5:devices:/lxc.payload.ufw
+4:cpuset:/lxc.payload.ufw
+3:cpuacct:/lxc.payload.ufw
+2:cpu:/lxc.payload.ufw
+1:blkio:/lxc.payload.ufw

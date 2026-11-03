@@ -1,0 +1,7 @@
+### CMD: route -n 2>/dev/null || ip route 2>/dev/null || true
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.59.128.1     0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+10.141.16.0     0.0.0.0         255.255.240.0   U     0      0        0 nbif0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 br0

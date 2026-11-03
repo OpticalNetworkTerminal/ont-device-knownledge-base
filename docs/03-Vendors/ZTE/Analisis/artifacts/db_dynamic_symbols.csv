@@ -1,0 +1,2956 @@
+file,address,type,symbol,category,inferred_role
+lib/libdb.so,0000682c,T,AES_decode,crypto,
+lib/libdb.so,0000674c,T,AES_encode,crypto,
+lib/libdb.so,,U,CSPStrToIP,other,
+lib/libdb.so,00005c94,T,ConvertTextString,other,
+lib/libdb.so,00004b14,T,DBShmCliInit,shared_memory_api,DB 客户端连接共享内存初始化
+lib/libdb.so,0000482c,T,DBShmOpenLib,shared_memory_api,打开视图扩展库 libdbcspview.so
+lib/libdb.so,000048ac,T,DBShmSrvInit,shared_memory_api,DB 服务端共享内存初始化
+lib/libdb.so,00004ddc,T,FreePUB,other,
+lib/libdb.so,00005b90,T,GenerateText,other,
+lib/libdb.so,00004dc8,T,GetPUB,other,
+lib/libdb.so,,U,GetUB,other,
+lib/libdb.so,,U,IPToStr,other,
+lib/libdb.so,,U,IPv6ToStr,other,
+lib/libdb.so,0001ef80,B,K,other,
+lib/libdb.so,,U,MACToStr,other,
+lib/libdb.so,0000dda4,R,Nb,other,
+lib/libdb.so,0001ef7c,B,Nk,other,
+lib/libdb.so,0001ef5c,B,Nr,other,
+lib/libdb.so,,U,OssDebugPrintf,other,
+lib/libdb.so,,U,ProcUserLog,other,
+lib/libdb.so,0001eeb0,D,R,other,
+lib/libdb.so,00005eec,T,Rcon,other,
+lib/libdb.so,,U,RetUB,other,
+lib/libdb.so,,U,SELF,other,
+lib/libdb.so,,U,SSEND,ipc_dependency,
+lib/libdb.so,,U,SafeStrncpy,other,
+lib/libdb.so,00004df0,T,ShmPoolLock,shared_memory_dependency,
+lib/libdb.so,00004e18,T,ShmPoolUnlock,shared_memory_dependency,
+lib/libdb.so,0001ef58,B,Shmfreelist,other,
+lib/libdb.so,,U,StrToIP,other,
+lib/libdb.so,,U,StrToIPv6,other,
+lib/libdb.so,,U,StrToMAC,other,
+lib/libdb.so,000047d8,T,ToStr,other,
+lib/libdb.so,0000475c,T,Tohex,other,
+lib/libdb.so,,w,_ITM_deregisterTMCloneTable,other,
+lib/libdb.so,,w,_ITM_registerTMCloneTable,other,
+lib/libdb.so,,w,_Jv_RegisterClasses,other,
+lib/libdb.so,,U,__assert_fail@GLIBC_2.4,other,
+lib/libdb.so,0001efb0,B,__bss_end__,other,
+lib/libdb.so,0001ef17,B,__bss_start,other,
+lib/libdb.so,0001ef17,B,__bss_start__,other,
+lib/libdb.so,,U,__ctype_b_loc@GLIBC_2.4,other,
+lib/libdb.so,,U,__ctype_toupper_loc@GLIBC_2.4,other,
+lib/libdb.so,,w,__cxa_finalize@GLIBC_2.4,other,
+lib/libdb.so,0001efb0,B,__end__,other,
+lib/libdb.so,,w,__gmon_start__,other,
+lib/libdb.so,0001efb0,B,_bss_end__,other,
+lib/libdb.so,0001ef17,D,_edata,other,
+lib/libdb.so,0001efb0,B,_end,other,
+lib/libdb.so,0000d454,T,_fini,other,
+lib/libdb.so,00002944,T,_init,other,
+lib/libdb.so,00005f54,T,add_round_key,other,
+lib/libdb.so,,U,atoi@GLIBC_2.4,other,
+lib/libdb.so,00004e3c,T,bget,other,
+lib/libdb.so,00005464,T,bgetr,other,
+lib/libdb.so,0000506c,T,bgetz,other,
+lib/libdb.so,000054f0,T,bpool,other,
+lib/libdb.so,000050f0,T,brel,other,
+lib/libdb.so,00005604,T,bstats,other,
+lib/libdb.so,0000646c,T,cipher,crypto,
+lib/libdb.so,00005d58,T,coef_add,other,
+lib/libdb.so,00005da4,T,coef_mult,other,
+lib/libdb.so,,U,cspLock,other,
+lib/libdb.so,,U,cspLockInit,other,
+lib/libdb.so,,U,cspUnLock,other,
+lib/libdb.so,00003204,T,dbAPIAddView,db_public_api,新增视图实例/行
+lib/libdb.so,00003de4,T,dbAPICompress,db_public_api,
+lib/libdb.so,00004468,T,dbAPIDelTmpUsrCfg,db_public_api,
+lib/libdb.so,00004528,T,dbAPIDelUsrCfg,db_public_api,
+lib/libdb.so,000032d0,T,dbAPIDelView,db_public_api,删除视图实例/行
+lib/libdb.so,000045ec,T,dbAPIFlashCfgEnd,db_public_api,
+lib/libdb.so,00003ef0,T,dbAPIGetDefCfg,db_public_api,
+lib/libdb.so,00004120,T,dbAPIGetDefPath,db_public_api,
+lib/libdb.so,00003870,T,dbAPIGetTblRowCount,db_public_api,
+lib/libdb.so,00004350,T,dbAPIGetUsrBackPath,db_public_api,
+lib/libdb.so,00004008,T,dbAPIGetUsrCfg,db_public_api,
+lib/libdb.so,00004238,T,dbAPIGetUsrPath,db_public_api,
+lib/libdb.so,000037a8,T,dbAPIGetValByRow,db_public_api,
+lib/libdb.so,000034a4,T,dbAPIGetView,db_public_api,按 ViewName 读取一条视图记录
+lib/libdb.so,00003910,T,dbAPIGetViewInfo,db_public_api,
+lib/libdb.so,000035b8,T,dbAPILstView,db_public_api,列出某类视图实例
+lib/libdb.so,000036c8,T,dbAPIQryView,db_public_api,按条件查询视图实例
+lib/libdb.so,00003ba4,T,dbAPIRestore,db_public_api,
+lib/libdb.so,00003c64,T,dbAPIRestoreLocal,db_public_api,
+lib/libdb.so,00003d24,T,dbAPIRestoreRemote,db_public_api,
+lib/libdb.so,00003a80,T,dbAPISave,db_public_api,触发运行时 DB 序列化并持久化
+lib/libdb.so,00003390,T,dbAPISetView,db_public_api,按 ViewName 修改一条视图记录
+lib/libdb.so,000031bc,T,dbAPITimeOut,db_public_api,
+lib/libdb.so,0000a330,T,dbAddCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,00007754,T,dbAddRow,db_internal_api,
+lib/libdb.so,0000a1b8,T,dbAddRowByLoad,db_internal_api,
+lib/libdb.so,000098f0,T,dbAddRowDebug,db_internal_api,
+lib/libdb.so,00009e64,T,dbCPCleanOtherRow,other,
+lib/libdb.so,0000c258,T,dbCacheList,other,
+lib/libdb.so,0000873c,T,dbCheckVal,other,
+lib/libdb.so,00008b94,T,dbClearAllTbl,db_internal_api,
+lib/libdb.so,0000c0c4,T,dbClearQryFlag,db_internal_api,
+lib/libdb.so,00008b58,T,dbClearTbl,db_internal_api,
+lib/libdb.so,0000abec,T,dbCreatViewFun,other,
+lib/libdb.so,00006ae8,T,dbCreateDomainNew,db_internal_api,
+lib/libdb.so,0000728c,T,dbCreateOuterKey,db_internal_api,
+lib/libdb.so,0000690c,T,dbCreateTbl,db_internal_api,
+lib/libdb.so,0000a4c4,T,dbDelCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,00007a38,T,dbDelRow,db_internal_api,
+lib/libdb.so,00009980,T,dbDelRowDebug,db_internal_api,
+lib/libdb.so,000097ec,T,dbDelRowFromTail,db_internal_api,
+lib/libdb.so,0000794c,T,dbDmCmp,db_internal_api,
+lib/libdb.so,00008e3c,T,dbDmNeedHidden,db_internal_api,
+lib/libdb.so,00007230,T,dbFindDmByName,db_internal_api,
+lib/libdb.so,00007478,T,dbFindRowByNo,db_internal_api,
+lib/libdb.so,0000ba84,T,dbFindRowByViewName,db_internal_api,
+lib/libdb.so,000071ec,T,dbFindTbl,db_internal_api,
+lib/libdb.so,0000b17c,T,dbGetCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,00007868,T,dbGetDmVal,db_internal_api,
+lib/libdb.so,00007c1c,T,dbGetDmValComm,db_internal_api,
+lib/libdb.so,0000472c,T,dbGetPmTypeValLen,db_internal_api,
+lib/libdb.so,000046fc,T,dbGetPrmValLen,db_internal_api,
+lib/libdb.so,0000b58c,T,dbGetTblRowCount,db_internal_api,
+lib/libdb.so,00007eec,T,dbGetVal,db_internal_api,
+lib/libdb.so,0000b634,T,dbGetValByRow,db_internal_api,
+lib/libdb.so,00009ce4,T,dbGetValComm,db_internal_api,
+lib/libdb.so,00007f5c,T,dbGetValName,db_internal_api,
+lib/libdb.so,0000ccd4,T,dbHashInsert,db_internal_api,
+lib/libdb.so,0000cabc,T,dbHashKey,db_internal_api,
+lib/libdb.so,0000cbd8,T,dbHashSearch,db_internal_api,
+lib/libdb.so,0000cf88,T,dbInitHashTble,other,
+lib/libdb.so,0000a510,T,dbLstCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,0000a634,T,dbMgrCommViewAddItem,other,
+lib/libdb.so,0000a54c,T,dbMgrViewAddItem,other,
+lib/libdb.so,00008bdc,T,dbPrintAllTbl,db_internal_api,
+lib/libdb.so,00009624,T,dbPrintTbl,db_internal_api,
+lib/libdb.so,00009b38,T,dbPrtDmInfo,other,
+lib/libdb.so,00009a2c,T,dbPrtTblInfo,other,
+lib/libdb.so,00009b88,T,dbPti,other,
+lib/libdb.so,0000b384,T,dbQryCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,0000cba4,T,dbRecHashNR,other,
+lib/libdb.so,0000a250,T,dbRegTblSaveFun,db_internal_api,
+lib/libdb.so,0000af14,T,dbSetCommView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdb.so,000074bc,T,dbSetDmDefault,db_internal_api,
+lib/libdb.so,00007f98,T,dbSetDmVal,db_internal_api,
+lib/libdb.so,00009d70,T,dbSetDmValComm,db_internal_api,
+lib/libdb.so,00009808,T,dbSetTblDebug,db_internal_api,
+lib/libdb.so,00008108,T,dbSetVal,db_internal_api,
+lib/libdb.so,00008170,T,dbSetValByRowNo,db_internal_api,
+lib/libdb.so,00008240,T,dbSetValComm,db_internal_api,
+lib/libdb.so,0000a158,T,dbSetValCommByLoad,db_internal_api,
+lib/libdb.so,000084b8,T,dbSetValCommByRowNo,db_internal_api,
+lib/libdb.so,00009f4c,T,dbSetValCommPtr,db_internal_api,
+lib/libdb.so,0000c16c,T,dbSingleViewOpInit,other,
+lib/libdb.so,0000a274,T,dbTblValChange,db_internal_api,
+lib/libdb.so,0000d100,T,dbVIEWIDInit,db_internal_api,
+lib/libdb.so,00008578,T,dbValToStr,db_internal_api,
+lib/libdb.so,0000ba58,T,dbViewClrOpResult,other,
+lib/libdb.so,0000ae1c,T,dbViewCommOp,other,
+lib/libdb.so,0000c788,T,dbViewGetAvailableName,other,
+lib/libdb.so,0000c598,T,dbViewGetList,other,
+lib/libdb.so,0000c1c8,T,dbViewGetName,other,
+lib/libdb.so,0000ba04,T,dbViewGetOpResult,other,
+lib/libdb.so,0000be50,T,dbViewGetQryList,other,
+lib/libdb.so,0000bf20,T,dbViewInsertRowByName,other,
+lib/libdb.so,0000a7b4,T,dbViewMgrPrint,other,
+lib/libdb.so,0000d3a4,T,dbViewNameListInit,other,
+lib/libdb.so,0000adcc,T,dbViewNameQryOp,other,
+lib/libdb.so,0000c0fc,T,dbViewOpInit,other,
+lib/libdb.so,0000bb28,T,dbViewPrmOp,other,
+lib/libdb.so,0000ba2c,T,dbViewSetOpResult,other,
+lib/libdb.so,0000d1cc,T,db_ListCache_Init,db_internal_api,
+lib/libdb.so,0000a838,T,dbcAddView,db_internal_api,
+lib/libdb.so,0000a954,T,dbcDelView,db_internal_api,
+lib/libdb.so,0000b270,T,dbcGetView,db_internal_api,
+lib/libdb.so,0000aa44,T,dbcLstView,db_internal_api,
+lib/libdb.so,0000ab40,T,dbcLstViewInfo,db_internal_api,
+lib/libdb.so,0000b478,T,dbcQryView,db_internal_api,
+lib/libdb.so,0000b068,T,dbcSetView,db_internal_api,
+lib/libdb.so,0000ca00,T,dbhashinit,other,
+lib/libdb.so,0000c524,T,dbiFristList,other,
+lib/libdb.so,,U,dlopen,other,
+lib/libdb.so,,U,dlsym,other,
+lib/libdb.so,00006674,T,end_AES,crypto,
+lib/libdb.so,,U,free@GLIBC_2.4,other,
+lib/libdb.so,0001ef14,D,g_ErrSymbol,other,
+lib/libdb.so,0001ef48,B,g_bDBInited,other,
+lib/libdb.so,0001ef60,B,g_dbActualkey,other,
+lib/libdb.so,0001eeb4,D,g_dbTotalkey,other,
+lib/libdb.so,0001eeac,D,g_dwTimeOut,other,
+lib/libdb.so,0001ef88,B,g_iViewOp,other,
+lib/libdb.so,0001ef28,B,g_pAddShmUse,other,
+lib/libdb.so,0001ef20,B,g_pGetCount,other,
+lib/libdb.so,0001ef1c,B,g_pListCount,other,
+lib/libdb.so,0001ef24,B,g_pSetCount,other,
+lib/libdb.so,0001ef34,B,g_pShmHandler,other,
+lib/libdb.so,0001ef54,B,g_pTblHash,other,
+lib/libdb.so,0001ef30,B,g_pTblShmUse,other,
+lib/libdb.so,0001ef4c,B,g_pViewHash,other,
+lib/libdb.so,0001ef2c,B,g_pViewShmUse,other,
+lib/libdb.so,0001ef78,B,g_ptTblHead,other,
+lib/libdb.so,0001ef84,B,g_ptViewHead,other,
+lib/libdb.so,0001ef50,B,g_ptViewId,other,
+lib/libdb.so,0001ef8c,B,g_szViewKey,other,
+lib/libdb.so,00005cf4,T,gadd,other,
+lib/libdb.so,00005d14,T,gmult,other,
+lib/libdb.so,00005d04,T,gsub,other,
+lib/libdb.so,000066a4,T,init_AES,crypto,
+lib/libdb.so,00006574,T,inv_cipher,crypto,
+lib/libdb.so,00006044,T,inv_mix_columns,other,
+lib/libdb.so,0000612c,T,inv_shift_rows,other,
+lib/libdb.so,000061e0,T,inv_sub_bytes,other,
+lib/libdb.so,000062ac,T,key_expansion,other,
+lib/libdb.so,,U,malloc@GLIBC_2.4,other,
+lib/libdb.so,,U,memcmp@GLIBC_2.4,other,
+lib/libdb.so,,U,memcpy@GLIBC_2.4,other,
+lib/libdb.so,,U,memset@GLIBC_2.4,other,
+lib/libdb.so,00005fb8,T,mix_columns,other,
+lib/libdb.so,0001ef3c,B,numget,other,
+lib/libdb.so,0001ef38,B,numrel,other,
+lib/libdb.so,00004d64,T,ossShmPoolCliInit,shared_memory_dependency,
+lib/libdb.so,00004cd0,T,ossShmPoolSrvInit,shared_memory_dependency,
+lib/libdb.so,00006280,T,rot_word,other,
+lib/libdb.so,000060d0,T,shift_rows,other,
+lib/libdb.so,,U,shmat@GLIBC_2.4,shared_memory_dependency,
+lib/libdb.so,,U,shmctl@GLIBC_2.4,shared_memory_dependency,
+lib/libdb.so,,U,shmget@GLIBC_2.4,shared_memory_dependency,
+lib/libdb.so,,U,snprintf@GLIBC_2.4,other,
+lib/libdb.so,,U,sprintf@GLIBC_2.4,other,
+lib/libdb.so,,U,strcat@GLIBC_2.4,other,
+lib/libdb.so,,U,strchr@GLIBC_2.4,other,
+lib/libdb.so,,U,strcmp@GLIBC_2.4,other,
+lib/libdb.so,,U,strcpy@GLIBC_2.4,other,
+lib/libdb.so,,U,strlcpy,other,
+lib/libdb.so,,U,strlen@GLIBC_2.4,other,
+lib/libdb.so,,U,strncmp@GLIBC_2.4,other,
+lib/libdb.so,,U,strncpy@GLIBC_2.4,other,
+lib/libdb.so,,U,strstr@GLIBC_2.4,other,
+lib/libdb.so,,U,strtoul@GLIBC_2.4,other,
+lib/libdb.so,,U,strtoull@GLIBC_2.4,other,
+lib/libdb.so,00006184,T,sub_bytes,other,
+lib/libdb.so,0000623c,T,sub_word,other,
+lib/libdb.so,0001ef40,B,totalloc,other,
+lib/libdb.so,,U,toupper@GLIBC_2.4,other,
+bin/cspd,,U,AESCBCDecry,crypto,
+bin/cspd,,U,AESCBCEncry,crypto,
+bin/cspd,,U,AESCBCRetUB,crypto,
+bin/cspd,,U,AES_encrypt,crypto,
+bin/cspd,,U,AES_set_encrypt_key,crypto,
+bin/cspd,,U,ASEND,ipc_dependency,
+bin/cspd,,U,ASEND_LOW_PRIORITY,other,
+bin/cspd,,U,AddMonFdList,other,
+bin/cspd,,U,AddNetIF,other,
+bin/cspd,,U,ArpBindDynamicInfo,other,
+bin/cspd,,U,CM_GET_OMCI_AllRouterOnu_State,other,
+bin/cspd,,U,CSPGetCapEthMac,other,
+bin/cspd,,U,CSPGetCapEthOpt,other,
+bin/cspd,,U,CSPGetCapPortInfo,other,
+bin/cspd,,U,CSPRegisterWlanDevice,other,
+bin/cspd,,U,CSPStrToIP,other,
+bin/cspd,,U,CfBandingListConf,other,
+bin/cspd,,U,CfBandingListWan,other,
+bin/cspd,,U,CfCheckPrefixValid,other,
+bin/cspd,,U,CfDhcp6cAppOptHandle,other,
+bin/cspd,,U,CfDhcp6cExtOptHandle,other,
+bin/cspd,,U,CfGen64bPrefixByMask,other,
+bin/cspd,,U,CfGetADevbyMac,other,
+bin/cspd,,U,CfGetPortBindMode,other,
+bin/cspd,,U,CfGetPortBindModeByName,other,
+bin/cspd,,U,CfGetPrefixBaseTime,other,
+bin/cspd,,U,CfGetRegionCode,other,
+bin/cspd,,U,CfGetWlanChipType,other,
+bin/cspd,,U,CfGetWlanNum,other,
+bin/cspd,,U,CfGetWlanPara4NFC,other,
+bin/cspd,00189494,T,CfIeee1905GetDevHopInfo,other,
+bin/cspd,,U,CfIfWlanSupport11ax,other,
+bin/cspd,,U,CfIfWlanSupportCap,other,
+bin/cspd,,U,CfIsRZXForAudit,other,
+bin/cspd,,U,CfIsWANCPassThroughBridge,other,
+bin/cspd,,U,CfMatchPortVlan,other,
+bin/cspd,,U,CfMultiAddFilterMac,other,
+bin/cspd,,U,CfMultiDelFilterMac,other,
+bin/cspd,,U,CfMultiSetAllPortFilterMacMode,other,
+bin/cspd,,U,CfMultiSetFilterMacEnable,other,
+bin/cspd,,U,CfMultiSetPortFilterMacMode,other,
+bin/cspd,,U,CfNotifyDbusSignal,other,
+bin/cspd,,U,CfPrefixAssign,other,
+bin/cspd,,U,CfRAGetCurPrefixes,other,
+bin/cspd,,U,CfReadOnuCfgItem,other,
+bin/cspd,,U,CfSendIAPDMsgToRoute,other,
+bin/cspd,,U,CfSendPrefixRoute,other,
+bin/cspd,,U,CfSipRegARPDetect,other,
+bin/cspd,,U,CfTR069LinkExceptReg,other,
+bin/cspd,,U,CfTR069RegTrigger,other,
+bin/cspd,,U,CfWANCGetPPPStatus,other,
+bin/cspd,,U,CfbrPortGetIndexByViewid,other,
+bin/cspd,,U,CheckBakParamTag,other,
+bin/cspd,,U,CheckDomainName,other,
+bin/cspd,,U,CheckMACMask,other,
+bin/cspd,,U,CheckMask,other,
+bin/cspd,,U,CheckPPPoEInterntWANC,other,
+bin/cspd,,U,ChkHost,other,
+bin/cspd,,U,ChkIP,other,
+bin/cspd,,U,ChkIPWithType,other,
+bin/cspd,,U,ChkIPv6,other,
+bin/cspd,,U,ChkIPv6WithType,other,
+bin/cspd,,U,ChkLanWanCon,other,
+bin/cspd,,U,ClearStrEndComma,other,
+bin/cspd,,U,CloseSocket,other,
+bin/cspd,,U,CmAccDevAllInfoGet,other,
+bin/cspd,,U,CmBspGetPowerSave,other,
+bin/cspd,,U,CmClearUnvailWancdWanc,other,
+bin/cspd,,U,CmDbusCallUfwFramGetall,other,
+bin/cspd,,U,CmDbusCallUfwPause,other,
+bin/cspd,,U,CmDbusCallUfwSwitch,other,
+bin/cspd,,U,CmDevGetDevInfoConf,other,
+bin/cspd,,U,CmDevSave,other,
+bin/cspd,,U,CmE8AddWanForBrSpeedTestExt,other,
+bin/cspd,,U,CmE8DelWanForBrSpeedTest,other,
+bin/cspd,,U,CmEnumStrOp,other,
+bin/cspd,,U,CmEthListInst,other,
+bin/cspd,,U,CmGetBrWancVlan,other,
+bin/cspd,,U,CmGetMultiDefPortMask,other,
+bin/cspd,,U,CmGetPrivateProfileInt,other,
+bin/cspd,,U,CmGetRegionCode,other,
+bin/cspd,,U,CmGetRegionCodeForTools,other,
+bin/cspd,,U,CmGetVersionConfigTypeInt,other,
+bin/cspd,,U,CmModifyRegionCode,other,
+bin/cspd,,U,CmMultiAPWlanRenewNotify,other,
+bin/cspd,0018af28,T,CmMultiApAgentTopoAllDev,other,
+bin/cspd,,U,CmNfcSetWifiMsgFromWLAN,other,
+bin/cspd,,U,CmPdtCtlLeds,other,
+bin/cspd,,U,CmPdtSetPonPowerSave,other,
+bin/cspd,,U,CmPdtSetUsbPowerSave,other,
+bin/cspd,,U,CmPonGetSn,other,
+bin/cspd,,U,CmPonSetTagInfo,other,
+bin/cspd,,U,CmPortIsolationSet,other,
+bin/cspd,,U,CmSendMsg2MM,other,
+bin/cspd,,U,CmSetMobileAppExInfo,other,
+bin/cspd,,U,CmSetUpgradeStatus,other,
+bin/cspd,,U,CmTpRuleDel,other,
+bin/cspd,,U,CmTpRuleListApp,other,
+bin/cspd,,U,CmTpRuleSet,other,
+bin/cspd,,U,CmUsbBakRstSynDevInfoSet,other,
+bin/cspd,,U,CmWANCHideView,other,
+bin/cspd,,U,CmWLANGetConfig,other,
+bin/cspd,,U,CmWLANGetConfigDriver,other,
+bin/cspd,,U,CmWLANListAP,other,
+bin/cspd,,U,CmWLANMacListCount,other,
+bin/cspd,,U,CmWLANSetScanAP,other,
+bin/cspd,,U,CmWLANSetTxpower,other,
+bin/cspd,,U,CmWancDbusPropertyChange,other,
+bin/cspd,,U,CmWanc_dbus_object_sync,other,
+bin/cspd,,U,CmWancppp_dbus_object_sync,other,
+bin/cspd,,U,CmWritePrivateProfileInt,other,
+bin/cspd,,U,Cm_notify_dbus_pro_change,other,
+bin/cspd,,U,CreateSocket,other,
+bin/cspd,,U,CspCopyFile,other,
+bin/cspd,,U,CspCopyFileNoBuffer,other,
+bin/cspd,,U,CspCopyFlushSyncFile,other,
+bin/cspd,,U,CspCustomDns,other,
+bin/cspd,002064ec,T,CspDBSetBackupItem,other,
+bin/cspd,,U,CspDeleteFile,other,
+bin/cspd,,U,CspGetIfIpv6Addr,other,
+bin/cspd,,U,CspGetMD5,other,
+bin/cspd,,U,CspGetNewMac,other,
+bin/cspd,,U,CspHardCodeParamGet,other,
+bin/cspd,,U,CspReleaseUsedMac,other,
+bin/cspd,,U,CspSetTaskSched,other,
+bin/cspd,0022c0cc,T,CspUserMtdRead,other,
+bin/cspd,,U,DBShmSrvInit,shared_memory_api,DB 服务端共享内存初始化
+bin/cspd,002e8891,D,DBviewname,other,
+bin/cspd,,U,DES_ecb3_encrypt,other,
+bin/cspd,,U,DES_set_key_unchecked,other,
+bin/cspd,,U,DelTagParam,other,
+bin/cspd,,U,DevGetDevConf,other,
+bin/cspd,,U,DevGetIPv6Effect,other,
+bin/cspd,,U,DevRebootForMod,other,
+bin/cspd,,U,DisableWatchdog,other,
+bin/cspd,,U,DnsOpDeceiveFile,other,
+bin/cspd,,U,DoBridgeFilter,other,
+bin/cspd,,U,DoBridgeFilterM,other,
+bin/cspd,,U,DoCreatSubChain,other,
+bin/cspd,,U,DoKernelIptablesM,other,
+bin/cspd,,U,DoKernelPRIptables,other,
+bin/cspd,,U,DoKernelPRServiceMark,other,
+bin/cspd,,U,DoPortBlocking,other,
+bin/cspd,,U,DoPortBlockingM,other,
+bin/cspd,,U,ERR_free_strings,other,
+bin/cspd,,U,EXTRA_KILL_TIMER,other,
+bin/cspd,,U,EXTRA_SET_LOOP_TIMER,other,
+bin/cspd,,U,EXTRA_SET_TIMER,other,
+bin/cspd,,U,ExpandPrefix,other,
+bin/cspd,,U,FTTR_ASEND_Master_to_Slave,other,
+bin/cspd,,U,FileFclose,other,
+bin/cspd,,U,FileFopen,other,
+bin/cspd,,U,GetActionServList,other,
+bin/cspd,,U,GetBaseInfoByWANC,other,
+bin/cspd,,U,GetBrPortInfo,other,
+bin/cspd,,U,GetCpuCoreNum,other,
+bin/cspd,,U,GetCpuInfoForMultiCore,other,
+bin/cspd,,U,GetCurrentTicks,other,
+bin/cspd,,U,GetDBParamInfo,other,
+bin/cspd,,U,GetEnvPara,other,
+bin/cspd,,U,GetHWMacByIfName,other,
+bin/cspd,,U,GetIFBaseInfo,other,
+bin/cspd,,U,GetIFIdByRealIFName,other,
+bin/cspd,,U,GetIFInfo,other,
+bin/cspd,,U,GetIPv4DnsServer,other,
+bin/cspd,,U,GetIPv6AddrType,other,
+bin/cspd,,U,GetLANIDByRealIfName,other,
+bin/cspd,,U,GetMemInfo,other,
+bin/cspd,,U,GetPIDNameByPID,other,
+bin/cspd,,U,GetPhyLinkInfo,other,
+bin/cspd,0022d338,T,GetPrivateProfileInt,other,
+bin/cspd,0022d97c,T,GetPrivateProfileString,other,
+bin/cspd,,U,GetRetFileName,other,
+bin/cspd,,U,GetRouteIFInfo,other,
+bin/cspd,,U,GetSelfPIDName,other,
+bin/cspd,,U,GetStringFromFile,other,
+bin/cspd,,U,GetTagParam,other,
+bin/cspd,,U,GetUB,other,
+bin/cspd,,U,GetUpTime,other,
+bin/cspd,,U,GetUpgradeFreeMemSize,other,
+bin/cspd,,U,GetWANCDLinkType,other,
+bin/cspd,,U,GetWANLANBaseInfo,other,
+bin/cspd,,U,IPToStr,other,
+bin/cspd,,U,IPv6AddrIfEnQ,other,
+bin/cspd,,U,IPv6AddrPrefIfEnQ,other,
+bin/cspd,,U,IPv6ToStr,other,
+bin/cspd,,U,IsInternetIPWan,other,
+bin/cspd,,U,IsIptvWan,other,
+bin/cspd,,U,IsTr069Wan,other,
+bin/cspd,,U,IsWANPPPRouteConnectWithLanPort,other,
+bin/cspd,00096b8c,T,IsZeroIPv6Addr,other,
+bin/cspd,,U,IsZeroMacAddr,other,
+bin/cspd,,U,KILL_TIMER,other,
+bin/cspd,,U,L2BAddAvailIf,other,
+bin/cspd,,U,L2BDelAvailIf,other,
+bin/cspd,,U,L2BDoPassThroughFilter,other,
+bin/cspd,,U,L2BGetAvailIfView,other,
+bin/cspd,,U,ListAllIF,other,
+bin/cspd,,U,ListAllRouteIF,other,
+bin/cspd,,U,ListDsLiteOnWANCID,other,
+bin/cspd,,U,ListWANC,other,
+bin/cspd,,U,ListWANCOnAppType,other,
+bin/cspd,,U,ListWANCOnServList,other,
+bin/cspd,,U,ListWANLANInterface,other,
+bin/cspd,,U,MACToStr,other,
+bin/cspd,,U,MapGetDB,other,
+bin/cspd,,U,ModFeedSoftWdForUsr,other,
+bin/cspd,,U,ModRegSoftWdForUsr,other,
+bin/cspd,,U,NEXT_STATE,other,
+bin/cspd,,U,OSSInitConfig,other,
+bin/cspd,,U,OSSSendAckData,other,
+bin/cspd,,U,OSSStart,other,
+bin/cspd,,U,OssDebugPrintf,other,
+bin/cspd,,U,OssGetBbxUserAddr,other,
+bin/cspd,,U,OssUserBbxWrite,other,
+bin/cspd,,U,PEM_read_X509,other,
+bin/cspd,,U,PcKillByName,other,
+bin/cspd,,U,PcSignalProgram,other,
+bin/cspd,,U,PcStartProgram,other,
+bin/cspd,,U,PcStopProgram,other,
+bin/cspd,,U,PdtGetBridgeBindingType,other,
+bin/cspd,,U,PdtRestoreLeds,other,
+bin/cspd,,U,PrefixRegPDConfList,other,
+bin/cspd,,U,ProcOssLog,other,
+bin/cspd,,U,ProcUserLog,other,
+bin/cspd,00213b5c,T,QCAppSet,other,
+bin/cspd,,U,QueryIPPool,other,
+bin/cspd,,U,RebindWANC,other,
+bin/cspd,,U,ReconnectWANC,other,
+bin/cspd,,U,RegistAcceptfd,other,
+bin/cspd,,U,RegistReadProcFun,other,
+bin/cspd,,U,RegistReadfd,other,
+bin/cspd,,U,RegisterDefaultGWNotifier,other,
+bin/cspd,,U,RegisterIFNotifier,other,
+bin/cspd,,U,RegisterNetIF,other,
+bin/cspd,,U,RegisterPhyLinkDev,other,
+bin/cspd,,U,RegisterPhyLinkNotifier,other,
+bin/cspd,,U,RegisterProtocolObj,other,
+bin/cspd,,U,RegisterSntpNotifier,other,
+bin/cspd,,U,RegisterWanLanNotifier,other,
+bin/cspd,,U,RetUB,other,
+bin/cspd,,U,SELF,other,
+bin/cspd,,U,SENDER,other,
+bin/cspd,,U,SETTagParam,other,
+bin/cspd,,U,SET_LOOP_TIMER,other,
+bin/cspd,,U,SET_TIMER,other,
+bin/cspd,,U,SHA256,other,
+bin/cspd,,U,SSEND,ipc_dependency,
+bin/cspd,,U,SSL_CTX_free,other,
+bin/cspd,,U,SSL_CTX_new,other,
+bin/cspd,,U,SSL_connect,other,
+bin/cspd,,U,SSL_free,other,
+bin/cspd,,U,SSL_library_init,other,
+bin/cspd,,U,SSL_load_error_strings,other,
+bin/cspd,,U,SSL_new,other,
+bin/cspd,,U,SSL_read,other,
+bin/cspd,,U,SSL_set_connect_state,other,
+bin/cspd,,U,SSL_set_fd,other,
+bin/cspd,,U,SSL_shutdown,other,
+bin/cspd,,U,SSL_write,other,
+bin/cspd,,U,SSLv23_client_method,other,
+bin/cspd,,U,SafeMemcpy,other,
+bin/cspd,,U,SafeStrcpy,other,
+bin/cspd,,U,SafeStrncpy,other,
+bin/cspd,,U,SendReqToFm,other,
+bin/cspd,,U,SendReqToFmCancelDownload,other,
+bin/cspd,,U,SendReqToPing,other,
+bin/cspd,,U,SendReqToStopPing,other,
+bin/cspd,,U,SetDBParamInfo,other,
+bin/cspd,,U,SetEnvPara,other,
+bin/cspd,,U,SetNetIFAvalible,other,
+bin/cspd,,U,SetNetIFBrport,other,
+bin/cspd,,U,SetNetIFEnable,other,
+bin/cspd,,U,SetNetIFRoute,other,
+bin/cspd,,U,SetPhyLinkDevDown,other,
+bin/cspd,,U,SetPhyLinkDevUP,other,
+bin/cspd,,U,SetProtocalObjDown,other,
+bin/cspd,,U,SetProtocalObjUp,other,
+bin/cspd,,U,SetSocketEvent,other,
+bin/cspd,,U,SetWANCAPPOnDialToWANC,other,
+bin/cspd,,U,SetWANCAPPWaitDialToWANC,other,
+bin/cspd,,U,ShmPoolLock,shared_memory_dependency,
+bin/cspd,,U,ShmPoolUnlock,shared_memory_dependency,
+bin/cspd,,U,StrMac,other,
+bin/cspd,,U,StrToHexInt,other,
+bin/cspd,,U,StrToIP,other,
+bin/cspd,,U,StrToIPv6,other,
+bin/cspd,,U,StrToIPv6AndPrefixLen,other,
+bin/cspd,,U,StrToInt,other,
+bin/cspd,,U,StrToMAC,other,
+bin/cspd,,U,StrToMutiIP,other,
+bin/cspd,,U,SubScribNotify,other,
+bin/cspd,,U,TR_StrToMAC,other,
+bin/cspd,,U,UnRegisterIFNotifier,other,
+bin/cspd,,U,UnRegisterNetIF,other,
+bin/cspd,,U,Unregistfd,other,
+bin/cspd,,U,UpdateGuaInfo,other,
+bin/cspd,,U,UserKeySetEventDelayRelease,other,
+bin/cspd,,U,UserKeySetEventOn,other,
+bin/cspd,,U,UserKeySetEventRelease,other,
+bin/cspd,,U,UserLedAction,other,
+bin/cspd,,U,WLANListBase,other,
+bin/cspd,,U,WLANListCfg,other,
+bin/cspd,,U,WifiRadioDisable,other,
+bin/cspd,,U,WifiRadioEnable,other,
+bin/cspd,,U,WlanBaseDbRead,other,
+bin/cspd,,U,WlanBaseInstId2CardIndex,other,
+bin/cspd,,U,WlanCardIndex2Band,other,
+bin/cspd,,U,WlanCfgDbRead,other,
+bin/cspd,,U,WlanGetBasic,other,
+bin/cspd,,U,WlanGetCfg,other,
+bin/cspd,,U,WlanIndex2IfName,other,
+bin/cspd,,U,WlanInstId2Index,other,
+bin/cspd,,U,WlanSetVapEnable,other,
+bin/cspd,0022d670,T,WritePrivateProfileInt,other,
+bin/cspd,0022dc78,T,WritePrivateProfileString,other,
+bin/cspd,,U,WriteStrToFile,other,
+bin/cspd,,U,X509_free,other,
+bin/cspd,,w,_ITM_deregisterTMCloneTable,other,
+bin/cspd,,w,_ITM_registerTMCloneTable,other,
+bin/cspd,,w,_Jv_RegisterClasses,other,
+bin/cspd,,U,__aeabi_d2f@GCC_3.5,other,
+bin/cspd,,U,__aeabi_d2iz@GCC_3.5,other,
+bin/cspd,,U,__aeabi_d2uiz@GCC_3.5,other,
+bin/cspd,,U,__aeabi_dadd@GCC_3.5,other,
+bin/cspd,,U,__aeabi_dcmpgt@GCC_3.5,other,
+bin/cspd,,U,__aeabi_dcmplt@GCC_3.5,other,
+bin/cspd,,U,__aeabi_ddiv@GCC_3.5,other,
+bin/cspd,,U,__aeabi_dmul@GCC_3.5,other,
+bin/cspd,,U,__aeabi_dsub@GCC_3.5,other,
+bin/cspd,,U,__aeabi_f2d@GCC_3.5,other,
+bin/cspd,,U,__aeabi_f2iz@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fadd@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fcmpgt@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fcmple@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fcmplt@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fdiv@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fmul@GCC_3.5,other,
+bin/cspd,,U,__aeabi_fsub@GCC_3.5,other,
+bin/cspd,,U,__aeabi_i2d@GCC_3.5,other,
+bin/cspd,,U,__aeabi_i2f@GCC_3.5,other,
+bin/cspd,,U,__aeabi_llsl@GCC_3.5,other,
+bin/cspd,,U,__aeabi_ui2d@GCC_3.5,other,
+bin/cspd,,U,__aeabi_ui2f@GCC_3.5,other,
+bin/cspd,,U,__aeabi_ul2f@GCC_3.5,other,
+bin/cspd,,U,__aeabi_uldivmod@GCC_3.5,other,
+bin/cspd,003614a8,B,__bss_end__,other,
+bin/cspd,002f76c4,B,__bss_start,other,
+bin/cspd,002f76c4,B,__bss_start__,other,
+bin/cspd,,U,__ctype_b_loc@GLIBC_2.4,other,
+bin/cspd,,U,__ctype_tolower_loc@GLIBC_2.4,other,
+bin/cspd,003614a8,B,__end__,other,
+bin/cspd,,U,__errno_location@GLIBC_2.4,other,
+bin/cspd,,U,__fxstat@GLIBC_2.4,other,
+bin/cspd,,w,__gmon_start__,other,
+bin/cspd,,U,__libc_current_sigrtmin@GLIBC_2.4,other,
+bin/cspd,,U,__libc_start_main@GLIBC_2.4,other,
+bin/cspd,002f7698,D,__start_module_section,other,
+bin/cspd,002f76c4,D,__stop_module_section,other,
+bin/cspd,,U,__xstat@GLIBC_2.4,other,
+bin/cspd,003614a8,B,_bss_end__,other,
+bin/cspd,002f76c4,D,_edata,other,
+bin/cspd,003614a8,B,_end,other,
+bin/cspd,0022f3d8,T,_fini,other,
+bin/cspd,0001b25c,T,_init,other,
+bin/cspd,,U,abort@GLIBC_2.4,other,
+bin/cspd,,U,access@GLIBC_2.4,other,
+bin/cspd,,U,adevAclLst,other,
+bin/cspd,,U,adevAclRegTrigger,other,
+bin/cspd,,U,adevListView,other,
+bin/cspd,,U,adevQryInterfaceByMac,other,
+bin/cspd,,U,adevQryParam,other,
+bin/cspd,,U,adevRegTrigger,other,
+bin/cspd,,U,adevSetADevInfo,other,
+bin/cspd,,U,atoi@GLIBC_2.4,other,
+bin/cspd,,U,atol@GLIBC_2.4,other,
+bin/cspd,,U,atoll@GLIBC_2.4,other,
+bin/cspd,,U,bIsMuitiAPEnable,other,
+bin/cspd,,U,bcmp@GLIBC_2.4,other,
+bin/cspd,,U,bind@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,bzero@GLIBC_2.4,other,
+bin/cspd,,U,calloc@GLIBC_2.4,other,
+bin/cspd,,U,cfAccessDevAllInfoGetbyMac,other,
+bin/cspd,,U,cfDevStateInquire,other,
+bin/cspd,,U,cfGetAccessDevMacByIP,other,
+bin/cspd,,U,cfGetFxsNum,other,
+bin/cspd,,U,cfGetPrefixByWANCID,other,
+bin/cspd,,U,change_label,other,
+bin/cspd,,U,checkWANCServList,other,
+bin/cspd,,U,chmod@GLIBC_2.4,other,
+bin/cspd,,U,clearerr@GLIBC_2.4,other,
+bin/cspd,,U,clock_gettime@GLIBC_2.17,other,
+bin/cspd,,U,close@GLIBC_2.4,other,
+bin/cspd,,U,closedir@GLIBC_2.4,other,
+bin/cspd,,U,cmBOOLPrmOp,other,
+bin/cspd,,U,cmDNSCFGDel,other,
+bin/cspd,,U,cmDWORDPrmOp,other,
+bin/cspd,,U,cmFttrNotifyZscpAlm,other,
+bin/cspd,,U,cmFwGetPm,other,
+bin/cspd,,U,cmFwGetTp,other,
+bin/cspd,,U,cmFwListTp,other,
+bin/cspd,,U,cmGetCurrentWANDType,other,
+bin/cspd,,U,cmGetParaFilter,other,
+bin/cspd,,U,cmListAllParaFilter,other,
+bin/cspd,,U,cmSTRPrmOp,other,
+bin/cspd,,U,connect@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,cspGetWANCStatsULL,other,
+bin/cspd,,U,cspLock,other,
+bin/cspd,,U,cspLockInit,other,
+bin/cspd,,U,cspUnLock,other,
+bin/cspd,,U,csp_gethostbynameMix,other,
+bin/cspd,0019ca08,T,csp_htonl,other,
+bin/cspd,0019ca14,T,csp_htons,other,
+bin/cspd,0019ca20,T,csp_ntohl,other,
+bin/cspd,0019ca2c,T,csp_ntohs,other,
+bin/cspd,,U,cspifconfig,other,
+bin/cspd,,U,ctGetEponLosInfo,other,
+bin/cspd,,U,ctGetGponLosInfo,other,
+bin/cspd,,U,ctypeCheck,other,
+bin/cspd,,U,dbAPIAddView,db_public_api,新增视图实例/行
+bin/cspd,,U,dbAPIDelView,db_public_api,删除视图实例/行
+bin/cspd,,U,dbAPIGetDefPath,db_public_api,
+bin/cspd,,U,dbAPIGetTblRowCount,db_public_api,
+bin/cspd,,U,dbAPIGetUsrBackPath,db_public_api,
+bin/cspd,,U,dbAPIGetUsrPath,db_public_api,
+bin/cspd,,U,dbAPIGetValByRow,db_public_api,
+bin/cspd,,U,dbAPIGetView,db_public_api,按 ViewName 读取一条视图记录
+bin/cspd,,U,dbAPILstView,db_public_api,列出某类视图实例
+bin/cspd,,U,dbAPIQryView,db_public_api,按条件查询视图实例
+bin/cspd,,U,dbAPISave,db_public_api,触发运行时 DB 序列化并持久化
+bin/cspd,,U,dbAPISetView,db_public_api,按 ViewName 修改一条视图记录
+bin/cspd,001db598,T,dbAddLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001db970,T,dbAddLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbAddRow,db_internal_api,
+bin/cspd,,U,dbAddRowDebug,db_internal_api,
+bin/cspd,,U,dbCPCleanOtherRow,other,
+bin/cspd,,U,dbClearAllTbl,db_internal_api,
+bin/cspd,,U,dbClearTbl,db_internal_api,
+bin/cspd,,U,dbCreatViewFun,other,
+bin/cspd,,U,dbCreateDomainNew,db_internal_api,
+bin/cspd,,U,dbCreateTbl,db_internal_api,
+bin/cspd,0020852c,T,dbDefAccessNotifyCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001cc49c,T,dbDefAppListCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001d7220,T,dbDefArpAS,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6560,T,dbDefAuthUserInfoProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,0020b5f8,T,dbDefBPRInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,0020ab20,T,dbDefBULocationConf,table_definition,定义数据库表/产品表结构
+bin/cspd,0020a8bc,T,dbDefBUServiceConf,table_definition,定义数据库表/产品表结构
+bin/cspd,00208f50,T,dbDefBoardInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,001cf0e4,T,dbDefCommSwitch,table_definition,定义数据库表/产品表结构
+bin/cspd,001b74e4,T,dbDefDDNSClient,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7618,T,dbDefDDNSService,table_definition,定义数据库表/产品表结构
+bin/cspd,001d1618,T,dbDefDHCP6SHostCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001d358c,T,dbDefDHCPSHostCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001f913c,T,dbDefDMSProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6d64,T,dbDefDMZProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7160,T,dbDefDevInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6350,T,dbDefDevInfoProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8f9c,T,dbDefDhcpsCommonPdt,table_definition,定义数据库表/产品表结构
+bin/cspd,001cdb78,T,dbDefDlTest,table_definition,定义数据库表/产品表结构
+bin/cspd,0020cc8c,T,dbDefEPONLlidConf,table_definition,定义数据库表/产品表结构
+bin/cspd,0020cacc,T,dbDefEPONProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,0020cf30,T,dbDefEPONSilenceCount,table_definition,定义数据库表/产品表结构
+bin/cspd,0020b140,T,dbDefEthAlarmProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,0020eb10,T,dbDefEthGlobalConfProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001f70a0,T,dbDefFTPServerCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001b78f0,T,dbDefFTPUser,table_definition,定义数据库表/产品表结构
+bin/cspd,001f7220,T,dbDefFTPUserProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001d9a4c,T,dbDefFWDMZ,table_definition,定义数据库表/产品表结构
+bin/cspd,001c08bc,T,dbDefFWIPTV,table_definition,定义数据库表/产品表结构
+bin/cspd,00206740,T,dbDefFalsifyDefend,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6f7c,T,dbDefFwLevelProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,0020d5e8,T,dbDefGPONCFG,table_definition,定义数据库表/产品表结构
+bin/cspd,001cf024,T,dbDefL2BAvailIF,table_definition,定义数据库表/产品表结构
+bin/cspd,001ce4a8,T,dbDefLAND,table_definition,定义数据库表/产品表结构
+bin/cspd,00209b7c,T,dbDefLANInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,001d1248,T,dbDefLanPrefixCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001daf6c,T,dbDefLoopbackGlobalConf,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7070,T,dbDefMAC,table_definition,定义数据库表/产品表结构
+bin/cspd,001cfa78,T,dbDefMLDWan,table_definition,定义数据库表/产品表结构
+bin/cspd,002082d8,T,dbDefMQTTSrv,table_definition,定义数据库表/产品表结构
+bin/cspd,001dc778,T,dbDefMultiAPCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001dd2fc,T,dbDefMultiAPDomain,table_definition,定义数据库表/产品表结构
+bin/cspd,001dcc58,T,dbDefMultiAPMaster,table_definition,定义数据库表/产品表结构
+bin/cspd,001de640,T,dbDefMultiAPRoamCatonCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,00210b90,T,dbDefNFCCONFProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,0020b838,T,dbDefOMCICFG,table_definition,定义数据库表/产品表结构
+bin/cspd,0020bc9c,T,dbDefOPTICAL,table_definition,定义数据库表/产品表结构
+bin/cspd,00208018,T,dbDefOnuSleepCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001cac8c,T,dbDefP1905Cfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001cb178,T,dbDefP1905ComCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,0020a7c4,T,dbDefPWSaving,table_definition,定义数据库表/产品表结构
+bin/cspd,0020a7d0,T,dbDefPWSavingConf,table_definition,定义数据库表/产品表结构
+bin/cspd,001d7020,T,dbDefParamInfoTbl,table_definition,定义数据库表/产品表结构
+bin/cspd,0020a410,T,dbDefPdtInterface,table_definition,定义数据库表/产品表结构
+bin/cspd,001bfec4,T,dbDefPingdiag,table_definition,定义数据库表/产品表结构
+bin/cspd,001d9534,T,dbDefPortControl,table_definition,定义数据库表/产品表结构
+bin/cspd,001f7398,T,dbDefPortControlProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001d9868,T,dbDefPortPriority,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6e74,T,dbDefPortalUrlProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001d2f14,T,dbDefQOSApp,table_definition,定义数据库表/产品表结构
+bin/cspd,00210f70,T,dbDefQOSBasicCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001d2a28,T,dbDefQOSQueue,table_definition,定义数据库表/产品表结构
+bin/cspd,00211060,T,dbDefQOSQueueCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001d014c,T,dbDefRaCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8fcc,T,dbDefSAMBAUserProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001f6b88,T,dbDefSNTPProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001b79f0,T,dbDefSambaUser,table_definition,定义数据库表/产品表结构
+bin/cspd,0020847c,T,dbDefSecProtect,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7040,T,dbDefSimulationDHCP,table_definition,定义数据库表/产品表结构
+bin/cspd,001b6f2c,T,dbDefSimulationPPPOE,table_definition,定义数据库表/产品表结构
+bin/cspd,0020a7dc,T,dbDefSleepCtrl,table_definition,定义数据库表/产品表结构
+bin/cspd,0020dc54,T,dbDefTCONT,table_definition,定义数据库表/产品表结构
+bin/cspd,001c0130,T,dbDefTR069ClearPwd,table_definition,定义数据库表/产品表结构
+bin/cspd,001c0350,T,dbDefTR232BulkDataProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c0578,T,dbDefTR232CSVProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c0690,T,dbDefTR232HTTPProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c04cc,T,dbDefTR232JsonProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c07a0,T,dbDefTR232ParameterProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c0380,T,dbDefTR232ProfileProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001cb500,T,dbDefTelnetCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bf1b4,T,dbDefTimePolicy,table_definition,定义数据库表/产品表结构
+bin/cspd,0020844c,T,dbDefUNBINDCtlTbl,table_definition,定义数据库表/产品表结构
+bin/cspd,001be2a0,T,dbDefVOIPCAP,table_definition,定义数据库表/产品表结构
+bin/cspd,001bf100,T,dbDefVOIPCIDCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001be5b4,T,dbDefVOIPHomeLine,table_definition,定义数据库表/产品表结构
+bin/cspd,001be92c,T,dbDefVOIPPhyCallFeature,table_definition,定义数据库表/产品表结构
+bin/cspd,001be33c,T,dbDefVOIPPhyInterface,table_definition,定义数据库表/产品表结构
+bin/cspd,001bdb90,T,dbDefVOIPVPCallFeature,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd870,T,dbDefVOIPVPNUMBERPROC,table_definition,定义数据库表/产品表结构
+bin/cspd,001bdd74,T,dbDefVOIPVPSERVICEKEY,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd9cc,T,dbDefVOIPVPSPEEDDIAL,table_definition,定义数据库表/产品表结构
+bin/cspd,001bf13c,T,dbDefVOIPVTCCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9690,T,dbDefVoIPBGWCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b810c,T,dbDefVoIPBearInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8d30,T,dbDefVoIPCSLine,table_definition,定义数据库表/产品表结构
+bin/cspd,001c5a04,T,dbDefVoIPCapabilitiesCodec,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc30c,T,dbDefVoIPDMTimerCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9534,T,dbDefVoIPDSPCIDCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b97ec,T,dbDefVoIPDSPMISCCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b927c,T,dbDefVoIPDTMFADVCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bf178,T,dbDefVoIPExt,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7d64,T,dbDefVoIPFMediaCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b93d8,T,dbDefVoIPFaxModemRptCtrlCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc87c,T,dbDefVoIPFaxT38Cfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc9d8,T,dbDefVoIPFaxVBDCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bef30,T,dbDefVoIPH248LineCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bebe8,T,dbDefVoIPH248MainCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bedd4,T,dbDefVoIPH248SubCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd4b0,T,dbDefVoIPHook,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd534,T,dbDefVoIPHookVPCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001c5fe8,T,dbDefVoIPIADDiag,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd690,T,dbDefVoIPIVRPsd,table_definition,定义数据库表/产品表结构
+bin/cspd,001bce30,T,dbDefVoIPLastSessionCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bcfd0,T,dbDefVoIPLineCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc16c,T,dbDefVoIPLineCodec,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd170,T,dbDefVoIPLineHistoryCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd310,T,dbDefVoIPLineLastCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7ecc,T,dbDefVoIPMMediaCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bcb34,T,dbDefVoIPModemVBDCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b80d0,T,dbDefVoIPPhyNumCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001c5ca4,T,dbDefVoIPPoorQualityList,table_definition,定义数据库表/产品表结构
+bin/cspd,001b79fc,T,dbDefVoIPPortCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,002f14d4,D,dbDefVoIPRINGERDescrptTable,table_definition,定义数据库表/产品表结构
+bin/cspd,002f1174,D,dbDefVoIPRINGEREventTable,table_definition,定义数据库表/产品表结构
+bin/cspd,002f1954,D,dbDefVoIPRINGERPatternTable,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9aa4,T,dbDefVoIPRTCPADVCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc5c4,T,dbDefVoIPRTCPCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9948,T,dbDefVoIPRTPADVCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc468,T,dbDefVoIPRTPCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9c00,T,dbDefVoIPRTPREDCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bae40,T,dbDefVoIPRingerCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bb2b4,T,dbDefVoIPRingerDescrptCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bb0b8,T,dbDefVoIPRingerEventCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bb548,T,dbDefVoIPRingerPatternCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8148,T,dbDefVoIPSIP,table_definition,定义数据库表/产品表结构
+bin/cspd,001bb9f4,T,dbDefVoIPSIPEventSubscribe,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbda0,T,dbDefVoIPSIPLan,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbc24,T,dbDefVoIPSIPLine,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8fc4,T,dbDefVoIPSIPServer,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9120,T,dbDefVoIPSIPTimer,table_definition,定义数据库表/产品表结构
+bin/cspd,001b84cc,T,dbDefVoIPSLC112TESTCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001f91f8,T,dbDefVoIPSLCCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001b83b8,T,dbDefVoIPSLCINFCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b82a4,T,dbDefVoIPSLCTIMECfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc0ac,T,dbDefVoIPSRBwList,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbe60,T,dbDefVoIPSRDigitCollect,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbfa4,T,dbDefVoIPSROfficeDigitMap,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbe9c,T,dbDefVoIPSROfficeGroupPrefix,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbf20,T,dbDefVoIPSROfficePrefix,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc130,T,dbDefVoIPSRPhyRefListEnable,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc028,T,dbDefVoIPSRRouteDigitMap,table_definition,定义数据库表/产品表结构
+bin/cspd,001bc720,T,dbDefVoIPSRTPCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bbddc,T,dbDefVoIPSRTermination,table_definition,定义数据库表/产品表结构
+bin/cspd,001bcc90,T,dbDefVoIPSessionCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001bea8c,T,dbDefVoIPSimulateTest,table_definition,定义数据库表/产品表结构
+bin/cspd,001bace4,T,dbDefVoIPT38ADVCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9d5c,T,dbDefVoIPTONECfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001ba26c,T,dbDefVoIPTONEDescrptCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,002ed934,D,dbDefVoIPTONEDescrptTable,table_definition,定义数据库表/产品表结构
+bin/cspd,001b9f90,T,dbDefVoIPTONEEventCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,002ed0c4,D,dbDefVoIPTONEEventTable,table_definition,定义数据库表/产品表结构
+bin/cspd,001ba5f0,T,dbDefVoIPTONEPatternCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,002edcf4,D,dbDefVoIPTONEPatternTable,table_definition,定义数据库表/产品表结构
+bin/cspd,001b7bfc,T,dbDefVoIPVMediaCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b86b0,T,dbDefVoIPVPCallTimer,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8840,T,dbDefVoIPVPCodec,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8994,T,dbDefVoIPVPDTMF,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8ae8,T,dbDefVoIPVPLine,table_definition,定义数据库表/产品表结构
+bin/cspd,001bd714,T,dbDefVoIPVPNP,table_definition,定义数据库表/产品表结构
+bin/cspd,001b86ec,T,dbDefVoIPVPService,table_definition,定义数据库表/产品表结构
+bin/cspd,001bb854,T,dbDefVoIPVoiceProcCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001b8508,T,dbDefVoIPVoiceProfile,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca7c8,T,dbDefWLANBandSteering,table_definition,定义数据库表/产品表结构
+bin/cspd,001c9140,T,dbDefWLANBase,table_definition,定义数据库表/产品表结构
+bin/cspd,001f75f8,T,dbDefWLANBaseProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c96c8,T,dbDefWLANCfg,table_definition,定义数据库表/产品表结构
+bin/cspd,001f7b6c,T,dbDefWLANCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca014,T,dbDefWLANCountry,table_definition,定义数据库表/产品表结构
+bin/cspd,001f7ebc,T,dbDefWLANCountryProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca5ec,T,dbDefWLANPSK,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8448,T,dbDefWLANPSKProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca8ec,T,dbDefWLANSetting,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8dd4,T,dbDefWLANTimeCfgProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8e4c,T,dbDefWLANTimeProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c9dc0,T,dbDefWLANWEP,table_definition,定义数据库表/产品表结构
+bin/cspd,001f8528,T,dbDefWLANWEPProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001c9998,T,dbDefWLANWMM,table_definition,定义数据库表/产品表结构
+bin/cspd,001f88dc,T,dbDefWLANWMMProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca520,T,dbDefWLANWPS,table_definition,定义数据库表/产品表结构
+bin/cspd,001f87e0,T,dbDefWLANWPSProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,002065f8,T,dbDefWLCInfo,table_definition,定义数据库表/产品表结构
+bin/cspd,001ca6a8,T,dbDefWlanTime,table_definition,定义数据库表/产品表结构
+bin/cspd,002109fc,T,dbDefminiOLT,table_definition,定义数据库表/产品表结构
+bin/cspd,001f910c,T,dbDefsysRouteProduct,table_definition,定义数据库表/产品表结构
+bin/cspd,001db6ac,T,dbDelLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001dba90,T,dbDelLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbDelRow,db_internal_api,
+bin/cspd,,U,dbDelRowDebug,db_internal_api,
+bin/cspd,,U,dbDelRowFromTail,db_internal_api,
+bin/cspd,,U,dbDelWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbDelWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbDmCmp,db_internal_api,
+bin/cspd,001a0934,T,dbFileCRCSame,other,
+bin/cspd,,U,dbFindDmByName,db_internal_api,
+bin/cspd,,U,dbFindRowByNo,db_internal_api,
+bin/cspd,,U,dbFindRowByViewName,db_internal_api,
+bin/cspd,,U,dbFindTbl,db_internal_api,
+bin/cspd,,U,dbGetDmValComm,db_internal_api,
+bin/cspd,,U,dbGetInterfaceInfo,db_internal_api,
+bin/cspd,,U,dbGetLAND,db_internal_api,
+bin/cspd,001db748,T,dbGetLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001db398,T,dbGetLoopbackGlobalConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001dbb2c,T,dbGetLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbGetRouteIFInfo,db_internal_api,
+bin/cspd,,U,dbGetVal,db_internal_api,
+bin/cspd,,U,dbGetValComm,db_internal_api,
+bin/cspd,,U,dbGetWanc,db_internal_api,
+bin/cspd,,U,dbInitHashTble,other,
+bin/cspd,001db76c,T,dbLstLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001dbb50,T,dbLstLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbMgrCommViewAddItem,other,
+bin/cspd,,U,dbMgrViewAddItem,other,
+bin/cspd,00201218,T,dbPdtTransferCfg,other,
+bin/cspd,,U,dbPrintAllTbl,db_internal_api,
+bin/cspd,,U,dbPrintTbl,db_internal_api,
+bin/cspd,,U,dbPti,other,
+bin/cspd,001db7b0,T,dbQryLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001dbb94,T,dbQryLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbSetDmValComm,db_internal_api,
+bin/cspd,001db700,T,dbSetLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001db350,T,dbSetLoopbackGlobalConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,001dbae4,T,dbSetLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+bin/cspd,,U,dbSetTblDebug,db_internal_api,
+bin/cspd,,U,dbSetVal,db_internal_api,
+bin/cspd,,U,dbSetValComm,db_internal_api,
+bin/cspd,,U,dbSetValCommByLoad,db_internal_api,
+bin/cspd,,U,dbSetValCommByRowNo,db_internal_api,
+bin/cspd,,U,dbSingleViewOpInit,other,
+bin/cspd,,U,dbVIEWIDInit,db_internal_api,
+bin/cspd,,U,dbViewBULocationConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewBUServiceConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewBoardInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewBrportInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEPONLlidConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEPONProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEPONSilenceCountFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthAlarmProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthGlobalConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthMVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthMacfilterProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthPortConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthQueueConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthRatelimitProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewEthVlanTransparentProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewGEMPORTFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewGPONCFGFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewGetAvailableName,other,
+bin/cspd,,U,dbViewGetList,other,
+bin/cspd,,U,dbViewGetName,other,
+bin/cspd,,U,dbViewGetOpResult,other,
+bin/cspd,,U,dbViewGetQryList,other,
+bin/cspd,,U,dbViewInsertRowByName,other,
+bin/cspd,,U,dbViewInterfaceInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewLANInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,001db530,T,dbViewLoopbackEthConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,001db308,T,dbViewLoopbackGlobalConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,001db908,T,dbViewLoopbackVlanConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewMgrPrint,other,
+bin/cspd,,U,dbViewMonitorCollectorCfgFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewMonitorCollectorParmFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewNameListInit,other,
+bin/cspd,,U,dbViewOMCICFGFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewOPTICALFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewOpInit,other,
+bin/cspd,,U,dbViewPWSavingConfFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewPWSavingFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewPdtInterfaceFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewPrmOp,other,
+bin/cspd,,U,dbViewQosConditionProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewQosConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewQosRuleProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewRouteIFInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewSetOpResult,other,
+bin/cspd,,U,dbViewSleepCtrlFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewTCONTFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewTCONTQUEUEFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewTCONTQUEUERATELIMITFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewVLANInfoFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewVlanConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewVlanEntryProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWANCAuthExtFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWANCIPFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWANCPPPFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWANCPPPStatusFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWLANCfgFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWifiMVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWifiPortConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWifiVlanConfProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewWifiVlanEntryProductFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbViewminiOLTFun,view_dispatcher,注册视图操作分发表
+bin/cspd,,U,dbcAddView,db_internal_api,
+bin/cspd,001a03c8,T,dbcCfgFileDecry,db_internal_api,配置包解密
+bin/cspd,0019fb74,T,dbcCfgFileEncry,db_internal_api,配置包加密
+bin/cspd,001a0660,T,dbcCfgFileIsEncry,db_internal_api,
+bin/cspd,,U,dbcGetView,db_internal_api,
+bin/cspd,,U,dbcLstViewInfo,db_internal_api,
+bin/cspd,,U,dbcQryView,db_internal_api,
+bin/cspd,,U,dbcSetView,db_internal_api,
+bin/cspd,,U,difftime@GLIBC_2.4,other,
+bin/cspd,,U,dlclose@GLIBC_2.4,other,
+bin/cspd,,U,dlopen@GLIBC_2.4,other,
+bin/cspd,,U,dlsym@GLIBC_2.4,other,
+bin/cspd,,U,endpwent@GLIBC_2.4,other,
+bin/cspd,,U,exitsMultiMVLANWAN,other,
+bin/cspd,00060efc,T,extract_str2array,other,
+bin/cspd,,U,fclose@GLIBC_2.4,other,
+bin/cspd,,U,fcntl@GLIBC_2.4,other,
+bin/cspd,,U,feof@GLIBC_2.4,other,
+bin/cspd,,U,ferror@GLIBC_2.4,other,
+bin/cspd,,U,ffEntryClear,other,
+bin/cspd,,U,ffNbifPPP,other,
+bin/cspd,,U,ffSkipSession,other,
+bin/cspd,,U,fgetc@GLIBC_2.4,other,
+bin/cspd,,U,fgets@GLIBC_2.4,other,
+bin/cspd,,U,fileno@GLIBC_2.4,other,
+bin/cspd,,U,find_command,other,
+bin/cspd,,U,flock@GLIBC_2.4,other,
+bin/cspd,,U,fopen@GLIBC_2.4,other,
+bin/cspd,,U,fprintf@GLIBC_2.4,other,
+bin/cspd,,U,fputs@GLIBC_2.4,other,
+bin/cspd,,U,fread@GLIBC_2.4,other,
+bin/cspd,,U,free@GLIBC_2.4,other,
+bin/cspd,,U,freeaddrinfo@GLIBC_2.4,other,
+bin/cspd,,U,fscanf@GLIBC_2.4,other,
+bin/cspd,,U,fseek@GLIBC_2.4,other,
+bin/cspd,,U,fsync@GLIBC_2.4,other,
+bin/cspd,,U,ftell@GLIBC_2.4,other,
+bin/cspd,,U,fwConeNATUDPRule,other,
+bin/cspd,,U,fwExcPortalUrl,other,
+bin/cspd,,U,fwLanForBindPortRule,other,
+bin/cspd,,U,fwLanForbiddenTcpRule,other,
+bin/cspd,,U,fwPortRegisterApi,other,
+bin/cspd,,U,fwSetSff,other,
+bin/cspd,,U,fwWanForBindPortRule,other,
+bin/cspd,,U,fwWanForbiddenTcpRule,other,
+bin/cspd,,U,fwWanForbiddenUdpRule,other,
+bin/cspd,0022d26c,T,fwread,other,
+bin/cspd,,U,fwrite@GLIBC_2.4,other,
+bin/cspd,00354f20,B,g_HistoryConfig,other,
+bin/cspd,00361414,B,g_IncRegionCode,other,
+bin/cspd,0033bd64,B,g_IncRegionCount,other,
+bin/cspd,00361214,B,g_RestoreRmFileConf,other,
+bin/cspd,0033c44d,B,g_bRstDo,other,
+bin/cspd,0033c028,B,g_dbdlycnt,other,
+bin/cspd,002ecfec,D,g_dwTOut,other,
+bin/cspd,002ebd3c,D,g_historyevents,other,
+bin/cspd,,U,g_pGetCount,other,
+bin/cspd,,U,g_pListCount,other,
+bin/cspd,,U,g_pSetCount,other,
+bin/cspd,,U,g_ptTblHead,other,
+bin/cspd,,U,g_ptViewHead,other,
+bin/cspd,0033bd68,B,g_slcAckCount,other,
+bin/cspd,0033bd6c,B,g_slcResult,other,
+bin/cspd,00345eec,B,g_stWlanMultiAP,other,
+bin/cspd,00354bc8,B,g_tCspWlanDeviceInfo,other,
+bin/cspd,0033bfe0,B,g_tDBCtrl,other,
+bin/cspd,0033be28,B,g_tDBPdtIf,other,
+bin/cspd,002ecff0,D,g_tXMLSpecial,other,
+bin/cspd,0033bdc4,B,g_testResult,other,
+bin/cspd,,U,gai_strerror@GLIBC_2.4,other,
+bin/cspd,,U,getAllPidByTaskName,other,
+bin/cspd,,U,getAllTaskPidByMainPid,other,
+bin/cspd,,U,getMainPidByTaskName,other,
+bin/cspd,,U,getProcAllFdNumByPid,other,
+bin/cspd,,U,getUplinkTypeINTStr,other,
+bin/cspd,,U,getWancIDByVlan,other,
+bin/cspd,,U,get_stor_label,other,
+bin/cspd,,U,getaddrinfo@GLIBC_2.4,other,
+bin/cspd,,U,getnameinfo@GLIBC_2.4,other,
+bin/cspd,,U,getpid@GLIBC_2.4,other,
+bin/cspd,,U,getpwent@GLIBC_2.4,other,
+bin/cspd,,U,getsockname@GLIBC_2.4,other,
+bin/cspd,,U,getsockopt@GLIBC_2.4,other,
+bin/cspd,,U,gettimeofday@GLIBC_2.4,other,
+bin/cspd,,U,gmtime@GLIBC_2.4,other,
+bin/cspd,,U,gmtime_r@GLIBC_2.4,other,
+bin/cspd,,U,if_nametoindex@GLIBC_2.4,other,
+bin/cspd,002f76c8,V,in6addr_loopback@GLIBC_2.4,other,
+bin/cspd,,U,inet_addr@GLIBC_2.4,other,
+bin/cspd,,U,inet_ntoa@GLIBC_2.4,other,
+bin/cspd,,U,inet_ntop@GLIBC_2.4,other,
+bin/cspd,,U,inet_pton@GLIBC_2.4,other,
+bin/cspd,,U,inst2portnum,other,
+bin/cspd,,U,ioctl@GLIBC_2.4,other,
+bin/cspd,,U,isPrefixSame,other,
+bin/cspd,,U,isspace@GLIBC_2.4,other,
+bin/cspd,,U,itoa,other,
+bin/cspd,,U,kill@GLIBC_2.4,other,
+bin/cspd,,U,klogctl@GLIBC_2.4,other,
+bin/cspd,,U,list_del_init,other,
+bin/cspd,,U,listen@GLIBC_2.4,other,
+bin/cspd,,U,localtime@GLIBC_2.4,other,
+bin/cspd,,U,log10@GLIBC_2.4,other,
+bin/cspd,,U,loopback_pid_reg,other,
+bin/cspd,,U,lseek64@GLIBC_2.4,other,
+bin/cspd,,U,lseek@GLIBC_2.4,other,
+bin/cspd,,U,malloc@GLIBC_2.4,other,
+bin/cspd,0005dac4,T,mamMemcmp,other,
+bin/cspd,0005da94,T,mamMemcpy,other,
+bin/cspd,0005dcb8,T,mamMemset,other,
+bin/cspd,00061c30,T,mamStrcat,other,
+bin/cspd,0005dc88,T,mamStrcmp,other,
+bin/cspd,0005db1c,T,mamStrcpy,other,
+bin/cspd,0005daf4,T,mamStrlen,other,
+bin/cspd,00061c08,T,mamStrrchr,other,
+bin/cspd,00060ed0,T,mamStrtok,other,
+bin/cspd,,U,memchr@GLIBC_2.4,other,
+bin/cspd,,U,memcmp@GLIBC_2.4,other,
+bin/cspd,,U,memcpy@GLIBC_2.4,other,
+bin/cspd,,U,memmove@GLIBC_2.4,other,
+bin/cspd,,U,memset@GLIBC_2.4,other,
+bin/cspd,,U,mkdir@GLIBC_2.4,other,
+bin/cspd,,U,mktime@GLIBC_2.4,other,
+bin/cspd,,U,mmap@GLIBC_2.4,other,
+bin/cspd,,U,mount@GLIBC_2.4,other,
+bin/cspd,,U,munmap@GLIBC_2.4,other,
+bin/cspd,,U,nanosleep@GLIBC_2.4,other,
+bin/cspd,,U,nodePrefixSrcChk,other,
+bin/cspd,,U,ntohl@GLIBC_2.4,other,
+bin/cspd,,U,open@GLIBC_2.4,other,
+bin/cspd,,U,openVersionCodeFile,other,
+bin/cspd,,U,openVersionCodeFileAKG,other,
+bin/cspd,,U,openVersionCodeFileYunyi,other,
+bin/cspd,,U,opendir@GLIBC_2.4,other,
+bin/cspd,,U,perror@GLIBC_2.4,other,
+bin/cspd,,U,pow@GLIBC_2.4,other,
+bin/cspd,,U,printf@GLIBC_2.4,other,
+bin/cspd,,U,rand@GLIBC_2.4,other,
+bin/cspd,,U,random@GLIBC_2.4,other,
+bin/cspd,,U,read@GLIBC_2.4,other,
+bin/cspd,,U,readdir@GLIBC_2.4,other,
+bin/cspd,,U,realloc@GLIBC_2.4,other,
+bin/cspd,,U,recv@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,recvmsg@GLIBC_2.4,other,
+bin/cspd,,U,remove@GLIBC_2.4,other,
+bin/cspd,,U,rename@GLIBC_2.4,other,
+bin/cspd,,U,rewind@GLIBC_2.4,other,
+bin/cspd,00126ea4,T,rlk_get_assoc_data,other,
+bin/cspd,0012c144,T,rlk_set_assoc_history_clean,other,
+bin/cspd,0012c12c,T,rlk_wlan_cfg_to_ioctl,other,
+bin/cspd,0012f574,T,rlk_wlan_cfg_to_profile,other,
+bin/cspd,,U,rmdir@GLIBC_2.4,other,
+bin/cspd,,U,rrm_onoff,other,
+bin/cspd,,U,rrm_send_bcn_req_param,other,
+bin/cspd,,U,rrm_wnm_init,other,
+bin/cspd,,U,select@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,send@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,sendmsg@GLIBC_2.4,other,
+bin/cspd,,U,sendto@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,setTestSpeedFlag,other,
+bin/cspd,,U,setTimeSynFlagForSNTP,other,
+bin/cspd,,U,setsockopt@GLIBC_2.4,other,
+bin/cspd,,U,settimeofday@GLIBC_2.4,other,
+bin/cspd,,U,shutdown@GLIBC_2.4,other,
+bin/cspd,,U,sleep@GLIBC_2.4,other,
+bin/cspd,,U,snprintf@GLIBC_2.4,other,
+bin/cspd,,U,socket@GLIBC_2.4,ipc_dependency,
+bin/cspd,,U,sprintf@GLIBC_2.4,other,
+bin/cspd,,U,srand@GLIBC_2.4,other,
+bin/cspd,,U,srandom@GLIBC_2.4,other,
+bin/cspd,,U,sscanf@GLIBC_2.4,other,
+bin/cspd,,U,statfs@GLIBC_2.4,other,
+bin/cspd,,U,storageDisable,other,
+bin/cspd,,U,storageEnable,other,
+bin/cspd,,U,strTypeConvert,other,
+bin/cspd,,U,strcasecmp@GLIBC_2.4,other,
+bin/cspd,,U,strcasestr@GLIBC_2.4,other,
+bin/cspd,,U,strcat@GLIBC_2.4,other,
+bin/cspd,,U,strchr@GLIBC_2.4,other,
+bin/cspd,,U,strcmp@GLIBC_2.4,other,
+bin/cspd,,U,strcoll@GLIBC_2.4,other,
+bin/cspd,,U,strcpy@GLIBC_2.4,other,
+bin/cspd,,U,strcspn@GLIBC_2.4,other,
+bin/cspd,,U,strdup@GLIBC_2.4,other,
+bin/cspd,,U,strerror@GLIBC_2.4,other,
+bin/cspd,,U,strlcat,other,
+bin/cspd,,U,strlcpy,other,
+bin/cspd,,U,strlen@GLIBC_2.4,other,
+bin/cspd,,U,strncasecmp@GLIBC_2.4,other,
+bin/cspd,,U,strncat@GLIBC_2.4,other,
+bin/cspd,,U,strncmp@GLIBC_2.4,other,
+bin/cspd,,U,strncpy@GLIBC_2.4,other,
+bin/cspd,,U,strnlen@GLIBC_2.4,other,
+bin/cspd,,U,strrchr@GLIBC_2.4,other,
+bin/cspd,,U,strsep@GLIBC_2.4,other,
+bin/cspd,,U,strspn@GLIBC_2.4,other,
+bin/cspd,,U,strstr@GLIBC_2.4,other,
+bin/cspd,,U,strtod@GLIBC_2.4,other,
+bin/cspd,,U,strtok@GLIBC_2.4,other,
+bin/cspd,,U,strtok_r@GLIBC_2.4,other,
+bin/cspd,,U,strtol@GLIBC_2.4,other,
+bin/cspd,,U,strtoul@GLIBC_2.4,other,
+bin/cspd,,U,strtoull@GLIBC_2.4,other,
+bin/cspd,,U,sync@GLIBC_2.4,other,
+bin/cspd,,U,system@GLIBC_2.4,other,
+bin/cspd,002e9af4,D,tWlanAssocTypeTable,other,
+bin/cspd,,U,tWlanBandTable,other,
+bin/cspd,,U,tWlanBandWidthTable,other,
+bin/cspd,002e9e1c,D,tWlanBeaconTypeTable_2,other,
+bin/cspd,002e98dc,D,tWlanEventTable,other,
+bin/cspd,002e9844,D,tWlanOBJTable,other,
+bin/cspd,002e9e64,D,tWlanWPA11IAuthMode_2,other,
+bin/cspd,002e9e84,D,tWlanWPA11IEncrypTypeTable_2,other,
+bin/cspd,,U,time@GLIBC_2.4,other,
+bin/cspd,,U,times@GLIBC_2.4,other,
+bin/cspd,,U,toupper@GLIBC_2.4,other,
+bin/cspd,,U,trim,other,
+bin/cspd,,U,umount2@GLIBC_2.4,other,
+bin/cspd,,U,umount@GLIBC_2.4,other,
+bin/cspd,,U,unlink@GLIBC_2.4,other,
+bin/cspd,,U,usleep@GLIBC_2.4,other,
+bin/cspd,,U,vsnprintf@GLIBC_2.4,other,
+bin/cspd,,U,webNotifyAutoDiaReDnsCheat,other,
+bin/cspd,,U,webNotifyDnsCheat,other,
+bin/cspd,,U,wlan_diag_usage,other,
+bin/cspd,,U,wnm_btm_onoff,other,
+bin/cspd,,U,wnm_send_btm_req_raw,other,
+bin/cspd,,U,write@GLIBC_2.4,other,
+lib/libdbcspview.so,,U,CfGetWlanNum,other,
+lib/libdbcspview.so,00008b48,T,CspDBInitProductViewPrivate,other,
+lib/libdbcspview.so,,U,ProcUserLog,other,
+lib/libdbcspview.so,,w,_ITM_deregisterTMCloneTable,other,
+lib/libdbcspview.so,,w,_ITM_registerTMCloneTable,other,
+lib/libdbcspview.so,,w,_Jv_RegisterClasses,other,
+lib/libdbcspview.so,00028f64,B,__bss_end__,other,
+lib/libdbcspview.so,00028f60,B,__bss_start,other,
+lib/libdbcspview.so,00028f60,B,__bss_start__,other,
+lib/libdbcspview.so,,U,__ctype_b_loc@GLIBC_2.4,other,
+lib/libdbcspview.so,,w,__cxa_finalize@GLIBC_2.4,other,
+lib/libdbcspview.so,00028f64,B,__end__,other,
+lib/libdbcspview.so,,w,__gmon_start__,other,
+lib/libdbcspview.so,00028f64,B,_bss_end__,other,
+lib/libdbcspview.so,00028f60,D,_edata,other,
+lib/libdbcspview.so,00028f64,B,_end,other,
+lib/libdbcspview.so,0001576c,T,_fini,other,
+lib/libdbcspview.so,00004808,T,_init,other,
+lib/libdbcspview.so,,U,atoi@GLIBC_2.4,other,
+lib/libdbcspview.so,00009398,T,dbAddBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004cc0,T,dbAddBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009bd4,T,dbAddEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000addc,T,dbAddEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a8f0,T,dbAddEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b558,T,dbAddEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bbc4,T,dbAddEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c0ac,T,dbAddEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c58c,T,dbAddEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c96c,T,dbAddEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d340,T,dbAddGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005204,T,dbAddInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008208,T,dbAddLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000088bc,T,dbAddLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e4c4,T,dbAddMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010a54,T,dbAddQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010e0c,T,dbAddQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011210,T,dbAddQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005b70,T,dbAddRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbAddRow,db_internal_api,
+lib/libdbcspview.so,00011fec,T,dbAddTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011b90,T,dbAddTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00014088,T,dbAddVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012474,T,dbAddVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012980,T,dbAddVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005f80,T,dbAddWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006b40,T,dbAddWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000064f0,T,dbAddWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007dac,T,dbAddWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007428,T,dbAddWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000154a8,T,dbAddWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012e6c,T,dbAddWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013278,T,dbAddWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000136a8,T,dbAddWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013aac,T,dbAddWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbCreatViewFun,other,
+lib/libdbcspview.so,000094ac,T,dbDelBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004de0,T,dbDelBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009ce8,T,dbDelEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000aef8,T,dbDelEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000aa10,T,dbDelEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b66c,T,dbDelEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bce0,T,dbDelEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c1c0,T,dbDelEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c6a8,T,dbDelEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ca88,T,dbDelEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d45c,T,dbDelGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005324,T,dbDelInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000831c,T,dbDelLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000089dc,T,dbDelLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e5d8,T,dbDelMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010b78,T,dbDelQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010f20,T,dbDelQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011330,T,dbDelQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005c90,T,dbDelRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbDelRow,db_internal_api,
+lib/libdbcspview.so,00012100,T,dbDelTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011ca4,T,dbDelTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000141a8,T,dbDelVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012588,T,dbDelVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012aa0,T,dbDelVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006074,T,dbDelWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006c50,T,dbDelWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000067b4,T,dbDelWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007ec0,T,dbDelWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000766c,T,dbDelWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00015610,T,dbDelWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012f88,T,dbDelWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001338c,T,dbDelWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000137bc,T,dbDelWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013bc8,T,dbDelWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbFindRowByViewName,db_internal_api,
+lib/libdbcspview.so,,U,dbFindTbl,db_internal_api,
+lib/libdbcspview.so,00009548,T,dbGetBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009a2c,T,dbGetBUServiceConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009090,T,dbGetBoardInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004e7c,T,dbGetBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009d84,T,dbGetEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a1e8,T,dbGetEPONProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a390,T,dbGetEPONSilenceCountView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ce68,T,dbGetEthAlarmProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a6c4,T,dbGetEthGlobalConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d0bc,T,dbGetEthLanMatchView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000af94,T,dbGetEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000aaac,T,dbGetEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b708,T,dbGetEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bd7c,T,dbGetEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c25c,T,dbGetEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c744,T,dbGetEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000cb24,T,dbGetEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d4f8,T,dbGetGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000da38,T,dbGetGPONCFGView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000053c0,T,dbGetInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ddd8,T,dbGetLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000083b8,T,dbGetLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008740,T,dbGetLoopbackGlobalConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008a78,T,dbGetLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e344,T,dbGetMonitorCollectorCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e674,T,dbGetMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ec0c,T,dbGetOMCICFGView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000100c8,T,dbGetOPTICALView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000108ac,T,dbGetPWSavingConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010730,T,dbGetPWSavingView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000102b0,T,dbGetPdtInterfaceView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000105b4,T,dbGetPortLocateView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010c14,T,dbGetQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010fbc,T,dbGetQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000113cc,T,dbGetQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005d2c,T,dbGetRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001164c,T,dbGetSleepCtrlView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001219c,T,dbGetTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011d40,T,dbGetTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000118b8,T,dbGetTCONTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00014244,T,dbGetVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012624,T,dbGetVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012b3c,T,dbGetVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006110,T,dbGetWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006cec,T,dbGetWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006894,T,dbGetWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007f5c,T,dbGetWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007750,T,dbGetWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013f3c,T,dbGetWIFISHAREView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000156a8,T,dbGetWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013024,T,dbGetWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013428,T,dbGetWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013858,T,dbGetWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013c64,T,dbGetWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e0f0,T,dbGetminiOLTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000956c,T,dbLstBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004ea0,T,dbLstBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009da8,T,dbLstEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ce8c,T,dbLstEthAlarmProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000afb8,T,dbLstEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000aad0,T,dbLstEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b72c,T,dbLstEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bda0,T,dbLstEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c280,T,dbLstEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c768,T,dbLstEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000cb48,T,dbLstEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d51c,T,dbLstGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000053e4,T,dbLstInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ddfc,T,dbLstLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000083dc,T,dbLstLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008a9c,T,dbLstLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e698,T,dbLstMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000102d4,T,dbLstPdtInterfaceView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010c38,T,dbLstQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010fe0,T,dbLstQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000113f0,T,dbLstQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005d50,T,dbLstRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000121c0,T,dbLstTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011d64,T,dbLstTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000118dc,T,dbLstTCONTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00014268,T,dbLstVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012648,T,dbLstVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012b60,T,dbLstVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006134,T,dbLstWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006d10,T,dbLstWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000068b8,T,dbLstWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007f80,T,dbLstWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007774,T,dbLstWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000156cc,T,dbLstWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013048,T,dbLstWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001344c,T,dbLstWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001387c,T,dbLstWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013c88,T,dbLstWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e114,T,dbLstminiOLTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000095b0,T,dbQryBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004ee4,T,dbQryBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009dec,T,dbQryEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ced0,T,dbQryEthAlarmProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000affc,T,dbQryEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ab14,T,dbQryEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b770,T,dbQryEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bde4,T,dbQryEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c2c4,T,dbQryEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c7ac,T,dbQryEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000cb8c,T,dbQryEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d560,T,dbQryGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005428,T,dbQryInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000de40,T,dbQryLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008420,T,dbQryLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008ae0,T,dbQryLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e6dc,T,dbQryMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010318,T,dbQryPdtInterfaceView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010c7c,T,dbQryQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011024,T,dbQryQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011434,T,dbQryQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005d94,T,dbQryRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012204,T,dbQryTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011da8,T,dbQryTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011920,T,dbQryTCONTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000142ac,T,dbQryVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001268c,T,dbQryVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012ba4,T,dbQryVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006178,T,dbQryWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006d54,T,dbQryWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000068fc,T,dbQryWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007fc4,T,dbQryWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000077b8,T,dbQryWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001570c,T,dbQryWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001308c,T,dbQryWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013490,T,dbQryWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000138c0,T,dbQryWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013ccc,T,dbQryWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e158,T,dbQryminiOLTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009500,T,dbSetBULocationConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000099e4,T,dbSetBUServiceConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009048,T,dbSetBoardInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00004e34,T,dbSetBrportInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00009d3c,T,dbSetEPONLlidConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a1a0,T,dbSetEPONProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a348,T,dbSetEPONSilenceCountView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ce20,T,dbSetEthAlarmProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000a67c,T,dbSetEthGlobalConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d074,T,dbSetEthLanMatchView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000af4c,T,dbSetEthMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000aa64,T,dbSetEthMacfilterProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000b6c0,T,dbSetEthPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000bd34,T,dbSetEthQueueConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c214,T,dbSetEthRatelimitProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000c6fc,T,dbSetEthVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000cadc,T,dbSetEthVlanTransparentProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d4b0,T,dbSetGEMPORTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000d9f0,T,dbSetGPONCFGView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005378,T,dbSetInterfaceInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000dd90,T,dbSetLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008370,T,dbSetLoopbackEthConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000086f8,T,dbSetLoopbackGlobalConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00008a30,T,dbSetLoopbackVlanConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e2fc,T,dbSetMonitorCollectorCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e62c,T,dbSetMonitorCollectorParmView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000ebc4,T,dbSetOMCICFGView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010080,T,dbSetOPTICALView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010864,T,dbSetPWSavingConfView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000106e8,T,dbSetPWSavingView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010268,T,dbSetPdtInterfaceView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0001056c,T,dbSetPortLocateView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010bcc,T,dbSetQosConditionProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00010f74,T,dbSetQosConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011384,T,dbSetQosRuleProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00005ce4,T,dbSetRouteIFInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011604,T,dbSetSleepCtrlView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012154,T,dbSetTCONTQUEUERATELIMITView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011cf8,T,dbSetTCONTQUEUEView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00011870,T,dbSetTCONTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000141fc,T,dbSetVLANInfoView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbSetVal,db_internal_api,
+lib/libdbcspview.so,000125dc,T,dbSetVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012af4,T,dbSetVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000060c8,T,dbSetWANCAuthExtView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00006ca4,T,dbSetWANCIPPrvDataView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000684c,T,dbSetWANCIPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007f14,T,dbSetWANCPPPStatusView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00007708,T,dbSetWANCPPPView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013ef4,T,dbSetWIFISHAREView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00015660,T,dbSetWLANCfgView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00012fdc,T,dbSetWifiMVlanTranslationProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,000133e0,T,dbSetWifiPortConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013810,T,dbSetWifiVlanConfProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,00013c1c,T,dbSetWifiVlanEntryProductView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,0000e0a8,T,dbSetminiOLTView,view_operation,具体 View 的 CRUD 操作函数
+lib/libdbcspview.so,,U,dbSingleViewOpInit,other,
+lib/libdbcspview.so,00009330,T,dbViewBULocationConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000999c,T,dbViewBUServiceConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00009000,T,dbViewBoardInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00004c58,T,dbViewBrportInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00009b6c,T,dbViewEPONLlidConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000a158,T,dbViewEPONProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000a300,T,dbViewEPONSilenceCountFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000cdc0,T,dbViewEthAlarmProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000a634,T,dbViewEthGlobalConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000d02c,T,dbViewEthLanMatchFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000ad74,T,dbViewEthMVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000a888,T,dbViewEthMacfilterProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000b4f0,T,dbViewEthPortConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000bb5c,T,dbViewEthQueueConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000c044,T,dbViewEthRatelimitProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000c524,T,dbViewEthVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000c904,T,dbViewEthVlanTransparentProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000d2d8,T,dbViewGEMPORTFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000d9a8,T,dbViewGPONCFGFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,,U,dbViewGetAvailableName,other,
+lib/libdbcspview.so,,U,dbViewGetList,other,
+lib/libdbcspview.so,,U,dbViewGetName,other,
+lib/libdbcspview.so,,U,dbViewGetOpResult,other,
+lib/libdbcspview.so,,U,dbViewGetQryList,other,
+lib/libdbcspview.so,,U,dbViewInsertRowByName,other,
+lib/libdbcspview.so,0000519c,T,dbViewInterfaceInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000dd30,T,dbViewLANInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,000081a0,T,dbViewLoopbackEthConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,000086b0,T,dbViewLoopbackGlobalConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00008854,T,dbViewLoopbackVlanConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000e2b4,T,dbViewMonitorCollectorCfgFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000e45c,T,dbViewMonitorCollectorParmFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000eb7c,T,dbViewOMCICFGFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00010038,T,dbViewOPTICALFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,,U,dbViewOpInit,other,
+lib/libdbcspview.so,0001081c,T,dbViewPWSavingConfFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,000106a0,T,dbViewPWSavingFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00010208,T,dbViewPdtInterfaceFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00010524,T,dbViewPortLocateFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,,U,dbViewPrmOp,other,
+lib/libdbcspview.so,000109ec,T,dbViewQosConditionProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00010da4,T,dbViewQosConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,000111a8,T,dbViewQosRuleProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00005b08,T,dbViewRouteIFInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,,U,dbViewSetOpResult,other,
+lib/libdbcspview.so,000115bc,T,dbViewSleepCtrlFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00011810,T,dbViewTCONTFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00011b28,T,dbViewTCONTQUEUEFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00011f84,T,dbViewTCONTQUEUERATELIMITFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00014020,T,dbViewVLANInfoFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0001240c,T,dbViewVlanConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00012918,T,dbViewVlanEntryProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00005f18,T,dbViewWANCAuthExtFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00006488,T,dbViewWANCIPFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00006ad8,T,dbViewWANCIPPrvDataFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,000073c0,T,dbViewWANCPPPFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00007d44,T,dbViewWANCPPPStatusFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00013eac,T,dbViewWIFISHAREFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00015458,T,dbViewWLANCfgFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00012e04,T,dbViewWifiMVlanTranslationProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00013210,T,dbViewWifiPortConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00013640,T,dbViewWifiVlanConfProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,00013a44,T,dbViewWifiVlanEntryProductFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,0000e048,T,dbViewminiOLTFun,view_dispatcher,注册视图操作分发表
+lib/libdbcspview.so,,U,memcpy@GLIBC_2.4,other,
+lib/libdbcspview.so,,U,memset@GLIBC_2.4,other,
+lib/libdbcspview.so,,U,sprintf@GLIBC_2.4,other,
+lib/libdbcspview.so,,U,strlen@GLIBC_2.4,other,
+lib/libdbcspview.so,,U,strstr@GLIBC_2.4,other,
+bin/sendcmd,,U,FreeAppComm,other,
+bin/sendcmd,,U,GetCpuNum,other,
+bin/sendcmd,,U,InitAppComm,other,
+bin/sendcmd,,U,IsNumStr,other,
+bin/sendcmd,00012440,T,OssCapSetKeepCaps,other,
+bin/sendcmd,0001285c,T,OssChCapByExInfo,other,
+bin/sendcmd,0001255c,T,OssChCgroupByExInfo,other,
+bin/sendcmd,00012e74,T,OssChKernelByExInfo,other,
+bin/sendcmd,00012a74,T,OssChProcUid,other,
+bin/sendcmd,00012ef0,T,OssCovCapMaskToStr,other,
+bin/sendcmd,00013068,T,OssGetAllCapInfoStr,other,
+bin/sendcmd,000131a0,T,OssGetPidCapInfo,other,
+bin/sendcmd,,U,ProcOssLog,other,
+bin/sendcmd,,U,SafeStrncpy,other,
+bin/sendcmd,,U,WriteStrToFile,other,
+bin/sendcmd,,w,_ITM_deregisterTMCloneTable,other,
+bin/sendcmd,,w,_ITM_registerTMCloneTable,other,
+bin/sendcmd,,w,_Jv_RegisterClasses,other,
+bin/sendcmd,00024c4c,B,__bss_end__,other,
+bin/sendcmd,00024bdc,B,__bss_start,other,
+bin/sendcmd,00024bdc,B,__bss_start__,other,
+bin/sendcmd,00024c4c,B,__end__,other,
+bin/sendcmd,,U,__errno_location@GLIBC_2.4,other,
+bin/sendcmd,,w,__gmon_start__,other,
+bin/sendcmd,,U,__libc_start_main@GLIBC_2.4,other,
+bin/sendcmd,00024c4c,B,_bss_end__,other,
+bin/sendcmd,00024bdc,D,_edata,other,
+bin/sendcmd,00024c4c,B,_end,other,
+bin/sendcmd,00013898,T,_fini,other,
+bin/sendcmd,00010dc0,T,_init,other,
+bin/sendcmd,,U,abort@GLIBC_2.4,other,
+bin/sendcmd,,U,access@GLIBC_2.4,other,
+bin/sendcmd,,U,atoi@GLIBC_2.4,other,
+bin/sendcmd,,U,bind@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,capget@GLIBC_2.4,other,
+bin/sendcmd,,U,capset@GLIBC_2.4,other,
+bin/sendcmd,,U,close@GLIBC_2.4,other,
+bin/sendcmd,,U,connect@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,fclose@GLIBC_2.4,other,
+bin/sendcmd,,U,fgets@GLIBC_2.4,other,
+bin/sendcmd,,U,fopen@GLIBC_2.4,other,
+bin/sendcmd,,U,free@GLIBC_2.4,other,
+bin/sendcmd,,U,fscanf@GLIBC_2.4,other,
+bin/sendcmd,,U,getpid@GLIBC_2.4,other,
+bin/sendcmd,,U,getuid@GLIBC_2.4,other,
+bin/sendcmd,,U,klogctl@GLIBC_2.4,other,
+bin/sendcmd,,U,malloc@GLIBC_2.4,other,
+bin/sendcmd,,U,memcpy@GLIBC_2.4,other,
+bin/sendcmd,,U,memmove@GLIBC_2.4,other,
+bin/sendcmd,,U,memset@GLIBC_2.4,other,
+bin/sendcmd,,U,mkdir@GLIBC_2.4,other,
+bin/sendcmd,,U,prctl@GLIBC_2.4,other,
+bin/sendcmd,,U,printf@GLIBC_2.4,other,
+bin/sendcmd,,U,raise@GLIBC_2.4,other,
+bin/sendcmd,,U,recvfrom@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,select@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,sendto@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,setresgid@GLIBC_2.4,other,
+bin/sendcmd,,U,setresuid@GLIBC_2.4,other,
+bin/sendcmd,,U,snprintf@GLIBC_2.4,other,
+bin/sendcmd,,U,socket@GLIBC_2.4,ipc_dependency,
+bin/sendcmd,,U,sprintf@GLIBC_2.4,other,
+bin/sendcmd,,U,sscanf@GLIBC_2.4,other,
+bin/sendcmd,,U,ssend,ipc_dependency,
+bin/sendcmd,,U,strchr@GLIBC_2.4,other,
+bin/sendcmd,,U,strcmp@GLIBC_2.4,other,
+bin/sendcmd,,U,strcpy@GLIBC_2.4,other,
+bin/sendcmd,,U,strerror@GLIBC_2.4,other,
+bin/sendcmd,,U,strlcat,other,
+bin/sendcmd,,U,strlen@GLIBC_2.4,other,
+bin/sendcmd,,U,strtoull@GLIBC_2.4,other,
+bin/sendcmd,,U,unlink@GLIBC_2.4,other,
+lib/libcmapi.so,,U,ASEND,ipc_dependency,
+lib/libcmapi.so,0005251c,T,CMVoipProtocolLog,other,
+lib/libcmapi.so,0006ff68,T,CM_VOIP_call_test,other,
+lib/libcmapi.so,00070abc,T,CM_VOIP_change_IADstate,other,
+lib/libcmapi.so,000702d4,T,CM_VOIP_get_hookstate,other,
+lib/libcmapi.so,00070404,T,CM_VOIP_get_operstate,other,
+lib/libcmapi.so,00070930,T,CM_VOIP_get_portstate,other,
+lib/libcmapi.so,00070170,T,CM_VOIP_set_112testInfo,other,
+lib/libcmapi.so,00070798,T,CM_VOIP_set_portstate,other,
+lib/libcmapi.so,0004e7a4,T,CM_Voip_CheckIsDigitMap,other,
+lib/libcmapi.so,,U,CSPChkUnsignedInt,other,
+lib/libcmapi.so,,U,CSPStrToIP,other,
+lib/libcmapi.so,0001fdd4,T,CancelSameSSID,other,
+lib/libcmapi.so,,U,CfGetRegionCode,other,
+lib/libcmapi.so,,U,CfGetSysArpInfo,other,
+lib/libcmapi.so,,U,CfGetWlanChipType,other,
+lib/libcmapi.so,,U,CfGetWlanNum,other,
+lib/libcmapi.so,,U,CfIfWlanSupport11ax,other,
+lib/libcmapi.so,,U,Check8021P,other,
+lib/libcmapi.so,0008afbc,T,CheckAudit,other,
+lib/libcmapi.so,,U,CheckDSCP,other,
+lib/libcmapi.so,,U,CheckDomainName,other,
+lib/libcmapi.so,00070bb0,T,CheckDomainNameSIP,other,
+lib/libcmapi.so,,U,ChkHost,other,
+lib/libcmapi.so,,U,ChkIPv6WithType,other,
+lib/libcmapi.so,,U,ChkLanWanCon,other,
+lib/libcmapi.so,00042ee4,T,ChkMntUsbList,other,
+lib/libcmapi.so,,U,CmAccDevAllInfoGet,other,
+lib/libcmapi.so,0001e1dc,T,CmAddWifiGuestInst,other,
+lib/libcmapi.so,0001d330,T,CmAddWlanWSInst,other,
+lib/libcmapi.so,0001e9dc,T,CmAppGuestControlGet,other,
+lib/libcmapi.so,0001e574,T,CmAppGuestControlSet,other,
+lib/libcmapi.so,0008b42c,T,CmAuditGet,other,
+lib/libcmapi.so,0008b030,T,CmAuditSet,other,
+lib/libcmapi.so,00034208,T,CmChangeInst2View,other,
+lib/libcmapi.so,0007d598,T,CmCheckAuth,other,
+lib/libcmapi.so,00044740,T,CmClearRipByConnID,other,
+lib/libcmapi.so,00022f48,T,CmCloudServerGet,other,
+lib/libcmapi.so,00022cf4,T,CmCloudServerSet,other,
+lib/libcmapi.so,0003589c,T,CmDDNSAddClient,other,
+lib/libcmapi.so,00036574,T,CmDDNSAddHostname,other,
+lib/libcmapi.so,00035f70,T,CmDDNSAddService,other,
+lib/libcmapi.so,000365e8,T,CmDDNSDelClient,other,
+lib/libcmapi.so,00036c20,T,CmDDNSDelHostname,other,
+lib/libcmapi.so,00036b20,T,CmDDNSDelService,other,
+lib/libcmapi.so,000354b0,T,CmDDNSGetBaseConfig,other,
+lib/libcmapi.so,00034f28,T,CmDDNSGetClientConfig,other,
+lib/libcmapi.so,000357b0,T,CmDDNSGetHostnameConfig,other,
+lib/libcmapi.so,00035214,T,CmDDNSGetServiceConfig,other,
+lib/libcmapi.so,000358ec,T,CmDDNSSetClientConfig,other,
+lib/libcmapi.so,0003552c,T,CmDDNSSetHostnameConfig,other,
+lib/libcmapi.so,00035fc0,T,CmDDNSSetServiceConfig,other,
+lib/libcmapi.so,0008c7cc,T,CmDbusCallAppListNumStat,other,
+lib/libcmapi.so,0008ca2c,T,CmDbusCallGetPlatServerInfo,other,
+lib/libcmapi.so,0008ba64,T,CmDbusCallUfwFramGetall,other,
+lib/libcmapi.so,0008b8e4,T,CmDbusCallUfwPause,other,
+lib/libcmapi.so,0008c04c,T,CmDbusCallUfwRestore,other,
+lib/libcmapi.so,0008be54,T,CmDbusCallUfwSwitch,other,
+lib/libcmapi.so,0008bc5c,T,CmDbusCallUfwUpdateMTDInfo,other,
+lib/libcmapi.so,0008c244,T,CmDbusCallUfwUpgrade,other,
+lib/libcmapi.so,0008b734,T,CmDbusGetProperty,other,
+lib/libcmapi.so,0008c48c,T,CmDbusNotifySetOther,other,
+lib/libcmapi.so,000398ec,T,CmDelParamAttr,other,
+lib/libcmapi.so,0001e3a4,T,CmDelWifiguestInst,other,
+lib/libcmapi.so,0001d454,T,CmDelWlanWSInst,other,
+lib/libcmapi.so,00032fe8,T,CmDevAddAuthInfo,other,
+lib/libcmapi.so,00034420,T,CmDevAddAuthInfofortr069,other,
+lib/libcmapi.so,00031e8c,T,CmDevCheckUserInfo,other,
+lib/libcmapi.so,00033db0,T,CmDevDelAuthInfo,other,
+lib/libcmapi.so,00032d8c,T,CmDevGetAuthInfo,other,
+lib/libcmapi.so,00032b84,T,CmDevGetDBFlashCfgEnd,other,
+lib/libcmapi.so,000313b8,T,CmDevGetDevInfoConf,other,
+lib/libcmapi.so,00034060,T,CmDevGetIPv6Conf,other,
+lib/libcmapi.so,000317d8,T,CmDevGetUserIFConf,other,
+lib/libcmapi.so,00031d14,T,CmDevGetUserInfoByUsername,other,
+lib/libcmapi.so,00031938,T,CmDevGetUserInfoConf,other,
+lib/libcmapi.so,00032f10,T,CmDevListAuthInfo,other,
+lib/libcmapi.so,0003455c,T,CmDevListAuthInfoForTr069,other,
+lib/libcmapi.so,00031be0,T,CmDevListUserInfoConf,other,
+lib/libcmapi.so,00032658,T,CmDevRestart,other,
+lib/libcmapi.so,000326f8,T,CmDevRestore,other,
+lib/libcmapi.so,000327ac,T,CmDevRestoreLocal,other,
+lib/libcmapi.so,00032810,T,CmDevRestoreRemote,other,
+lib/libcmapi.so,00032878,T,CmDevRestoreRemoteByWeb,other,
+lib/libcmapi.so,0003296c,T,CmDevRestoreSpecial,other,
+lib/libcmapi.so,00032580,T,CmDevSave,other,
+lib/libcmapi.so,00033a08,T,CmDevSetAuthInfo,other,
+lib/libcmapi.so,0003116c,T,CmDevSetDevInfoConf,other,
+lib/libcmapi.so,00033e34,T,CmDevSetIPv6Conf,other,
+lib/libcmapi.so,00031620,T,CmDevSetUserIFConf,other,
+lib/libcmapi.so,00033088,T,CmDevSetUserInfoConf,other,
+lib/libcmapi.so,0007d790,T,CmDhcpSimulationGet,other,
+lib/libcmapi.so,0007e7c8,T,CmDhcpSimulationGetTr069,other,
+lib/libcmapi.so,00080cb8,T,CmDhcpSimulationSet,other,
+lib/libcmapi.so,000813dc,T,CmDhcpSimulationSetTr069,other,
+lib/libcmapi.so,0007d744,T,CmDhcpSimulationStop,other,
+lib/libcmapi.so,0002bbbc,T,CmDlSPDTestSmartGet,other,
+lib/libcmapi.so,0002ba04,T,CmDlSPDTestSmartSet,other,
+lib/libcmapi.so,000273e0,T,CmDlTestCheckURL,other,
+lib/libcmapi.so,000114d4,T,CmE8TsConfGet,other,
+lib/libcmapi.so,00011514,T,CmE8TsConfSet,other,
+lib/libcmapi.so,00011528,T,CmE8TsConfStartTd,other,
+lib/libcmapi.so,0002d600,T,CmEnumStrOp,other,
+lib/libcmapi.so,00025c18,T,CmExStorageCompress,other,
+lib/libcmapi.so,00025454,T,CmExStorageCopy,other,
+lib/libcmapi.so,0002479c,T,CmExStorageCopy2,other,
+lib/libcmapi.so,00024ba8,T,CmExStorageCopyByTransactionId,other,
+lib/libcmapi.so,00024fc0,T,CmExStorageCopyPercent,other,
+lib/libcmapi.so,00025160,T,CmExStorageCopyPercentByTransactionId,other,
+lib/libcmapi.so,000252a0,T,CmExStorageCopyPercentWeb,other,
+lib/libcmapi.so,000259c4,T,CmExStorageCreateFolder,other,
+lib/libcmapi.so,00023eac,T,CmExStorageDelete,other,
+lib/libcmapi.so,00023390,T,CmExStorageDevGet,other,
+lib/libcmapi.so,00023144,T,CmExStorageDevList,other,
+lib/libcmapi.so,000266c4,T,CmExStorageDiscInfo,other,
+lib/libcmapi.so,00026244,T,CmExStorageGetFileList,other,
+lib/libcmapi.so,00025fe4,T,CmExStorageGetNum,other,
+lib/libcmapi.so,00024334,T,CmExStorageMove,other,
+lib/libcmapi.so,0002408c,T,CmExStorageRename,other,
+lib/libcmapi.so,00026bdc,T,CmExStorageRenameDisc,other,
+lib/libcmapi.so,00026e88,T,CmExStorageRenameDiscByLabel,other,
+lib/libcmapi.so,00027128,T,CmExStorageStat,other,
+lib/libcmapi.so,000404a0,T,CmFtpServerGetConfig,other,
+lib/libcmapi.so,000406fc,T,CmFtpServerSetConfig,other,
+lib/libcmapi.so,0003ee8c,T,CmFtpUserAdd,other,
+lib/libcmapi.so,0003f0bc,T,CmFtpUserClear,other,
+lib/libcmapi.so,0003ef8c,T,CmFtpUserDel,other,
+lib/libcmapi.so,00040178,T,CmFtpUserGet,other,
+lib/libcmapi.so,0003f2f4,T,CmFtpUserList,other,
+lib/libcmapi.so,0003f4d4,T,CmFtpUserQry,other,
+lib/libcmapi.so,00040368,T,CmFtpUserRead,other,
+lib/libcmapi.so,0003f7c8,T,CmFtpUserSet,other,
+lib/libcmapi.so,0003ffb8,T,CmFtpUserWrite,other,
+lib/libcmapi.so,,U,CmFttrGetRoomponInfo,other,
+lib/libcmapi.so,000881f8,T,CmGetBrAgingTime,other,
+lib/libcmapi.so,0002734c,T,CmGetDlTest,other,
+lib/libcmapi.so,0002c054,T,CmGetDlTestPerformParm,other,
+lib/libcmapi.so,0007d1d0,T,CmGetEthPortInfo,other,
+lib/libcmapi.so,0007f738,T,CmGetEthPortInfoBind,other,
+lib/libcmapi.so,000238f4,T,CmGetExStorageMediaFileNum,other,
+lib/libcmapi.so,00023af4,T,CmGetExStorageMediaFiles,other,
+lib/libcmapi.so,00039130,T,CmGetParamAttr,other,
+lib/libcmapi.so,00034134,T,CmGetPemEffectiveTime,other,
+lib/libcmapi.so,00088350,T,CmGetPortMacInfo,other,
+lib/libcmapi.so,00088620,T,CmGetPortMacNum,other,
+lib/libcmapi.so,00037c0c,T,CmGetQueueCfg,other,
+lib/libcmapi.so,00037d5c,T,CmGetQueueNum,other,
+lib/libcmapi.so,00034120,T,CmGetRegionCode,other,
+lib/libcmapi.so,0001f70c,T,CmGetSameSSIDEnable,other,
+lib/libcmapi.so,0002b770,T,CmGetSpdResult,other,
+lib/libcmapi.so,00086e50,T,CmGetSysArpInfo,other,
+lib/libcmapi.so,00086c5c,T,CmGetSysArpNum,other,
+lib/libcmapi.so,00088018,T,CmGetSysMacInfo,other,
+lib/libcmapi.so,00087b28,T,CmGetSysMacNum,other,
+lib/libcmapi.so,0003a240,T,CmGetTr069IP,other,
+lib/libcmapi.so,00047934,T,CmGetTraceRouteState,other,
+lib/libcmapi.so,,U,CmGetVersionConfigTypeInt,other,
+lib/libcmapi.so,0007ce08,T,CmGetWanPortInfo,other,
+lib/libcmapi.so,0001e178,T,CmGetWifiPortCapability,other,
+lib/libcmapi.so,0001c864,T,CmGetWlanWmmCfg,other,
+lib/libcmapi.so,0001d02c,T,CmGetWlanWmmServiceCfg,other,
+lib/libcmapi.so,0002c468,T,CmGetZxSpdTest,other,
+lib/libcmapi.so,0001eefc,T,CmGuestControl,other,
+lib/libcmapi.so,0008b5d8,T,CmHasPluginForAudit,other,
+lib/libcmapi.so,0007c980,T,CmISZeroMac,other,
+lib/libcmapi.so,000527a0,T,CmInitSrTidCfg,other,
+lib/libcmapi.so,0003a9e8,T,CmIpMacGetConfig,other,
+lib/libcmapi.so,0003a7e8,T,CmIpMacSetConfig,other,
+lib/libcmapi.so,00038ff8,T,CmListPatamAttr,other,
+lib/libcmapi.so,000437f8,T,CmLogClear,other,
+lib/libcmapi.so,000434cc,T,CmLogGetConfig,other,
+lib/libcmapi.so,000436d4,T,CmLogGetLogFile,other,
+lib/libcmapi.so,00043124,T,CmLogSetConfig,other,
+lib/libcmapi.so,00043890,T,CmLogSetTimer,other,
+lib/libcmapi.so,0003a1e4,T,CmMaintainComplete,other,
+lib/libcmapi.so,000370a8,T,CmManageServerGetConfig,other,
+lib/libcmapi.so,00038eb0,T,CmManageServerSetConfig,other,
+lib/libcmapi.so,00038fb0,T,CmManageServerSetConfig_TR69,other,
+lib/libcmapi.so,000456f8,T,CmMirrorClearByLanId,other,
+lib/libcmapi.so,0004564c,T,CmMirrorClearByWancId,other,
+lib/libcmapi.so,0004530c,T,CmMirrorDel,other,
+lib/libcmapi.so,00044b8c,T,CmMirrorGet,other,
+lib/libcmapi.so,0004548c,T,CmMirrorList,other,
+lib/libcmapi.so,00044d58,T,CmMirrorSet,other,
+lib/libcmapi.so,,U,CmMultiAPSetMasterCfg,other,
+lib/libcmapi.so,,U,CmMultiAPWlanRenewNotify,other,
+lib/libcmapi.so,0002c6ec,T,CmPkgCtsgwUdpMsg,other,
+lib/libcmapi.so,00011568,T,CmPkgTsConfGet,other,
+lib/libcmapi.so,0001153c,T,CmPkgTsConfGetDb,other,
+lib/libcmapi.so,00011550,T,CmPkgTsConfSet,other,
+lib/libcmapi.so,0001157c,T,CmPkgTsConfSetTemp,other,
+lib/libcmapi.so,0007d6c4,T,CmPppoeSimulationGet,other,
+lib/libcmapi.so,0007d8d8,T,CmPppoeSimulationGetTr069,other,
+lib/libcmapi.so,0007fe84,T,CmPppoeSimulationSet,other,
+lib/libcmapi.so,0008033c,T,CmPppoeSimulationSetTr069,other,
+lib/libcmapi.so,0007d660,T,CmPppoeSimulationStop,other,
+lib/libcmapi.so,0008cbe8,T,CmProcStatListInit,other,
+lib/libcmapi.so,000445b8,T,CmRIPDelIf,other,
+lib/libcmapi.so,000438ec,T,CmRIPGetConf,other,
+lib/libcmapi.so,0004400c,T,CmRIPGetIf,other,
+lib/libcmapi.so,00043f80,T,CmRIPIfList,other,
+lib/libcmapi.so,00043ab0,T,CmRIPSetConf,other,
+lib/libcmapi.so,000441a0,T,CmRIPSetIf,other,
+lib/libcmapi.so,000224d0,T,CmScpGetAppInfo,other,
+lib/libcmapi.so,00022814,T,CmScpListAppByType,other,
+lib/libcmapi.so,0002ccec,T,CmSendMsg2MM,other,
+lib/libcmapi.so,0002cbd4,T,CmSendMsg2MMWithTimerOut,other,
+lib/libcmapi.so,00032bec,T,CmSetADevInfEn,other,
+lib/libcmapi.so,000881e8,T,CmSetBrAgingTime,other,
+lib/libcmapi.so,0002b208,T,CmSetDlTest,other,
+lib/libcmapi.so,0002bd80,T,CmSetDlTestPerformParm,other,
+lib/libcmapi.so,0003950c,T,CmSetParamAttr,other,
+lib/libcmapi.so,00037930,T,CmSetQueueCfg,other,
+lib/libcmapi.so,000206a8,T,CmSetSameSSIDEnable,other,
+lib/libcmapi.so,0001c700,T,CmSetWlanWmmCfg,other,
+lib/libcmapi.so,0001c940,T,CmSetWlanWmmServiceCfg,other,
+lib/libcmapi.so,0002c188,T,CmSetZxSpdTest,other,
+lib/libcmapi.so,0007d7fc,T,CmSimulationInfoPrint,other,
+lib/libcmapi.so,0007c634,T,CmSrmGetCfg,other,
+lib/libcmapi.so,0007c1c4,T,CmSrmGetCpuInfo,other,
+lib/libcmapi.so,0007c528,T,CmSrmGetMaxCpuInfo,other,
+lib/libcmapi.so,0007c2ec,T,CmSrmGetMemInfo,other,
+lib/libcmapi.so,0007c41c,T,CmSrmGetUpdateCpuInfo,other,
+lib/libcmapi.so,0007c788,T,CmSrmSetCfg,other,
+lib/libcmapi.so,0004065c,T,CmStartFTP,other,
+lib/libcmapi.so,00048418,T,CmStartSAMBA,other,
+lib/libcmapi.so,0002c8e0,T,CmSvcOneKeyCollectGet,other,
+lib/libcmapi.so,0002c82c,T,CmSvcOneKeyCollectSet,other,
+lib/libcmapi.so,0003a00c,T,CmTR069GetSelfInfoStat,other,
+lib/libcmapi.so,00039e6c,T,CmTR069GetStat,other,
+lib/libcmapi.so,0003a10c,T,CmTR069ReqInform,other,
+lib/libcmapi.so,0003b8f8,T,CmTR232BulkDataGet,other,
+lib/libcmapi.so,0003b7d4,T,CmTR232BulkDataSet,other,
+lib/libcmapi.so,0003ca28,T,CmTR232CSVGet,other,
+lib/libcmapi.so,0003c824,T,CmTR232CSVSet,other,
+lib/libcmapi.so,0003d434,T,CmTR232HTTPGet,other,
+lib/libcmapi.so,0003cd88,T,CmTR232HTTPSet,other,
+lib/libcmapi.so,0003cccc,T,CmTR232JSONGet,other,
+lib/libcmapi.so,0003cb14,T,CmTR232JSONSet,other,
+lib/libcmapi.so,0003c56c,T,CmTR232ParameterAdd,other,
+lib/libcmapi.so,0003c75c,T,CmTR232ParameterDel,other,
+lib/libcmapi.so,0003c6a0,T,CmTR232ParameterGet,other,
+lib/libcmapi.so,0003c780,T,CmTR232ParameterList,other,
+lib/libcmapi.so,0003c5a4,T,CmTR232ParameterSet,other,
+lib/libcmapi.so,0003bb30,T,CmTR232ProfileAdd,other,
+lib/libcmapi.so,0003c48c,T,CmTR232ProfileDel,other,
+lib/libcmapi.so,0003c1b0,T,CmTR232ProfileGet,other,
+lib/libcmapi.so,0003c3a8,T,CmTR232ProfileList,other,
+lib/libcmapi.so,0003bc40,T,CmTR232ProfileSet,other,
+lib/libcmapi.so,0003d15c,T,CmTR232ReqParmAdd,other,
+lib/libcmapi.so,0003d36c,T,CmTR232ReqParmDel,other,
+lib/libcmapi.so,0003d2b0,T,CmTR232ReqParmGet,other,
+lib/libcmapi.so,0003d390,T,CmTR232ReqParmList,other,
+lib/libcmapi.so,0003d194,T,CmTR232ReqParmSet,other,
+lib/libcmapi.so,0003b6f8,T,CmTR232SBDCGet,other,
+lib/libcmapi.so,0003b570,T,CmTR232SBDCSet,other,
+lib/libcmapi.so,00041490,T,CmTestFtpControlGet,other,
+lib/libcmapi.so,000414a0,T,CmTestFtpControlSet,other,
+lib/libcmapi.so,00041378,T,CmTestFtpGet,other,
+lib/libcmapi.so,00040e28,T,CmTestFtpSet,other,
+lib/libcmapi.so,00082e18,T,CmTpRuleDel,other,
+lib/libcmapi.so,00082a34,T,CmTpRuleGet,other,
+lib/libcmapi.so,00082994,T,CmTpRuleList,other,
+lib/libcmapi.so,00082898,T,CmTpRuleListApp,other,
+lib/libcmapi.so,00082bcc,T,CmTpRuleSet,other,
+lib/libcmapi.so,0003a3cc,T,CmTr069tcpEnGet,other,
+lib/libcmapi.so,0003a530,T,CmTr069tcpEnSet,other,
+lib/libcmapi.so,00047a94,T,CmTracertGetConfig,other,
+lib/libcmapi.so,00047b68,T,CmTracertHopsGetConfig,other,
+lib/libcmapi.so,00047984,T,CmTracertSetConfig,other,
+lib/libcmapi.so,000853cc,T,CmTrafficQosClAdd,other,
+lib/libcmapi.so,00085948,T,CmTrafficQosClAddExt,other,
+lib/libcmapi.so,00085a64,T,CmTrafficQosClDel,other,
+lib/libcmapi.so,00085db8,T,CmTrafficQosClDelByFlow,other,
+lib/libcmapi.so,00085b90,T,CmTrafficQosClDelExt,other,
+lib/libcmapi.so,00085f2c,T,CmTrafficQosClGet,other,
+lib/libcmapi.so,00085c40,T,CmTrafficQosClListByFlow,other,
+lib/libcmapi.so,000857d0,T,CmTrafficQosClSet,other,
+lib/libcmapi.so,0008558c,T,CmTrafficQosClregisterrule,other,
+lib/libcmapi.so,00086a9c,T,CmTrafficQosFlowGet,other,
+lib/libcmapi.so,00086104,T,CmTrafficQosFlowQry,other,
+lib/libcmapi.so,00086598,T,CmTrafficQosFlowSet,other,
+lib/libcmapi.so,000863a0,T,CmTrafficQosRateGet,other,
+lib/libcmapi.so,0008626c,T,CmTrafficQosStatsGet,other,
+lib/libcmapi.so,000114e8,T,CmTsConfGet,other,
+lib/libcmapi.so,000114fc,T,CmTsConfSet,other,
+lib/libcmapi.so,0003e160,T,CmUPnPAddWanConn,other,
+lib/libcmapi.so,0003e8c0,T,CmUPnPDelPortMap,other,
+lib/libcmapi.so,0003e2b8,T,CmUPnPDelWanConn,other,
+lib/libcmapi.so,0003de98,T,CmUPnPGetConfig,other,
+lib/libcmapi.so,0003e670,T,CmUPnPGetPortMap,other,
+lib/libcmapi.so,0003e468,T,CmUPnPListPortMap,other,
+lib/libcmapi.so,0003da28,T,CmUPnPSetConfig,other,
+lib/libcmapi.so,00036e38,T,CmUpgradeInformFlash,other,
+lib/libcmapi.so,00036d24,T,CmUpgradeStart,other,
+lib/libcmapi.so,000457a4,T,CmUsbBackupStorageGet,other,
+lib/libcmapi.so,0004593c,T,CmUsbBackupStorageList,other,
+lib/libcmapi.so,00046274,T,CmUsbBakRstGet,other,
+lib/libcmapi.so,000463e0,T,CmUsbBakRstSet,other,
+lib/libcmapi.so,00046dc4,T,CmUsbBakRstSynDevInfoSet,other,
+lib/libcmapi.so,00041b48,T,CmUsbDevGet,other,
+lib/libcmapi.so,00041d34,T,CmUsbDevGet_tr069,other,
+lib/libcmapi.so,000416c0,T,CmUsbDevList,other,
+lib/libcmapi.so,000418f8,T,CmUsbDevList_tr069,other,
+lib/libcmapi.so,000421f8,T,CmUsbNonStorDevGet,other,
+lib/libcmapi.so,000420c0,T,CmUsbNonStorDevList,other,
+lib/libcmapi.so,00042010,T,CmUsbPortGet,other,
+lib/libcmapi.so,00041e88,T,CmUsbPortList,other,
+lib/libcmapi.so,00042ce8,T,CmUsbStorageMount,other,
+lib/libcmapi.so,00042454,T,CmUsbStorageParGet,other,
+lib/libcmapi.so,00042328,T,CmUsbStorageParList,other,
+lib/libcmapi.so,000428b8,T,CmUsbStorageParSet,other,
+lib/libcmapi.so,00042a38,T,CmUsbStorageRemove,other,
+lib/libcmapi.so,00053894,T,CmVoIPProtocolAdaptProcess,other,
+lib/libcmapi.so,0004f518,T,CmVoipAddCapabilitiesCodec,other,
+lib/libcmapi.so,00058bb8,T,CmVoipAddNpPrefix,other,
+lib/libcmapi.so,0005ed58,T,CmVoipAddRingerDescrpt,other,
+lib/libcmapi.so,0005f6bc,T,CmVoipAddRingerPattern,other,
+lib/libcmapi.so,00075540,T,CmVoipAddSipEventSubscribe,other,
+lib/libcmapi.so,0005cacc,T,CmVoipAddToneDescrpt,other,
+lib/libcmapi.so,0005d7f0,T,CmVoipAddTonePattern,other,
+lib/libcmapi.so,0004e52c,T,CmVoipAddVPLine,other,
+lib/libcmapi.so,0004d5dc,T,CmVoipAddVoiceProfile,other,
+lib/libcmapi.so,0004a3ac,T,CmVoipCheckDialNumber,other,
+lib/libcmapi.so,0004f7cc,T,CmVoipDelCapabilitiesCodec,other,
+lib/libcmapi.so,00058c94,T,CmVoipDelNpPrefix,other,
+lib/libcmapi.so,0005ee30,T,CmVoipDelRingerDescrpt,other,
+lib/libcmapi.so,0005f794,T,CmVoipDelRingerPattern,other,
+lib/libcmapi.so,00075550,T,CmVoipDelSipEventSubscribe,other,
+lib/libcmapi.so,0005cbac,T,CmVoipDelToneDescrpt,other,
+lib/libcmapi.so,0005d8d0,T,CmVoipDelTonePattern,other,
+lib/libcmapi.so,0004e53c,T,CmVoipDelVPLine,other,
+lib/libcmapi.so,0004d5ec,T,CmVoipDelVoiceProfile,other,
+lib/libcmapi.so,0007aa5c,T,CmVoipGet248IADOperationStatus,other,
+lib/libcmapi.so,0007a1b8,T,CmVoipGet248ParameterConfig,other,
+lib/libcmapi.so,0007a86c,T,CmVoipGet248RTPTIDInfo,other,
+lib/libcmapi.so,0007a594,T,CmVoipGet248UserTIDInfo,other,
+lib/libcmapi.so,0004a410,T,CmVoipGetBearInfo,other,
+lib/libcmapi.so,0005a5d0,T,CmVoipGetBgwCfg,other,
+lib/libcmapi.so,000573b4,T,CmVoipGetCAP,other,
+lib/libcmapi.so,0005005c,T,CmVoipGetCIDCfg,other,
+lib/libcmapi.so,0005677c,T,CmVoipGetCSHsdpa,other,
+lib/libcmapi.so,0004a85c,T,CmVoipGetCSLine,other,
+lib/libcmapi.so,00050fc0,T,CmVoipGetCallState,other,
+lib/libcmapi.so,0005464c,T,CmVoipGetCallTestInfo,other,
+lib/libcmapi.so,0004f2d4,T,CmVoipGetCapabilitiesCodec,other,
+lib/libcmapi.so,00061dc4,T,CmVoipGetDMTimerCfg,other,
+lib/libcmapi.so,0005a1a4,T,CmVoipGetDspCidCfg,other,
+lib/libcmapi.so,0005a964,T,CmVoipGetDspMiscCfg,other,
+lib/libcmapi.so,00058fdc,T,CmVoipGetDtmfAdvCfg,other,
+lib/libcmapi.so,0007b310,T,CmVoipGetFaxModemConfig,other,
+lib/libcmapi.so,0005953c,T,CmVoipGetFaxModemRptCtrlCfg,other,
+lib/libcmapi.so,000623c4,T,CmVoipGetFaxT38Cfg,other,
+lib/libcmapi.so,000625cc,T,CmVoipGetFaxVBDCfg,other,
+lib/libcmapi.so,0007622c,T,CmVoipGetH248Line,other,
+lib/libcmapi.so,00075764,T,CmVoipGetH248Main,other,
+lib/libcmapi.so,00075e68,T,CmVoipGetH248Sub,other,
+lib/libcmapi.so,00056f60,T,CmVoipGetHServKey,other,
+lib/libcmapi.so,0006e308,T,CmVoipGetHomeLine,other,
+lib/libcmapi.so,00057968,T,CmVoipGetHook,other,
+lib/libcmapi.so,00057fc0,T,CmVoipGetHookVPCfg,other,
+lib/libcmapi.so,0004faf0,T,CmVoipGetIADDiag,other,
+lib/libcmapi.so,00057ce4,T,CmVoipGetIVRPsd,other,
+lib/libcmapi.so,0007bb44,T,CmVoipGetLSTimer,other,
+lib/libcmapi.so,00062aa4,T,CmVoipGetLSessionCfg,other,
+lib/libcmapi.so,00062c2c,T,CmVoipGetLineCfg,other,
+lib/libcmapi.so,0004cc70,T,CmVoipGetLineFMedia,other,
+lib/libcmapi.so,000630f8,T,CmVoipGetLineHCfg,other,
+lib/libcmapi.so,000632e8,T,CmVoipGetLineLCfg,other,
+lib/libcmapi.so,000539ac,T,CmVoipGetLineUnlimitCAP,other,
+lib/libcmapi.so,0004c408,T,CmVoipGetLineVMedia,other,
+lib/libcmapi.so,00062744,T,CmVoipGetModemVBDCfg,other,
+lib/libcmapi.so,000589c0,T,CmVoipGetNpPrefix,other,
+lib/libcmapi.so,00055528,T,CmVoipGetNumberProc,other,
+lib/libcmapi.so,0007b59c,T,CmVoipGetPOTSStatus,other,
+lib/libcmapi.so,0006d0a4,T,CmVoipGetPhyCallFeature,other,
+lib/libcmapi.so,0006da88,T,CmVoipGetPhyInterface,other,
+lib/libcmapi.so,0006aa48,T,CmVoipGetPhyNumCfg,other,
+lib/libcmapi.so,00050980,T,CmVoipGetPortStatus,other,
+lib/libcmapi.so,0006f600,T,CmVoipGetProtocal,other,
+lib/libcmapi.so,00054734,T,CmVoipGetProtocolType,other,
+lib/libcmapi.so,00053c00,T,CmVoipGetRegFailInfo,other,
+lib/libcmapi.so,0005e0d0,T,CmVoipGetRinger,other,
+lib/libcmapi.so,0005e82c,T,CmVoipGetRingerDescrpt,other,
+lib/libcmapi.so,0005e4f4,T,CmVoipGetRingerEvent,other,
+lib/libcmapi.so,0005eef4,T,CmVoipGetRingerPattern,other,
+lib/libcmapi.so,0005b72c,T,CmVoipGetRtcpAdvCfg,other,
+lib/libcmapi.so,000620ec,T,CmVoipGetRtcpCfg,other,
+lib/libcmapi.so,0005ae20,T,CmVoipGetRtpAdvCfg,other,
+lib/libcmapi.so,00061f1c,T,CmVoipGetRtpCfg,other,
+lib/libcmapi.so,0005babc,T,CmVoipGetRtpRedCfg,other,
+lib/libcmapi.so,0007ab04,T,CmVoipGetSIPParameterConfig,other,
+lib/libcmapi.so,0007b0f8,T,CmVoipGetSIPUserParameterConfig,other,
+lib/libcmapi.so,0006a4d8,T,CmVoipGetSRBWList,other,
+lib/libcmapi.so,00068f78,T,CmVoipGetSRDigitCollect,other,
+lib/libcmapi.so,00069c6c,T,CmVoipGetSROfficeDM,other,
+lib/libcmapi.so,00069894,T,CmVoipGetSROfficeGroupPrefix,other,
+lib/libcmapi.so,000694f0,T,CmVoipGetSROfficePrefix,other,
+lib/libcmapi.so,0006a094,T,CmVoipGetSRRouteDM,other,
+lib/libcmapi.so,00068a00,T,CmVoipGetSRTermination,other,
+lib/libcmapi.so,00056328,T,CmVoipGetServKey,other,
+lib/libcmapi.so,0005155c,T,CmVoipGetServerStatus,other,
+lib/libcmapi.so,00062904,T,CmVoipGetSessionCfg,other,
+lib/libcmapi.so,00070d04,T,CmVoipGetSip,other,
+lib/libcmapi.so,00071790,T,CmVoipGetSipEventSubscribe,other,
+lib/libcmapi.so,0007191c,T,CmVoipGetSipLine,other,
+lib/libcmapi.so,00071298,T,CmVoipGetSipServer,other,
+lib/libcmapi.so,0007153c,T,CmVoipGetSipTimer,other,
+lib/libcmapi.so,000618a8,T,CmVoipGetSlc112TestResult,other,
+lib/libcmapi.so,000600bc,T,CmVoipGetSlcInf,other,
+lib/libcmapi.so,00060958,T,CmVoipGetSlcTime,other,
+lib/libcmapi.so,00055e9c,T,CmVoipGetSpeedDial,other,
+lib/libcmapi.so,00062294,T,CmVoipGetSrtpCfg,other,
+lib/libcmapi.so,0005d994,T,CmVoipGetT38ADV,other,
+lib/libcmapi.so,0005be8c,T,CmVoipGetTone,other,
+lib/libcmapi.so,0005c5f8,T,CmVoipGetToneDescrpt,other,
+lib/libcmapi.so,0005c2b8,T,CmVoipGetToneEvent,other,
+lib/libcmapi.so,0005cc70,T,CmVoipGetTonePattern,other,
+lib/libcmapi.so,0004afc0,T,CmVoipGetVPCodec,other,
+lib/libcmapi.so,0004bfa0,T,CmVoipGetVPDTMF,other,
+lib/libcmapi.so,0004d5fc,T,CmVoipGetVPLine,other,
+lib/libcmapi.so,0004d89c,T,CmVoipGetVPLineRegDuration,other,
+lib/libcmapi.so,0005841c,T,CmVoipGetVPNP,other,
+lib/libcmapi.so,0004ad58,T,CmVoipGetVPService,other,
+lib/libcmapi.so,0005f858,T,CmVoipGetVoiceProc,other,
+lib/libcmapi.so,0004d2f4,T,CmVoipGetVoiceProfile,other,
+lib/libcmapi.so,000526e4,T,CmVoipGetVoipAutoAdapt,other,
+lib/libcmapi.so,0006fd14,T,CmVoipGetVoipDiagnose,other,
+lib/libcmapi.so,00051e80,T,CmVoipGetVoipExt,other,
+lib/libcmapi.so,0004f884,T,CmVoipGetVoipPoorQualityList,other,
+lib/libcmapi.so,00067d78,T,CmVoipGetVoipSimulateTest,other,
+lib/libcmapi.so,0006adfc,T,CmVoipGetVpCallFeature,other,
+lib/libcmapi.so,0006c884,T,CmVoipGetVpCallTimer,other,
+lib/libcmapi.so,000756f4,T,CmVoipH248Operation,other,
+lib/libcmapi.so,0004e684,T,CmVoipListBearInfo,other,
+lib/libcmapi.so,0005a944,T,CmVoipListBgwCfg,other,
+lib/libcmapi.so,00057948,T,CmVoipListCAP,other,
+lib/libcmapi.so,00050960,T,CmVoipListCIDCfg,other,
+lib/libcmapi.so,00056f40,T,CmVoipListCSHsdpa,other,
+lib/libcmapi.so,0004e6a4,T,CmVoipListCSLine,other,
+lib/libcmapi.so,0004f448,T,CmVoipListCapabilitiesCodec,other,
+lib/libcmapi.so,000677e4,T,CmVoipListDMTimerCfg,other,
+lib/libcmapi.so,0005a5b0,T,CmVoipListDspCidCfg,other,
+lib/libcmapi.so,0005ae00,T,CmVoipListDspMiscCfg,other,
+lib/libcmapi.so,0005951c,T,CmVoipListDtmfAdvCfg,other,
+lib/libcmapi.so,0005a184,T,CmVoipListFaxModemRptCtrlCfg,other,
+lib/libcmapi.so,000679c0,T,CmVoipListFaxT38Cfg,other,
+lib/libcmapi.so,00067a38,T,CmVoipListFaxVBDCfg,other,
+lib/libcmapi.so,0007a198,T,CmVoipListH248Line,other,
+lib/libcmapi.so,0007a158,T,CmVoipListH248Main,other,
+lib/libcmapi.so,0007a178,T,CmVoipListH248Sub,other,
+lib/libcmapi.so,00057394,T,CmVoipListHServKey,other,
+lib/libcmapi.so,00067c8c,T,CmVoipListHistoryLineCfg,other,
+lib/libcmapi.so,0006efa0,T,CmVoipListHomeLine,other,
+lib/libcmapi.so,00057cc4,T,CmVoipListHook,other,
+lib/libcmapi.so,000583fc,T,CmVoipListHookVPCfg,other,
+lib/libcmapi.so,0005003c,T,CmVoipListIADDiag,other,
+lib/libcmapi.so,00057fa0,T,CmVoipListIVRPsd,other,
+lib/libcmapi.so,00067d04,T,CmVoipListLastLineCfg,other,
+lib/libcmapi.so,00067ba0,T,CmVoipListLastSessionCfg,other,
+lib/libcmapi.so,00067c14,T,CmVoipListLineCfg,other,
+lib/libcmapi.so,0004e744,T,CmVoipListLineFMedia,other,
+lib/libcmapi.so,0004e724,T,CmVoipListLineVMedia,other,
+lib/libcmapi.so,00067ab0,T,CmVoipListModemVBDCfg,other,
+lib/libcmapi.so,00058b98,T,CmVoipListNpPrefix,other,
+lib/libcmapi.so,00055e7c,T,CmVoipListNumberProc,other,
+lib/libcmapi.so,0006da68,T,CmVoipListPhyCallFeature,other,
+lib/libcmapi.so,0006e2e8,T,CmVoipListPhyInterface,other,
+lib/libcmapi.so,0006addc,T,CmVoipListPhyNumCfg,other,
+lib/libcmapi.so,0006fc20,T,CmVoipListProtocal,other,
+lib/libcmapi.so,0005e4d4,T,CmVoipListRinger,other,
+lib/libcmapi.so,0005ed38,T,CmVoipListRingerDescrpt,other,
+lib/libcmapi.so,0005e80c,T,CmVoipListRingerEvent,other,
+lib/libcmapi.so,0005f69c,T,CmVoipListRingerPattern,other,
+lib/libcmapi.so,0005ba9c,T,CmVoipListRtcpAdvCfg,other,
+lib/libcmapi.so,000678d0,T,CmVoipListRtcpCfg,other,
+lib/libcmapi.so,0005b70c,T,CmVoipListRtpAdvCfg,other,
+lib/libcmapi.so,0006785c,T,CmVoipListRtpCfg,other,
+lib/libcmapi.so,0005be6c,T,CmVoipListRtpRedCfg,other,
+lib/libcmapi.so,0006a9cc,T,CmVoipListSRBWList,other,
+lib/libcmapi.so,000694d0,T,CmVoipListSRDigitCollect,other,
+lib/libcmapi.so,0006a074,T,CmVoipListSROfficeDM,other,
+lib/libcmapi.so,00069c4c,T,CmVoipListSROfficeGroupPrefix,other,
+lib/libcmapi.so,00069874,T,CmVoipListSROfficePrefix,other,
+lib/libcmapi.so,0006a4b8,T,CmVoipListSRRouteDM,other,
+lib/libcmapi.so,00068f58,T,CmVoipListSRTermination,other,
+lib/libcmapi.so,0005675c,T,CmVoipListServKey,other,
+lib/libcmapi.so,00067b28,T,CmVoipListSessionCfg,other,
+lib/libcmapi.so,000688cc,T,CmVoipListSimulateTest,other,
+lib/libcmapi.so,000754a0,T,CmVoipListSip,other,
+lib/libcmapi.so,00075500,T,CmVoipListSipEventSubscribe,other,
+lib/libcmapi.so,00075520,T,CmVoipListSipLine,other,
+lib/libcmapi.so,000754c0,T,CmVoipListSipServer,other,
+lib/libcmapi.so,000754e0,T,CmVoipListSipTimer,other,
+lib/libcmapi.so,00061888,T,CmVoipListSlc112TestResult,other,
+lib/libcmapi.so,00060938,T,CmVoipListSlcInf,other,
+lib/libcmapi.so,00061494,T,CmVoipListSlcTime,other,
+lib/libcmapi.so,00056308,T,CmVoipListSpeedDial,other,
+lib/libcmapi.so,00067948,T,CmVoipListSrtpCfg,other,
+lib/libcmapi.so,0005e0b0,T,CmVoipListT38ADV,other,
+lib/libcmapi.so,0005c298,T,CmVoipListTone,other,
+lib/libcmapi.so,0005caac,T,CmVoipListToneDescrpt,other,
+lib/libcmapi.so,0005c5d8,T,CmVoipListToneEvent,other,
+lib/libcmapi.so,0005d7d0,T,CmVoipListTonePattern,other,
+lib/libcmapi.so,0004e6e4,T,CmVoipListVPCodec,other,
+lib/libcmapi.so,0004e704,T,CmVoipListVPDTMF,other,
+lib/libcmapi.so,0004e784,T,CmVoipListVPLine,other,
+lib/libcmapi.so,000589a0,T,CmVoipListVPNP,other,
+lib/libcmapi.so,0004e6c4,T,CmVoipListVPService,other,
+lib/libcmapi.so,0004e54c,T,CmVoipListView,other,
+lib/libcmapi.so,0006009c,T,CmVoipListVoiceProc,other,
+lib/libcmapi.so,0004e764,T,CmVoipListVoiceProfile,other,
+lib/libcmapi.so,0006fe74,T,CmVoipListVoipDiagnose,other,
+lib/libcmapi.so,000524fc,T,CmVoipListVoipExt,other,
+lib/libcmapi.so,0004fad0,T,CmVoipListVoipPoorQualityList,other,
+lib/libcmapi.so,0006c864,T,CmVoipListVpCallFeature,other,
+lib/libcmapi.so,0006d084,T,CmVoipListVpCallTimer,other,
+lib/libcmapi.so,000614c8,T,CmVoipSet112TestCmd,other,
+lib/libcmapi.so,0007bd90,T,CmVoipSet112TestInfo,other,
+lib/libcmapi.so,0007a37c,T,CmVoipSet248ParameterConfig,other,
+lib/libcmapi.so,0007a764,T,CmVoipSet248RTPTIDConfig,other,
+lib/libcmapi.so,0007a634,T,CmVoipSet248UserTIDInfo,other,
+lib/libcmapi.so,0004a568,T,CmVoipSetBearInfo,other,
+lib/libcmapi.so,0005a714,T,CmVoipSetBgwCfg,other,
+lib/libcmapi.so,0005769c,T,CmVoipSetCAP,other,
+lib/libcmapi.so,0005022c,T,CmVoipSetCIDCfg,other,
+lib/libcmapi.so,000569ac,T,CmVoipSetCSHsdpa,other,
+lib/libcmapi.so,0004a9ec,T,CmVoipSetCSLine,other,
+lib/libcmapi.so,0005402c,T,CmVoipSetCallTestInfo,other,
+lib/libcmapi.so,0004f5ec,T,CmVoipSetCapabilitiesCodec,other,
+lib/libcmapi.so,00063528,T,CmVoipSetDMTimerCfg,other,
+lib/libcmapi.so,0005a300,T,CmVoipSetDspCidCfg,other,
+lib/libcmapi.so,0005aad8,T,CmVoipSetDspMiscCfg,other,
+lib/libcmapi.so,00059160,T,CmVoipSetDtmfAdvCfg,other,
+lib/libcmapi.so,0007b454,T,CmVoipSetFaxModemConfig,other,
+lib/libcmapi.so,000597b8,T,CmVoipSetFaxModemRptCtrlCfg,other,
+lib/libcmapi.so,00064488,T,CmVoipSetFaxT38Cfg,other,
+lib/libcmapi.so,00064b64,T,CmVoipSetFaxVBDCfg,other,
+lib/libcmapi.so,00079d14,T,CmVoipSetH248Line,other,
+lib/libcmapi.so,00076380,T,CmVoipSetH248Main,other,
+lib/libcmapi.so,00078a34,T,CmVoipSetH248Sub,other,
+lib/libcmapi.so,000570c8,T,CmVoipSetHServKey,other,
+lib/libcmapi.so,0006e524,T,CmVoipSetHomeLine,other,
+lib/libcmapi.so,00057aa8,T,CmVoipSetHook,other,
+lib/libcmapi.so,00058128,T,CmVoipSetHookVPCfg,other,
+lib/libcmapi.so,0004fc64,T,CmVoipSetIADDiag,other,
+lib/libcmapi.so,0007b760,T,CmVoipSetIADOperation,other,
+lib/libcmapi.so,00057e04,T,CmVoipSetIVRPsd,other,
+lib/libcmapi.so,0007b9a0,T,CmVoipSetLSTimer,other,
+lib/libcmapi.so,000656c4,T,CmVoipSetLastSessionCfg,other,
+lib/libcmapi.so,000659c0,T,CmVoipSetLineCfg,other,
+lib/libcmapi.so,0004ce60,T,CmVoipSetLineFMedia,other,
+lib/libcmapi.so,00067298,T,CmVoipSetLineHistoryCfg,other,
+lib/libcmapi.so,00066c3c,T,CmVoipSetLineLCfg,other,
+lib/libcmapi.so,0004c5f8,T,CmVoipSetLineVMedia,other,
+lib/libcmapi.so,00064e8c,T,CmVoipSetModemVBDCfg,other,
+lib/libcmapi.so,00058d48,T,CmVoipSetNpPrefix,other,
+lib/libcmapi.so,00055740,T,CmVoipSetNumberProc,other,
+lib/libcmapi.so,0006d300,T,CmVoipSetPhyCallFeature,other,
+lib/libcmapi.so,0006dd2c,T,CmVoipSetPhyInterface,other,
+lib/libcmapi.so,0006ab8c,T,CmVoipSetPhyNumCfg,other,
+lib/libcmapi.so,0006f7ac,T,CmVoipSetProtocal,other,
+lib/libcmapi.so,0005e22c,T,CmVoipSetRinger,other,
+lib/libcmapi.so,0005e9d0,T,CmVoipSetRingerDescrpt,other,
+lib/libcmapi.so,0005e648,T,CmVoipSetRingerEvent,other,
+lib/libcmapi.so,0005f0d0,T,CmVoipSetRingerPattern,other,
+lib/libcmapi.so,0005b870,T,CmVoipSetRtcpAdvCfg,other,
+lib/libcmapi.so,00063ff4,T,CmVoipSetRtcpCfg,other,
+lib/libcmapi.so,0005afdc,T,CmVoipSetRtpAdvCfg,other,
+lib/libcmapi.so,00063814,T,CmVoipSetRtpCfg,other,
+lib/libcmapi.so,0005bc18,T,CmVoipSetRtpRedCfg,other,
+lib/libcmapi.so,0007b8f8,T,CmVoipSetSIPDigitMap,other,
+lib/libcmapi.so,0007ad9c,T,CmVoipSetSIPParameterConfig,other,
+lib/libcmapi.so,0007b1b8,T,CmVoipSetSIPUserParameterConfig,other,
+lib/libcmapi.so,0006a660,T,CmVoipSetSRBWList,other,
+lib/libcmapi.so,00069100,T,CmVoipSetSRDigitCollect,other,
+lib/libcmapi.so,00069dbc,T,CmVoipSetSROfficeDM,other,
+lib/libcmapi.so,000699e4,T,CmVoipSetSROfficeGroupPrefix,other,
+lib/libcmapi.so,00069638,T,CmVoipSetSROfficePrefix,other,
+lib/libcmapi.so,0006a1e4,T,CmVoipSetSRRouteDM,other,
+lib/libcmapi.so,00068b98,T,CmVoipSetSRTermination,other,
+lib/libcmapi.so,00056490,T,CmVoipSetServKey,other,
+lib/libcmapi.so,00065358,T,CmVoipSetSessionCfg,other,
+lib/libcmapi.so,00071b18,T,CmVoipSetSip,other,
+lib/libcmapi.so,00074a68,T,CmVoipSetSipEventSubscribe,other,
+lib/libcmapi.so,00074e50,T,CmVoipSetSipLine,other,
+lib/libcmapi.so,00073324,T,CmVoipSetSipServer,other,
+lib/libcmapi.so,00074270,T,CmVoipSetSipTimer,other,
+lib/libcmapi.so,00061bb4,T,CmVoipSetSlc112TestPara,other,
+lib/libcmapi.so,0006029c,T,CmVoipSetSlcInf,other,
+lib/libcmapi.so,00060b74,T,CmVoipSetSlcTime,other,
+lib/libcmapi.so,00056014,T,CmVoipSetSpeedDial,other,
+lib/libcmapi.so,000642f8,T,CmVoipSetSrtpCfg,other,
+lib/libcmapi.so,0005db68,T,CmVoipSetT38ADV,other,
+lib/libcmapi.so,0005bff0,T,CmVoipSetTone,other,
+lib/libcmapi.so,0005c76c,T,CmVoipSetToneDescrpt,other,
+lib/libcmapi.so,0005c414,T,CmVoipSetToneEvent,other,
+lib/libcmapi.so,0005ced4,T,CmVoipSetTonePattern,other,
+lib/libcmapi.so,0004b288,T,CmVoipSetVPCodec,other,
+lib/libcmapi.so,0004c0e8,T,CmVoipSetVPDTMF,other,
+lib/libcmapi.so,0004da3c,T,CmVoipSetVPLine,other,
+lib/libcmapi.so,000585ac,T,CmVoipSetVPNP,other,
+lib/libcmapi.so,0004e890,T,CmVoipSetVPService,other,
+lib/libcmapi.so,0005fa34,T,CmVoipSetVoiceProc,other,
+lib/libcmapi.so,0005297c,T,CmVoipSetVoiceProfile,other,
+lib/libcmapi.so,00052020,T,CmVoipSetVoipExt,other,
+lib/libcmapi.so,0004fac0,T,CmVoipSetVoipPoorQualityList,other,
+lib/libcmapi.so,00067fdc,T,CmVoipSetVoipSimulateTest,other,
+lib/libcmapi.so,0006b274,T,CmVoipSetVpCallFeature,other,
+lib/libcmapi.so,0006ca58,T,CmVoipSetVpCallTimer,other,
+lib/libcmapi.so,00053b98,T,CmVoip_GetRowByInstID,other,
+lib/libcmapi.so,,U,CmWANDListWand,other,
+lib/libcmapi.so,0001d598,T,CmWLANAddInst,other,
+lib/libcmapi.so,0001892c,T,CmWLANAssignSetting,other,
+lib/libcmapi.so,0001c268,T,CmWLANDelAd,other,
+lib/libcmapi.so,0001d738,T,CmWLANDelInst,other,
+lib/libcmapi.so,0001f5c0,T,CmWLANDelMacList,other,
+lib/libcmapi.so,00018650,T,CmWLANDelSetting,other,
+lib/libcmapi.so,0001bed4,T,CmWLANFastGetAd,other,
+lib/libcmapi.so,0001b6d0,T,CmWLANGetAd,other,
+lib/libcmapi.so,000211fc,T,CmWLANGetAntiInterferenceOrBSSColor,other,
+lib/libcmapi.so,0001ffcc,T,CmWLANGetBandSteering,other,
+lib/libcmapi.so,00019a70,T,CmWLANGetChannel,other,
+lib/libcmapi.so,00019bec,T,CmWLANGetChannelList,other,
+lib/libcmapi.so,00020aec,T,CmWLANGetChannelUtilization5G,other,
+lib/libcmapi.so,00020c24,T,CmWLANGetChannelUtilizationOccupy,other,
+lib/libcmapi.so,00018984,T,CmWLANGetConfig,other,
+lib/libcmapi.so,000184ac,T,CmWLANGetConfigDriver,other,
+lib/libcmapi.so,00019cdc,T,CmWLANGetCountry,other,
+lib/libcmapi.so,00020e08,T,CmWLANGetCurrentTemperature,other,
+lib/libcmapi.so,00020d5c,T,CmWLANGetIdleInterPercent,other,
+lib/libcmapi.so,0001f4cc,T,CmWLANGetMacList,other,
+lib/libcmapi.so,0001995c,T,CmWLANGetPsk,other,
+lib/libcmapi.so,0001942c,T,CmWLANGetSetting,other,
+lib/libcmapi.so,00021660,T,CmWLANGetSlaveRadioInfo,other,
+lib/libcmapi.so,0001df9c,T,CmWLANGetTime,other,
+lib/libcmapi.so,0001dbbc,T,CmWLANGetTimeCfg,other,
+lib/libcmapi.so,0001ad00,T,CmWLANGetWPSRunningState,other,
+lib/libcmapi.so,00019848,T,CmWLANGetWep,other,
+lib/libcmapi.so,00019d94,T,CmWLANGetWlanRunningState,other,
+lib/libcmapi.so,0001b474,T,CmWLANGetWmm,other,
+lib/libcmapi.so,0001ac54,T,CmWLANGetWps,other,
+lib/libcmapi.so,0001c44c,T,CmWLANListAP,other,
+lib/libcmapi.so,0001b56c,T,CmWLANListAd,other,
+lib/libcmapi.so,0001a348,T,CmWLANListCardConfig,other,
+lib/libcmapi.so,00019fd4,T,CmWLANListConfig,other,
+lib/libcmapi.so,0001c3b4,T,CmWLANListCountry,other,
+lib/libcmapi.so,0001e47c,T,CmWLANListGUEST,other,
+lib/libcmapi.so,0001a27c,T,CmWLANListPsk,other,
+lib/libcmapi.so,00019f08,T,CmWLANListSettings,other,
+lib/libcmapi.so,00021310,T,CmWLANListSlaveRadioInfo,other,
+lib/libcmapi.so,0001a1a8,T,CmWLANListWep,other,
+lib/libcmapi.so,0001aed4,T,CmWLANListWmm,other,
+lib/libcmapi.so,0001d4c4,T,CmWLANListWmmService,other,
+lib/libcmapi.so,0001a89c,T,CmWLANListWps,other,
+lib/libcmapi.so,00020aa4,T,CmWLANMapSsidCfgSync2Repeater,other,
+lib/libcmapi.so,00020f40,T,CmWLANSetAntiInterferenceOrBSSColor,other,
+lib/libcmapi.so,000200e8,T,CmWLANSetBandSteering,other,
+lib/libcmapi.so,000133d4,T,CmWLANSetConfig,other,
+lib/libcmapi.so,0001f2b8,T,CmWLANSetMacList,other,
+lib/libcmapi.so,00017d54,T,CmWLANSetPsk,other,
+lib/libcmapi.so,00018314,T,CmWLANSetScanAP,other,
+lib/libcmapi.so,00021880,T,CmWLANSetSlaveRadioInfo,other,
+lib/libcmapi.so,0001dc70,T,CmWLANSetTime,other,
+lib/libcmapi.so,0001d8d8,T,CmWLANSetTimeCfg,other,
+lib/libcmapi.so,00020918,T,CmWLANSetTxpower,other,
+lib/libcmapi.so,00017124,T,CmWLANSetWep,other,
+lib/libcmapi.so,00012c14,T,CmWLANSetWepIndexWepKey,other,
+lib/libcmapi.so,00017888,T,CmWLANSetWepTr069,other,
+lib/libcmapi.so,0001afa0,T,CmWLANSetWmm,other,
+lib/libcmapi.so,0001a968,T,CmWLANSetWps,other,
+lib/libcmapi.so,00021978,T,CmWLANTriggerAutoChannel,other,
+lib/libcmapi.so,0001a4dc,T,CmWLANWpsApp,other,
+lib/libcmapi.so,000114c0,T,CmWebTelnetGet,other,
+lib/libcmapi.so,0003aaac,T,CmWhiteListInformEnGet,other,
+lib/libcmapi.so,0003adb4,T,CmWhiteListInformEnSet,other,
+lib/libcmapi.so,00022128,T,CmWlanGetPowerSave,other,
+lib/libcmapi.so,00021a2c,T,CmWlanListBeaconInfo,other,
+lib/libcmapi.so,00021c28,T,CmWlanListProbeReqInfo,other,
+lib/libcmapi.so,00012a5c,T,CmWlanSendMsg2MM,other,
+lib/libcmapi.so,00022234,T,CmWlanSetLowPower,other,
+lib/libcmapi.so,00021dcc,T,CmWlanSetPowerSave,other,
+lib/libcmapi.so,0008aad0,T,CmXPONAddL2Entry,other,
+lib/libcmapi.so,0008acc0,T,CmXPONAddUntagEntry,other,
+lib/libcmapi.so,0008abc8,T,CmXPONDelL2Entry,other,
+lib/libcmapi.so,0008a9e8,T,CmXPONDelL3Entry,other,
+lib/libcmapi.so,0008ada8,T,CmXPONDelUntagEntry,other,
+lib/libcmapi.so,0008af18,T,CmXPONReset,other,
+lib/libcmapi.so,0008a8d8,T,CmXPONSetL3Entry,other,
+lib/libcmapi.so,0008ae60,T,CmXPONSetTpid,other,
+lib/libcmapi.so,0002d43c,T,Cm_notify_dbus_force_pro_change,other,
+lib/libcmapi.so,0002d41c,T,Cm_notify_dbus_pro_change,other,
+lib/libcmapi.so,0004ef74,T,Cm_voip_IsDigitNum,other,
+lib/libcmapi.so,0001d4b4,T,Cm_wmmentry_set,other,
+lib/libcmapi.so,,U,CommonPasswordCheck,other,
+lib/libcmapi.so,,U,CommonUsernameCheck,other,
+lib/libcmapi.so,0004efe0,T,CspAddVoipWANC,other,
+lib/libcmapi.so,,U,CspCopyFile,other,
+lib/libcmapi.so,0004f0bc,T,CspDelVoipWANC,other,
+lib/libcmapi.so,,U,CspDeleteFile,other,
+lib/libcmapi.so,0006f41c,T,Csp_CM_Voip_Get_Queue,other,
+lib/libcmapi.so,0006f030,T,Csp_CM_Voip_Set_Queue,other,
+lib/libcmapi.so,,U,DelTagParam,other,
+lib/libcmapi.so,00039b5c,T,DelTr069WANC,other,
+lib/libcmapi.so,,U,DevGetIPv6Effect,other,
+lib/libcmapi.so,0002d45c,T,Enum2StrOp,other,
+lib/libcmapi.so,,U,FTTR_SSEND_Master_to_Slave,other,
+lib/libcmapi.so,,U,FileFclose,other,
+lib/libcmapi.so,,U,FileFopen,other,
+lib/libcmapi.so,0002b940,T,FindTaskByName,other,
+lib/libcmapi.so,0008654c,T,FlowSetOpt,other,
+lib/libcmapi.so,,U,Fttr_Str_To_MAC,other,
+lib/libcmapi.so,,U,GetBaseInfoByWANC,other,
+lib/libcmapi.so,,U,GetBrPortInfo,other,
+lib/libcmapi.so,,U,GetCurrWANDType,other,
+lib/libcmapi.so,,U,GetCurrentTicks,other,
+lib/libcmapi.so,,U,GetIFBaseInfo,other,
+lib/libcmapi.so,,U,GetLANIDByRealIfName,other,
+lib/libcmapi.so,0008cd20,T,GetProcNum,other,
+lib/libcmapi.so,0008cd84,T,GetProcStatVal,other,
+lib/libcmapi.so,,U,GetRetFileName,other,
+lib/libcmapi.so,,U,GetRouteIFInfo,other,
+lib/libcmapi.so,,U,GetSelfPIDName,other,
+lib/libcmapi.so,,U,GetStringFromFile,other,
+lib/libcmapi.so,,U,GetUB,other,
+lib/libcmapi.so,,U,GetUpTime,other,
+lib/libcmapi.so,,U,GetWANCIDByRealIfName,other,
+lib/libcmapi.so,,U,GetWANLANBaseInfo,other,
+lib/libcmapi.so,,U,IPv6ToStr,other,
+lib/libcmapi.so,00054848,T,IsVoiceChipNormal,other,
+lib/libcmapi.so,,U,ListWANLANInterface,other,
+lib/libcmapi.so,,U,MACToStr,other,
+lib/libcmapi.so,00037d9c,T,MntSvrChkInst2View,other,
+lib/libcmapi.so,,U,PcStartProgram,other,
+lib/libcmapi.so,00083e44,T,PingDiagChkConfig,other,
+lib/libcmapi.so,,U,ProcUserLog,other,
+lib/libcmapi.so,00037010,T,RandomURL,other,
+lib/libcmapi.so,,U,RetUB,other,
+lib/libcmapi.so,,U,SELF,other,
+lib/libcmapi.so,,U,SETTagParam,other,
+lib/libcmapi.so,000614b4,T,SLC_CheckCommon,other,
+lib/libcmapi.so,,U,SSEND,ipc_dependency,
+lib/libcmapi.so,,U,SSEND_EX,other,
+lib/libcmapi.so,,U,SafeMemcpy,other,
+lib/libcmapi.so,,U,SafeStrncpy,other,
+lib/libcmapi.so,0001f7b0,T,SetSameSSID,other,
+lib/libcmapi.so,,U,StrToIP,other,
+lib/libcmapi.so,,U,StrToIPv6,other,
+lib/libcmapi.so,,U,StrToIPv6AndPrefixLen,other,
+lib/libcmapi.so,,U,StrToMAC,other,
+lib/libcmapi.so,0002eb3c,T,TR_IsValidMacStr,other,
+lib/libcmapi.so,0002eb58,T,TR_MacStrCmp,other,
+lib/libcmapi.so,0002eaa0,T,TR_StrToMAC,other,
+lib/libcmapi.so,0002cde8,T,ViewList2InstList,other,
+lib/libcmapi.so,,w,_ITM_deregisterTMCloneTable,other,
+lib/libcmapi.so,,w,_ITM_registerTMCloneTable,other,
+lib/libcmapi.so,,w,_Jv_RegisterClasses,other,
+lib/libcmapi.so,000d9b70,B,__bss_end__,other,
+lib/libcmapi.so,000bafa4,B,__bss_start,other,
+lib/libcmapi.so,000bafa4,B,__bss_start__,other,
+lib/libcmapi.so,,U,__ctype_b_loc@GLIBC_2.4,other,
+lib/libcmapi.so,,w,__cxa_finalize@GLIBC_2.4,other,
+lib/libcmapi.so,000d9b70,B,__end__,other,
+lib/libcmapi.so,,U,__errno_location@GLIBC_2.4,other,
+lib/libcmapi.so,,w,__gmon_start__,other,
+lib/libcmapi.so,,U,__lxstat@GLIBC_2.4,other,
+lib/libcmapi.so,,U,__xstat@GLIBC_2.4,other,
+lib/libcmapi.so,000d9b70,B,_bss_end__,other,
+lib/libcmapi.so,000bafa4,D,_edata,other,
+lib/libcmapi.so,000d9b70,B,_end,other,
+lib/libcmapi.so,0008df9c,T,_fini,other,
+lib/libcmapi.so,0000ede4,T,_init,other,
+lib/libcmapi.so,,U,abs@GLIBC_2.4,other,
+lib/libcmapi.so,,U,access@GLIBC_2.4,other,
+lib/libcmapi.so,,U,atoi@GLIBC_2.4,other,
+lib/libcmapi.so,,U,bind@GLIBC_2.4,ipc_dependency,
+lib/libcmapi.so,,U,bzero@GLIBC_2.4,other,
+lib/libcmapi.so,,U,close@GLIBC_2.4,other,
+lib/libcmapi.so,,U,closedir@GLIBC_2.4,other,
+lib/libcmapi.so,00083604,T,cmAddPingDiag,other,
+lib/libcmapi.so,0002fe48,T,cmAddTrafficFastPathRecord,other,
+lib/libcmapi.so,00082674,T,cmAutoSimulationPPPoEGet,other,
+lib/libcmapi.so,00081f7c,T,cmAutoSimulationPPPoESet,other,
+lib/libcmapi.so,0002cf7c,T,cmBOOLPrmOp,other,
+lib/libcmapi.so,0002d180,T,cmBUFPrmOp,other,
+lib/libcmapi.so,00081b5c,T,cmCkeckAutoConfParam,other,
+lib/libcmapi.so,000350f0,T,cmDDNSListClient,other,
+lib/libcmapi.so,0003588c,T,cmDDNSListHostname,other,
+lib/libcmapi.so,0003538c,T,cmDDNSListService,other,
+lib/libcmapi.so,0002ced0,T,cmDWORDPrmOp,other,
+lib/libcmapi.so,0002f410,T,cmDelAllTrafficDtlProc,other,
+lib/libcmapi.so,00083bc0,T,cmDelPingDiag,other,
+lib/libcmapi.so,0002f0cc,T,cmDelTrafficDtlProc,other,
+lib/libcmapi.so,0002ff10,T,cmDelTrafficFastPathRecord,other,
+lib/libcmapi.so,0002ebe0,T,cmDtlProcChkRepeat,other,
+lib/libcmapi.so,0002d018,T,cmENUMPrmOp,other,
+lib/libcmapi.so,0002fc44,T,cmFastPathRecordChkRepeat,other,
+lib/libcmapi.so,00088f1c,T,cmFwAddTrafficForward,other,
+lib/libcmapi.so,00089bec,T,cmFwAddTrafficMirror,other,
+lib/libcmapi.so,00089114,T,cmFwDelTrafficForward,other,
+lib/libcmapi.so,00089e98,T,cmFwDelTrafficMirror,other,
+lib/libcmapi.so,00088f58,T,cmFwGetTrafficForward,other,
+lib/libcmapi.so,00089cb4,T,cmFwGetTrafficMirror,other,
+lib/libcmapi.so,000892c4,T,cmFwListTrafficForward,other,
+lib/libcmapi.so,0008a048,T,cmFwListTrafficMirror,other,
+lib/libcmapi.so,00089724,T,cmFwSetTrafficForward,other,
+lib/libcmapi.so,0008a50c,T,cmFwSetTrafficMirror,other,
+lib/libcmapi.so,00082f94,T,cmGetDmsCfg,other,
+lib/libcmapi.so,0002cdc0,T,cmGetMediaInfo,other,
+lib/libcmapi.so,000837a8,T,cmGetPingDiag,other,
+lib/libcmapi.so,0002eed4,T,cmGetTrafficDtlProc,other,
+lib/libcmapi.so,00030390,T,cmGetTrafficFastPathRecord,other,
+lib/libcmapi.so,0007c068,T,cmGetWolinkEnable,other,
+lib/libcmapi.so,0003d608,T,cmIGDevGetInfo,other,
+lib/libcmapi.so,0002ce24,T,cmINT32PrmOp,other,
+lib/libcmapi.so,0002d2dc,T,cmIPPrmOp,other,
+lib/libcmapi.so,0002d2f0,T,cmIPv6PrmOp,other,
+lib/libcmapi.so,0002d400,T,cmIsParamSet,other,
+lib/libcmapi.so,00083d14,T,cmListPingDiag,other,
+lib/libcmapi.so,0002f2e4,T,cmListTrafficDtlProc,other,
+lib/libcmapi.so,00030504,T,cmListTrafficFastPathRecord,other,
+lib/libcmapi.so,0002cd2c,T,cmLockInit,other,
+lib/libcmapi.so,0002d37c,T,cmMACPrmOp,other,
+lib/libcmapi.so,0002d230,T,cmMASKPrmOp,other,
+lib/libcmapi.so,0002cd94,T,cmMediaInfoInit,other,
+lib/libcmapi.so,000898a0,T,cmMirrorChkRepeat,other,
+lib/libcmapi.so,00088c98,T,cmRedirectChkRepeat,other,
+lib/libcmapi.so,0002d0c4,T,cmSTRPrmOp,other,
+lib/libcmapi.so,000498ec,T,cmSambaAddUser,other,
+lib/libcmapi.so,00049b24,T,cmSambaClearUser,other,
+lib/libcmapi.so,000499f4,T,cmSambaDelUser,other,
+lib/libcmapi.so,00048cf0,T,cmSambaGetCfg,other,
+lib/libcmapi.so,00048f6c,T,cmSambaGetUser,other,
+lib/libcmapi.so,00049d54,T,cmSambaListUser,other,
+lib/libcmapi.so,00049e98,T,cmSambaQryUser,other,
+lib/libcmapi.so,000490e0,T,cmSambaReadUser,other,
+lib/libcmapi.so,000484c0,T,cmSambaSetCfg,other,
+lib/libcmapi.so,000491d8,T,cmSambaSetUser,other,
+lib/libcmapi.so,00049794,T,cmSambaWriteUser,other,
+lib/libcmapi.so,00083020,T,cmSetDmsCfg,other,
+lib/libcmapi.so,00084580,T,cmSetPingDiag,other,
+lib/libcmapi.so,0002f8b8,T,cmSetTrafficDtlProc,other,
+lib/libcmapi.so,000307b0,T,cmSetTrafficFastPathRecord,other,
+lib/libcmapi.so,0007bf14,T,cmSetWolinkEnable,other,
+lib/libcmapi.so,0002f5b0,T,cmTrafficDtlProcToView,other,
+lib/libcmapi.so,00030628,T,cmTrafficFastPathRecordToView,other,
+lib/libcmapi.so,00030164,T,cmTrafficFastPathRecordUserDel,other,
+lib/libcmapi.so,000893f0,T,cmTrafficForwardToView,other,
+lib/libcmapi.so,0008a174,T,cmTrafficMirrorToView,other,
+lib/libcmapi.so,0002d8ec,T,cmTrafficMonitorChkRepeat,other,
+lib/libcmapi.so,0002e4a4,T,cmTrafficMonitorDel,other,
+lib/libcmapi.so,0002e3ac,T,cmTrafficMonitorGet,other,
+lib/libcmapi.so,0002e968,T,cmTrafficMonitorList,other,
+lib/libcmapi.so,0002e174,T,cmTrafficMonitorSet,other,
+lib/libcmapi.so,0002e6d8,T,cmTrafficMonitorUserDel,other,
+lib/libcmapi.so,0002e054,T,cmTrafficMonitorregister,other,
+lib/libcmapi.so,00036e78,T,cmUpgradePrgsInd,other,
+lib/libcmapi.so,00012a20,T,cmWlanObjFilter,other,
+lib/libcmapi.so,0002cd50,T,cmWriteLock,other,
+lib/libcmapi.so,0002cd74,T,cmWriteUnlock,other,
+lib/libcmapi.so,0002ddf8,T,cmaddPreprocess,other,
+lib/libcmapi.so,0002df4c,T,cmsetPreprocess,other,
+lib/libcmapi.so,,U,cspLock,other,
+lib/libcmapi.so,,U,cspLockInit,other,
+lib/libcmapi.so,,U,cspUnLock,other,
+lib/libcmapi.so,,U,ctypeCheck,other,
+lib/libcmapi.so,,U,dbAPIAddView,db_public_api,新增视图实例/行
+lib/libcmapi.so,,U,dbAPICompress,db_public_api,
+lib/libcmapi.so,,U,dbAPIDelView,db_public_api,删除视图实例/行
+lib/libcmapi.so,,U,dbAPIFlashCfgEnd,db_public_api,
+lib/libcmapi.so,,U,dbAPIGetView,db_public_api,按 ViewName 读取一条视图记录
+lib/libcmapi.so,,U,dbAPILstView,db_public_api,列出某类视图实例
+lib/libcmapi.so,,U,dbAPIQryView,db_public_api,按条件查询视图实例
+lib/libcmapi.so,,U,dbAPIRestore,db_public_api,
+lib/libcmapi.so,,U,dbAPIRestoreLocal,db_public_api,
+lib/libcmapi.so,,U,dbAPIRestoreRemote,db_public_api,
+lib/libcmapi.so,,U,dbAPISave,db_public_api,触发运行时 DB 序列化并持久化
+lib/libcmapi.so,,U,dbAPISetView,db_public_api,按 ViewName 修改一条视图记录
+lib/libcmapi.so,,U,dbAddRow,db_internal_api,
+lib/libcmapi.so,,U,dbFindRowByNo,db_internal_api,
+lib/libcmapi.so,,U,dbFindTbl,db_internal_api,
+lib/libcmapi.so,,U,dbGetValComm,db_internal_api,
+lib/libcmapi.so,,U,dbSetValCommByRowNo,db_internal_api,
+lib/libcmapi.so,000cd9a0,B,eCmMediaType,other,
+lib/libcmapi.so,,U,fclose@GLIBC_2.4,other,
+lib/libcmapi.so,,U,feof@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fgetc@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fgets@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fopen@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fprintf@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fputs@GLIBC_2.4,other,
+lib/libcmapi.so,,U,free@GLIBC_2.4,other,
+lib/libcmapi.so,,U,fscanf@GLIBC_2.4,other,
+lib/libcmapi.so,000d9a20,B,gProperPrio,other,
+lib/libcmapi.so,0007f180,T,getDefaultEthPort,other,
+lib/libcmapi.so,00051fe8,T,getVoIPProtocolName,other,
+lib/libcmapi.so,,U,gettimeofday@GLIBC_2.4,other,
+lib/libcmapi.so,,U,gmtime@GLIBC_2.4,other,
+lib/libcmapi.so,,U,if_indextoname@GLIBC_2.4,other,
+lib/libcmapi.so,,U,index@GLIBC_2.4,other,
+lib/libcmapi.so,,U,inet_addr@GLIBC_2.4,other,
+lib/libcmapi.so,,U,inet_ntoa@GLIBC_2.4,other,
+lib/libcmapi.so,,U,ioctl@GLIBC_2.4,other,
+lib/libcmapi.so,,U,isblank@GLIBC_2.4,other,
+lib/libcmapi.so,,U,isprint@GLIBC_2.4,other,
+lib/libcmapi.so,,U,malloc@GLIBC_2.4,other,
+lib/libcmapi.so,,U,mamStrcat,other,
+lib/libcmapi.so,,U,memcmp@GLIBC_2.4,other,
+lib/libcmapi.so,,U,memcpy@GLIBC_2.4,other,
+lib/libcmapi.so,,U,memmove@GLIBC_2.4,other,
+lib/libcmapi.so,,U,memset@GLIBC_2.4,other,
+lib/libcmapi.so,,U,mkdir@GLIBC_2.4,other,
+lib/libcmapi.so,,U,open@GLIBC_2.4,other,
+lib/libcmapi.so,,U,opendir@GLIBC_2.4,other,
+lib/libcmapi.so,,U,pclose@GLIBC_2.4,other,
+lib/libcmapi.so,,U,popen@GLIBC_2.4,other,
+lib/libcmapi.so,0007cc78,T,printDHCPResultInfo,other,
+lib/libcmapi.so,0007c9c0,T,printPPPoEResultInfo,other,
+lib/libcmapi.so,,U,printf@GLIBC_2.4,other,
+lib/libcmapi.so,,U,read@GLIBC_2.4,other,
+lib/libcmapi.so,,U,readdir@GLIBC_2.4,other,
+lib/libcmapi.so,,U,setsockopt@GLIBC_2.4,other,
+lib/libcmapi.so,,U,sha256,other,
+lib/libcmapi.so,,U,shmat@GLIBC_2.4,shared_memory_dependency,
+lib/libcmapi.so,,U,shmdt@GLIBC_2.4,other,
+lib/libcmapi.so,,U,shmget@GLIBC_2.4,shared_memory_dependency,
+lib/libcmapi.so,,U,sleep@GLIBC_2.4,other,
+lib/libcmapi.so,,U,snprintf@GLIBC_2.4,other,
+lib/libcmapi.so,,U,socket@GLIBC_2.4,ipc_dependency,
+lib/libcmapi.so,,U,sprintf@GLIBC_2.4,other,
+lib/libcmapi.so,,U,sscanf@GLIBC_2.4,other,
+lib/libcmapi.so,,U,statfs@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strcasecmp@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strcat@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strchr@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strcmp@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strcpy@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strerror@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strlcat,other,
+lib/libcmapi.so,,U,strlcpy,other,
+lib/libcmapi.so,,U,strlen@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strncasecmp@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strncmp@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strncpy@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strrchr@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strsep@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strstr@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strtod@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strtok@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strtok_r@GLIBC_2.4,other,
+lib/libcmapi.so,,U,strtoull@GLIBC_2.4,other,
+lib/libcmapi.so,,U,sync@GLIBC_2.4,other,
+lib/libcmapi.so,,U,sysinfo@GLIBC_2.4,other,
+lib/libcmapi.so,,U,system@GLIBC_2.4,other,
+lib/libcmapi.so,,U,tADevAddrSrcTable,other,
+lib/libcmapi.so,,U,tADevCategoryTable,other,
+lib/libcmapi.so,,U,tADevIFTypeTable,other,
+lib/libcmapi.so,,U,tADevTypeTable,other,
+lib/libcmapi.so,000b9f58,D,tAutoPPPEmulatAuthProto,other,
+lib/libcmapi.so,000b9f70,D,tAutoPPPEmulatEnabel,other,
+lib/libcmapi.so,,U,tBrGrpAddressingTypeTable,other,
+lib/libcmapi.so,,U,tBrGrpLeavemodeTable,other,
+lib/libcmapi.so,000b9290,D,tCSPStrEnumParams,other,
+lib/libcmapi.so,,U,tDelegationType,other,
+lib/libcmapi.so,000b9758,D,tDevAuthAppIDTable,other,
+lib/libcmapi.so,000b9fa0,D,tDevDiagnosticsStateTable,other,
+lib/libcmapi.so,000b9780,D,tDevUserIFLangTable,other,
+lib/libcmapi.so,000b97b8,D,tDevUserInfoRightTable,other,
+lib/libcmapi.so,000b96e0,D,tDevWandTypeTable,other,
+lib/libcmapi.so,,U,tDhcpsHostCfgDnsSource,other,
+lib/libcmapi.so,000b9208,D,tDiscName,other,
+lib/libcmapi.so,,U,tIPv6DNSConfigTypeTable,other,
+lib/libcmapi.so,,U,tL2BEntryStatus,other,
+lib/libcmapi.so,,U,tL2BIfTypeTable,other,
+lib/libcmapi.so,,U,tMacfilterMode,other,
+lib/libcmapi.so,,U,tMacfilterProtocol,other,
+lib/libcmapi.so,,U,tMacfilterType,other,
+lib/libcmapi.so,,U,tMultiAPDevStateTable,other,
+lib/libcmapi.so,,U,tMultiAPModeTable,other,
+lib/libcmapi.so,,U,tPROUTEProtocolTypeTable,other,
+lib/libcmapi.so,,U,tPdtWlanCountryChannel,other,
+lib/libcmapi.so,000cd998,B,tPkgStrEnumParams,other,
+lib/libcmapi.so,000b9858,D,tPortMapProtocolTable,other,
+lib/libcmapi.so,,U,tPrefixLanMode,other,
+lib/libcmapi.so,,U,tPrefixOrigin,other,
+lib/libcmapi.so,000bad74,D,tProcStatMap,other,
+lib/libcmapi.so,,U,tProtocalTable,other,
+lib/libcmapi.so,,U,tQOSModeTable,other,
+lib/libcmapi.so,,U,tQOSStatusTable,other,
+lib/libcmapi.so,,U,tQPAlgorithmName,other,
+lib/libcmapi.so,,U,tQQAlgorithmName,other,
+lib/libcmapi.so,000b9870,D,tRIPIfStatus,other,
+lib/libcmapi.so,000b9898,D,tRIPProtocol,other,
+lib/libcmapi.so,,U,tROUTEEntryStatusTable,other,
+lib/libcmapi.so,,U,tROUTEEntryTypeTable,other,
+lib/libcmapi.so,000b9f88,D,tScTimePlcApp,other,
+lib/libcmapi.so,,U,tSntpConfDayTimeTypeTable,other,
+lib/libcmapi.so,000b98f8,D,tTCFMethod,other,
+lib/libcmapi.so,000b98b8,D,tTracertProtocol,other,
+lib/libcmapi.so,,U,tUSERLMTMode,other,
+lib/libcmapi.so,000b9978,D,tVoipCALLSTATE,other,
+lib/libcmapi.so,000b99d0,D,tVoipCidmode,other,
+lib/libcmapi.so,000b99b0,D,tVoipClipFormat,other,
+lib/libcmapi.so,000b9a88,D,tVoipCodec,other,
+lib/libcmapi.so,000b9db8,D,tVoipCodecList,other,
+lib/libcmapi.so,000b9e00,D,tVoipDTMFOpt,other,
+lib/libcmapi.so,000b9e18,D,tVoipEnble,other,
+lib/libcmapi.so,000b9d48,D,tVoipG711Controltype,other,
+lib/libcmapi.so,000b99f0,D,tVoipH248AuthenticationMethIDTable,other,
+lib/libcmapi.so,000b9d98,D,tVoipH248DeviceIDType,other,
+lib/libcmapi.so,000b9a28,D,tVoipH248DigitMapMatchMode,other,
+lib/libcmapi.so,000b9a10,D,tVoipH248EPHType,other,
+lib/libcmapi.so,000b9d68,D,tVoipH248EncodingType,other,
+lib/libcmapi.so,000b9d80,D,tVoipH248HeartbeatmodeTable,other,
+lib/libcmapi.so,000b98d8,D,tVoipH248MGSwitchMethod,other,
+lib/libcmapi.so,000b9ae0,D,tVoipLineTestConclusion,other,
+lib/libcmapi.so,000b9910,D,tVoipPoorQualityCodecList,other,
+lib/libcmapi.so,000b9e30,D,tVoipPortReg,other,
+lib/libcmapi.so,000b9958,D,tVoipProtocolset,other,
+lib/libcmapi.so,000b9b60,D,tVoipResult,other,
+lib/libcmapi.so,000b9a68,D,tVoipServertype,other,
+lib/libcmapi.so,000b9d30,D,tVoipServicetype,other,
+lib/libcmapi.so,000b9a48,D,tVoipSipDigitMapMatchMode,other,
+lib/libcmapi.so,000b9ec0,D,tVoipSrBWlistDataType,other,
+lib/libcmapi.so,000b9ea8,D,tVoipSrBWlistType,other,
+lib/libcmapi.so,000b9ef0,D,tVoipSrBoundType,other,
+lib/libcmapi.so,000b9f40,D,tVoipSrColdgtPstnNoPrefixKey,other,
+lib/libcmapi.so,000b9f20,D,tVoipSrColdgtType,other,
+lib/libcmapi.so,000b9ed8,D,tVoipSrDefaultRouteType,other,
+lib/libcmapi.so,000b9f08,D,tVoipSrMethodType,other,
+lib/libcmapi.so,000b9e88,D,tVoipSrOfficeDigitMapOffice,other,
+lib/libcmapi.so,000b9b78,D,tVoipTestCalledFail,other,
+lib/libcmapi.so,000b9bd8,D,tVoipTestCallerFail,other,
+lib/libcmapi.so,000b9c40,D,tVoipTestConclusion,other,
+lib/libcmapi.so,000b9ce8,D,tVoipTestSelector,other,
+lib/libcmapi.so,000b9d10,D,tVoipTestState,other,
+lib/libcmapi.so,000b9c68,D,tVoipTestStatus,other,
+lib/libcmapi.so,000b9cc8,D,tVoipTestType,other,
+lib/libcmapi.so,000b9ac0,D,tVoipVPFACTIONS,other,
+lib/libcmapi.so,,U,tWANCAPPConnTypeTable,other,
+lib/libcmapi.so,,U,tWANCAPPStatusTable,other,
+lib/libcmapi.so,,U,tWANCApplicationTable,other,
+lib/libcmapi.so,,U,tWANCDLINKType,other,
+lib/libcmapi.so,,U,tWANCIPAddressingTypeTable,other,
+lib/libcmapi.so,,U,tWANCInfoSrcTable,other,
+lib/libcmapi.so,,U,tWANCIpModeBaseOneTable,other,
+lib/libcmapi.so,,U,tWANCIpModeBaseZeroTable,other,
+lib/libcmapi.so,,U,tWANCIpModeTable,other,
+lib/libcmapi.so,,U,tWANCIpv6PrefixSrcTable,other,
+lib/libcmapi.so,,U,tWANCIpv6PrefixSrcTable_TR069,other,
+lib/libcmapi.so,,U,tWANCWBDModeTable,other,
+lib/libcmapi.so,,U,tWancDssAddrStatusTable,other,
+lib/libcmapi.so,,U,tWancIPErrorTable,other,
+lib/libcmapi.so,,U,tWancPPPAuthTypeTable,other,
+lib/libcmapi.so,,U,tWancPPPCompProtTable,other,
+lib/libcmapi.so,,U,tWancPPPConnTriggerTable,other,
+lib/libcmapi.so,,U,tWancPPPEncryProtTable,other,
+lib/libcmapi.so,,U,tWancPPPErrorTable,other,
+lib/libcmapi.so,,U,tWancPPPRouteProtTable,other,
+lib/libcmapi.so,,U,tWancPPPTransTypeTable,other,
+lib/libcmapi.so,,U,tWandStatusTable,other,
+lib/libcmapi.so,,U,tWandTypeTable,other,
+lib/libcmapi.so,000b8f40,D,tWlan11nRateTable,other,
+lib/libcmapi.so,000b8cc0,D,tWlanAclPolicyTable,other,
+lib/libcmapi.so,000b8ac0,D,tWlanAuthServerModeTable,other,
+lib/libcmapi.so,000b90a8,D,tWlanBandTable,other,
+lib/libcmapi.so,000b9078,D,tWlanBandWidthTable,other,
+lib/libcmapi.so,000b9170,D,tWlanBasicEncryptionModesTable,other,
+lib/libcmapi.so,000b9188,D,tWlanBeaconTypeTable,other,
+lib/libcmapi.so,000b90c0,D,tWlanCardModeTable,other,
+lib/libcmapi.so,000b8e00,D,tWlanChannelScopeTable,other,
+lib/libcmapi.so,000b8a28,D,tWlanConnectStatusTable,other,
+lib/libcmapi.so,000b8f10,D,tWlanDataRatesTable,other,
+lib/libcmapi.so,000b8ae0,D,tWlanDeciceOpModeTable,other,
+lib/libcmapi.so,000b8b18,D,tWlanKeyModeTable,other,
+lib/libcmapi.so,000b8a90,D,tWlanPowerLevelTable,other,
+lib/libcmapi.so,000b8a48,D,tWlanQostypeTable,other,
+lib/libcmapi.so,000b8b30,D,tWlanRegulatryDomainTable,other,
+lib/libcmapi.so,000b89c8,D,tWlanSetRuleTable,other,
+lib/libcmapi.so,000b8998,D,tWlanSettingTable,other,
+lib/libcmapi.so,000b9060,D,tWlanSideBandTable,other,
+lib/libcmapi.so,000b9118,D,tWlanStandardTable,other,
+lib/libcmapi.so,000b91f0,D,tWlanStatusTable,other,
+lib/libcmapi.so,000b89b0,D,tWlanTimeEventTable,other,
+lib/libcmapi.so,000b8e98,D,tWlanWEPEncrypLevelTable,other,
+lib/libcmapi.so,000b8e70,D,tWlanWEPKeyIndexTable,other,
+lib/libcmapi.so,000b8ee8,D,tWlanWPA11IAuthModeTable,other,
+lib/libcmapi.so,000b8ec0,D,tWlanWPA11IEncrypTypeTable,other,
+lib/libcmapi.so,000b8bd0,D,tWlanWPSDevicePassIDTable,other,
+lib/libcmapi.so,000b89e0,D,tWlanWdsModeTable,other,
+lib/libcmapi.so,000b8e48,D,tWlanWepAuthModesTable,other,
+lib/libcmapi.so,000b8e20,D,tWlanWlanIfTable,other,
+lib/libcmapi.so,000b8ce0,D,tWlanWlanRateTable,other,
+lib/libcmapi.so,000b8a68,D,tWlanWmmLevelTable,other,
+lib/libcmapi.so,000b8c08,D,tWlanWpsConfErrorTable,other,
+lib/libcmapi.so,000b8a00,D,tWlanWpsMethodTable,other,
+lib/libcmapi.so,000b8ca8,D,tWlanWpsStatusTable,other,
+lib/libcmapi.so,0007d8a4,T,transDWORDtOIP,other,
+lib/libcmapi.so,000d9b5c,B,wDesBufSize,other,
+lib/libcmapi.so,000d9b20,B,wIADTaBufSize,other,
+lib/libcmapi.so,000d9b34,B,wSSTaBufSize,other,
+lib/libcmapi.so,000d9b48,B,wTmpTaBufSize,other,
+lib/libcmapi.so,00012bb8,T,wlan_check_wepkey_hex,other,
+lib/libcfapi.so,,U,ASEND,ipc_dependency,
+lib/libcfapi.so,00004394,T,CSPRegisterWlanDevice,other,
+lib/libcfapi.so,,U,CSPStrToIP,other,
+lib/libcfapi.so,00009644,T,CfGetAttr,other,
+lib/libcfapi.so,0000b798,T,CfGetNeedReboot,other,
+lib/libcfapi.so,00009888,T,CfGetParamAttr,other,
+lib/libcfapi.so,0000e084,T,CfGetRegionCode,other,
+lib/libcfapi.so,0000d5a8,T,CfGetSysArpInfo,other,
+lib/libcfapi.so,000093bc,T,CfGetTR069ParamAttr,other,
+lib/libcfapi.so,00003634,T,CfGetTdSec,other,
+lib/libcfapi.so,00003578,T,CfGetTdSepMode,other,
+lib/libcfapi.so,00004908,T,CfGetWlanChipType,other,
+lib/libcfapi.so,000048a8,T,CfGetWlanChipVendor,other,
+lib/libcfapi.so,000045cc,T,CfGetWlanNum,other,
+lib/libcfapi.so,00004b4c,T,CfGetWlanPara4NFC,other,
+lib/libcfapi.so,00004948,T,CfIfWlanSupport11ax,other,
+lib/libcfapi.so,00004a44,T,CfIfWlanSupport160M,other,
+lib/libcfapi.so,000049dc,T,CfIfWlanSupportBW,other,
+lib/libcfapi.so,00004a60,T,CfIfWlanSupportBandSteering,other,
+lib/libcfapi.so,00004a94,T,CfIfWlanSupportCap,other,
+lib/libcfapi.so,00004988,T,CfIfWlanSupportGI4,other,
+lib/libcfapi.so,000049c8,T,CfIfWlanSupportWPA3,other,
+lib/libcfapi.so,0000e40c,T,CfIsRZXForAudit,other,
+lib/libcfapi.so,0000dc14,T,CfIsVoiceBusy,other,
+lib/libcfapi.so,00007bc0,T,CfNotifyCtsgwProxy,other,
+lib/libcfapi.so,0000e7b8,T,CfNotifyDbusSignal,other,
+lib/libcfapi.so,00007bd0,T,CfNotifyPostMsg,other,
+lib/libcfapi.so,0000e0ec,T,CfReadOnuCfgItem,other,
+lib/libcfapi.so,00009964,T,CfSetParamAttr,other,
+lib/libcfapi.so,00003444,T,CfSetTdSec,other,
+lib/libcfapi.so,0000dbc4,T,CfSipRegARPDetect,other,
+lib/libcfapi.so,0000b9a8,T,CfTR069LinkExceptReg,other,
+lib/libcfapi.so,0000b888,T,CfTR069RegTrigger,other,
+lib/libcfapi.so,0000af90,T,CfUpgradeInformFlash,other,
+lib/libcfapi.so,0000aedc,T,CfUpgradeStart,other,
+lib/libcfapi.so,,U,CheckDomainName,other,
+lib/libcfapi.so,000090d4,T,ChkHost,other,
+lib/libcfapi.so,00009210,T,ChkLanWanCon,other,
+lib/libcfapi.so,0000b444,T,CloseTty,other,
+lib/libcfapi.so,0000a7e8,T,CspGetNewMac,other,
+lib/libcfapi.so,0000a2f0,T,CspIoctlMACForIF,other,
+lib/libcfapi.so,0000a634,T,CspMacForbidWanLanShare,other,
+lib/libcfapi.so,0000a6f8,T,CspMacGetRemainCount,other,
+lib/libcfapi.so,0000ac5c,T,CspReleaseUsedMac,other,
+lib/libcfapi.so,00008028,T,DevGetDevConf,other,
+lib/libcfapi.so,00008d54,T,DevGetIPv6Effect,other,
+lib/libcfapi.so,00007f44,T,DevRebootForMod,other,
+lib/libcfapi.so,00007d6c,T,GetJSWifiShareTime,other,
+lib/libcfapi.so,000091f0,T,GetLandViewName,other,
+lib/libcfapi.so,00009060,T,GetRetFileName,other,
+lib/libcfapi.so,,U,GetRouteIFInfo,other,
+lib/libcfapi.so,,U,GetSelfPIDName,other,
+lib/libcfapi.so,,U,GetUB,other,
+lib/libcfapi.so,00004548,T,IsZeroMacAddr,other,
+lib/libcfapi.so,0000afd0,T,OpenTty,other,
+lib/libcfapi.so,,U,OssDebugPrintf,other,
+lib/libcfapi.so,,U,ProcUserLog,other,
+lib/libcfapi.so,00009e18,T,QueryIPPool,other,
+lib/libcfapi.so,00020e7c,D,RadioState24g,other,
+lib/libcfapi.so,00020e80,D,RadioState5g,other,
+lib/libcfapi.so,00008f20,T,ReadPingRst,other,
+lib/libcfapi.so,,U,RetUB,other,
+lib/libcfapi.so,,U,SSEND,ipc_dependency,
+lib/libcfapi.so,,U,SafeStrncpy,other,
+lib/libcfapi.so,0000b5e0,T,SendReqToFm,other,
+lib/libcfapi.so,0000b6f4,T,SendReqToFmCancelDownload,other,
+lib/libcfapi.so,00008da8,T,SendReqToPing,other,
+lib/libcfapi.so,00008e60,T,SendReqToStopPing,other,
+lib/libcfapi.so,0000b680,T,SendRespToFm,other,
+lib/libcfapi.so,000092fc,T,SendWanUpToPing,other,
+lib/libcfapi.so,0000b504,T,SetLanBindWan,other,
+lib/libcfapi.so,0000b4a8,T,SetTty,other,
+lib/libcfapi.so,00003a48,T,SleepOnuCfg,other,
+lib/libcfapi.so,,U,StrToIPv6,other,
+lib/libcfapi.so,000042c8,T,WLANListBase,other,
+lib/libcfapi.so,000040e8,T,WLANListCfg,other,
+lib/libcfapi.so,00007ce0,T,WLAN_NOTIFY_UP_DOWN,other,
+lib/libcfapi.so,00004744,T,WifiRadioDisable,other,
+lib/libcfapi.so,00004604,T,WifiRadioEnable,other,
+lib/libcfapi.so,000039dc,T,WifiSetEnable,other,
+lib/libcfapi.so,000061dc,T,WlanADInstIdDbRead,other,
+lib/libcfapi.so,000062b4,T,WlanADInstIdDbWrite,other,
+lib/libcfapi.so,00006b24,T,WlanAclCfgInstIdDbRead,other,
+lib/libcfapi.so,00006bfc,T,WlanAclCfgInstIdDbWrite,other,
+lib/libcfapi.so,00007454,T,WlanBaseDbRead,other,
+lib/libcfapi.so,00007780,T,WlanBaseDbWrite,other,
+lib/libcfapi.so,0000738c,T,WlanBaseInstId2CardIndex,other,
+lib/libcfapi.so,00007694,T,WlanCardIndex2Band,other,
+lib/libcfapi.so,000072cc,T,WlanCardIndex2BaseInstId,other,
+lib/libcfapi.so,00006370,T,WlanCfgDbRead,other,
+lib/libcfapi.so,00006a14,T,WlanCfgDbWrite,other,
+lib/libcfapi.so,00007984,T,WlanChkStrMAC,other,
+lib/libcfapi.so,00005b70,T,WlanDbIndex2InstId,other,
+lib/libcfapi.so,00003f20,T,WlanGetBasic,other,
+lib/libcfapi.so,00003cd8,T,WlanGetCfg,other,
+lib/libcfapi.so,00007570,T,WlanIfName2Band,other,
+lib/libcfapi.so,0000676c,T,WlanIfName2Index,other,
+lib/libcfapi.so,00006838,T,WlanIfName2InstId,other,
+lib/libcfapi.so,00005a60,T,WlanIndex2ADInstId,other,
+lib/libcfapi.so,000065f4,T,WlanIndex2IfName,other,
+lib/libcfapi.so,0000533c,T,WlanIndex2InstId,other,
+lib/libcfapi.so,000055ec,T,WlanIndex2PSKInstId,other,
+lib/libcfapi.so,000056f0,T,WlanIndex2WEPInstId,other,
+lib/libcfapi.so,000057fc,T,WlanIndex2WMMInstId,other,
+lib/libcfapi.so,0000595c,T,WlanIndex2WPSInstId,other,
+lib/libcfapi.so,00007744,T,WlanInstId2Band,other,
+lib/libcfapi.so,00006494,T,WlanInstId2IfName,other,
+lib/libcfapi.so,00005454,T,WlanInstId2Index,other,
+lib/libcfapi.so,00006cb8,T,WlanMultiAPCfgDbRead,other,
+lib/libcfapi.so,00006d94,T,WlanMultiAPCfgDbWrite,other,
+lib/libcfapi.so,00005e14,T,WlanPSKDbRead,other,
+lib/libcfapi.so,00005f38,T,WlanPSKDbWrite,other,
+lib/libcfapi.so,00003b74,T,WlanSetVapEnable,other,
+lib/libcfapi.so,00006e5c,T,WlanTimeCfgDbRead,other,
+lib/libcfapi.so,00006f24,T,WlanTimeCfgDbWrite,other,
+lib/libcfapi.so,00006048,T,WlanWEPInstIdDbRead,other,
+lib/libcfapi.so,00006120,T,WlanWEPInstIdDbWrite,other,
+lib/libcfapi.so,00006fd8,T,WlanWMMInstIdDbRead,other,
+lib/libcfapi.so,0000715c,T,WlanWMMInstIdDbWrite,other,
+lib/libcfapi.so,00005c20,T,WlanWPSDbRead,other,
+lib/libcfapi.so,00005d24,T,WlanWPSDbWrite,other,
+lib/libcfapi.so,,w,_ITM_deregisterTMCloneTable,other,
+lib/libcfapi.so,,w,_ITM_registerTMCloneTable,other,
+lib/libcfapi.so,,w,_Jv_RegisterClasses,other,
+lib/libcfapi.so,00020f60,B,__bss_end__,other,
+lib/libcfapi.so,00020f3c,B,__bss_start,other,
+lib/libcfapi.so,00020f3c,B,__bss_start__,other,
+lib/libcfapi.so,,U,__ctype_b_loc@GLIBC_2.4,other,
+lib/libcfapi.so,,w,__cxa_finalize@GLIBC_2.4,other,
+lib/libcfapi.so,00020f60,B,__end__,other,
+lib/libcfapi.so,,U,__errno_location@GLIBC_2.4,other,
+lib/libcfapi.so,,w,__gmon_start__,other,
+lib/libcfapi.so,00020f60,B,_bss_end__,other,
+lib/libcfapi.so,00020f3c,D,_edata,other,
+lib/libcfapi.so,00020f60,B,_end,other,
+lib/libcfapi.so,0000e7d4,T,_fini,other,
+lib/libcfapi.so,00002e78,T,_init,other,
+lib/libcfapi.so,,U,atoi@GLIBC_2.4,other,
+lib/libcfapi.so,00008208,T,cfDevStateInquire,other,
+lib/libcfapi.so,00008170,T,cfDevStateRegister,other,
+lib/libcfapi.so,000082a0,T,cfDevStateResponse,other,
+lib/libcfapi.so,0000da74,T,cfGetFxsNum,other,
+lib/libcfapi.so,00007e70,T,cfNotifyAccount,other,
+lib/libcfapi.so,0000bf74,T,cfUpnpCntKeepAlive,other,
+lib/libcfapi.so,0000cde4,T,cfUpnpCtrlPtDownloadXmlDoc,other,
+lib/libcfapi.so,0000c9c8,T,cfUpnpCtrlPtGetServiceVarStatus,other,
+lib/libcfapi.so,0000c620,T,cfUpnpCtrlPtSearch,other,
+lib/libcfapi.so,0000c758,T,cfUpnpCtrlPtSendAction,other,
+lib/libcfapi.so,0000c2c8,T,cfUpnpCtrlPtStart,other,
+lib/libcfapi.so,0000c4e0,T,cfUpnpCtrlPtStop,other,
+lib/libcfapi.so,0000cb60,T,cfUpnpCtrlPtSubscribe,other,
+lib/libcfapi.so,0000ccb4,T,cfUpnpCtrlPtUnSubscribe,other,
+lib/libcfapi.so,0000bdd4,T,cfUpnpDevSendActResp,other,
+lib/libcfapi.so,0000ba2c,T,cfUpnpDevStart,other,
+lib/libcfapi.so,0000bc8c,T,cfUpnpDevStop,other,
+lib/libcfapi.so,0000c1a8,T,cfUpnpDigestInfo,other,
+lib/libcfapi.so,0000c03c,T,cfUpnpGetUUID,other,
+lib/libcfapi.so,,U,close@GLIBC_2.4,other,
+lib/libcfapi.so,,U,cspLock,other,
+lib/libcfapi.so,,U,cspLockInit,other,
+lib/libcfapi.so,,U,cspUnLock,other,
+lib/libcfapi.so,,U,dbAPIAddView,db_public_api,新增视图实例/行
+lib/libcfapi.so,,U,dbAPIDelView,db_public_api,删除视图实例/行
+lib/libcfapi.so,,U,dbAPIGetView,db_public_api,按 ViewName 读取一条视图记录
+lib/libcfapi.so,,U,dbAPILstView,db_public_api,列出某类视图实例
+lib/libcfapi.so,,U,dbAPIQryView,db_public_api,按条件查询视图实例
+lib/libcfapi.so,,U,dbAPISave,db_public_api,触发运行时 DB 序列化并持久化
+lib/libcfapi.so,,U,dbAPISetView,db_public_api,按 ViewName 修改一条视图记录
+lib/libcfapi.so,00008338,T,devGetAuthInfo,other,
+lib/libcfapi.so,00008520,T,devGetDevAuthInfo,other,
+lib/libcfapi.so,00008aec,T,devListAuthInfo,other,
+lib/libcfapi.so,00008660,T,devSetDevAuthInfo,other,
+lib/libcfapi.so,,U,dup@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fclose@GLIBC_2.4,other,
+lib/libcfapi.so,0000d474,T,ffEntryClear,other,
+lib/libcfapi.so,0000d4b0,T,ffNbifPPP,other,
+lib/libcfapi.so,0000d1fc,T,ffSkipSession,other,
+lib/libcfapi.so,,U,fgetc@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fgets@GLIBC_2.4,other,
+lib/libcfapi.so,00007a14,T,find_command,other,
+lib/libcfapi.so,,U,fopen@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fread@GLIBC_2.4,other,
+lib/libcfapi.so,,U,free@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fscanf@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fseek@GLIBC_2.4,other,
+lib/libcfapi.so,,U,fwrite@GLIBC_2.4,other,
+lib/libcfapi.so,,U,getpid@GLIBC_2.4,other,
+lib/libcfapi.so,,U,ioctl@GLIBC_2.4,other,
+lib/libcfapi.so,00004590,T,list_del_init,other,
+lib/libcfapi.so,000045b0,T,list_empty,other,
+lib/libcfapi.so,,U,malloc@GLIBC_2.4,other,
+lib/libcfapi.so,,U,memcmp@GLIBC_2.4,other,
+lib/libcfapi.so,,U,memcpy@GLIBC_2.4,other,
+lib/libcfapi.so,,U,memset@GLIBC_2.4,other,
+lib/libcfapi.so,,U,open@GLIBC_2.4,other,
+lib/libcfapi.so,,U,printf@GLIBC_2.4,other,
+lib/libcfapi.so,,U,setsid@GLIBC_2.4,other,
+lib/libcfapi.so,,U,snprintf@GLIBC_2.4,other,
+lib/libcfapi.so,,U,socket@GLIBC_2.4,ipc_dependency,
+lib/libcfapi.so,,U,sprintf@GLIBC_2.4,other,
+lib/libcfapi.so,,U,sscanf@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strcmp@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strcpy@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strlcpy,other,
+lib/libcfapi.so,,U,strlen@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strncasecmp@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strncpy@GLIBC_2.4,other,
+lib/libcfapi.so,,U,strstr@GLIBC_2.4,other,
+lib/libcfapi.so,0000efd3,R,tWlanBaseTbl,other,
+lib/libcfapi.so,0000ebae,R,tWlanTbl,other,
+lib/libcfapi.so,,U,tcgetattr@GLIBC_2.4,other,
+lib/libcfapi.so,,U,tcsetattr@GLIBC_2.4,other,
+lib/libcfapi.so,,U,tcsetpgrp@GLIBC_2.4,other,
+lib/libcfapi.so,0000d17c,T,webGetPortSwitchStatus,other,
+lib/libcfapi.so,0000d038,T,webNotifyAutoDiaReDnsCheat,other,
+lib/libcfapi.so,0000cf14,T,webNotifyDnsCheat,other,
+lib/libcfapi.so,0000d140,T,webNotifyPortSwitchConfig,other,
+lib/libcfapi.so,00006930,T,wlanIfName2Band,other,
+lib/libcfapi.so,00007888,T,wlan_diag_usage,other,
+lib/libcfapi.so,00004410,T,wlan_mm_req_asend,other,

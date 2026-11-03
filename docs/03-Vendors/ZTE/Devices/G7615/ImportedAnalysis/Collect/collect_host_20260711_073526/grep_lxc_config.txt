@@ -1,0 +1,459 @@
+### CMD: for d in /etc /usr/etc /var/lib /usr/var /opt/cu; do [ -d "$d" ] || continue; grep -r -n "lxc.rootfs\|lxc.rootfs.path\|lxc.mount\|lxc.net\|lxc.network\|overlayfs\|lowerdir\|upperdir\|workdir" "$d" 2>/dev/null; done
+
+/etc/init.d/dbus-rcS:53:#/bin/mount -t overlay overlay -o lowerdir=/etc,upperdir=/opt/cu/apps/etc,workdir=/opt/cu/apps/etc_work /etc
+/etc/init.d/dbus-rcS:54:#echo "  Mounting overlay lowerdir=/etc,upperdir=/opt/cu/apps/etc,workdir=/opt/cu/apps/etc_work /etc"
+/etc/init.d/dbus-rcS:55:#/bin/mount -t overlay overlay -o lowerdir=/usr,upperdir=/opt/cu/apps/usr,workdir=/opt/cu/apps/usr_work /usr
+/etc/init.d/dbus-rcS:56:#echo "  Mounting overlay lowerdir=/usr,upperdir=/opt/cu/apps/usr,,workdir=/opt/cu/apps/usr_work /usr"
+/etc/init.d/dbus-rcS:57:/bin/mount -t overlay overlay -o lowerdir=/usr/sbin,upperdir=/opt/cu/apps/usrsbin,workdir=/opt/cu/apps/usrsbin_work /usr/sbin
+/etc/init.d/dbus-rcS:58:echo "  Mounting overlay lowerdir=/usr/sbin,upperdir=/opt/cu/apps/usrsbin,,workdir=/opt/cu/apps/usrsbin_work /usr/sbin"
+/etc/init.d/dbus-rcS:59:#/bin/mount -t overlay overlay -o lowerdir=/lib,upperdir=/opt/cu/apps/lib,workdir=/opt/cu/apps/lib_work /lib
+/etc/init.d/dbus-rcS:60:#echo "  Mounting overlay lowerdir=/lib,upperdir=/opt/cu/apps/lib,workdir=/opt/cu/apps/lib_work /lib"
+/etc/init.d/dbus-rcS:97:#必须创建/usr/lib/lxc/rootfs目录,否则lxc无法启动
+/etc/init.d/dbus-rcS:98:#if [ ! -d /usr/lib/lxc/rootfs ]
+/etc/init.d/dbus-rcS:100:#    mkdir -p /usr/lib/lxc/rootfs
+/etc/init.d/rcS:274:mount -t overlay overlay -o lowerdir=/usr/pre_plugin/pre_CuInform_$host_name,upperdir=/opt/cu/apps/CuInformUpper,workdir=/opt/cu/apps/CuInformWork /CuInform
+/usr/etc/sysconfig/lxc:26:USE_LXC_BRIDGE="false"  # overridden in lxc-net
+/usr/etc/sysconfig/lxc:28:[ ! -f /usr/etc/sysconfig/lxc-net ] || . /usr/etc/sysconfig/lxc-net
+/usr/etc/rc.d/init.d/lxc-net:3:# lxc-net Start/Stop LXC Networking
+/usr/etc/rc.d/init.d/lxc-net:9:# Provides: lxc-net
+/usr/etc/rc.d/init.d/lxc-net:32:    /usr/libexec/lxc/lxc-net start
+/usr/etc/rc.d/init.d/lxc-net:37:    /usr/libexec/lxc/lxc-net stop
+/usr/etc/lxc/default.conf:1:lxc.net.0.type = veth
+/usr/etc/lxc/default.conf:2:lxc.net.0.link = lxcbr0
+/usr/etc/lxc/default.conf:3:lxc.net.0.flags = up
+/usr/etc/lxc/default.conf:4:lxc.net.0.hwaddr = 00:16:3e:xx:xx:xx
+/opt/cu/framework/ufw/config:1:lxc.rootfs.path = overlayfs:/opt/cu/framework/ufw/rootfs:/opt/cu/apps/apps
+/opt/cu/framework/ufw/config:10:lxc.net.0.type = none
+/opt/cu/framework/ufw/config:11:lxc.mount.entry = sysfs sys sysfs defaults 0 0
+/opt/cu/framework/ufw/config:12:lxc.mount.auto = cgroup-full:rw:force
+/opt/cu/framework/ufw/config:13:lxc.mount.entry = proc proc proc defaults 0 0
+/opt/cu/framework/ufw/config:14:lxc.mount.entry = shm /dev/shm tmpfs defaults 0 0
+/opt/cu/framework/ufw/config:15:lxc.mount.entry = tmpfs tmp tmpfs size=24m,mode=0777
+/opt/cu/framework/ufw/config:16:lxc.mount.entry = /tmp hgutmp none rw,rbind 0 0
+/opt/cu/framework/ufw/config:17:lxc.mount.entry = /mnt mnt none rw,rbind 0 0
+/opt/cu/framework/ufw/config:18:lxc.mount.entry = /var/run/dbus var/run/dbus none rw,bind 0 0
+/opt/cu/framework/ufw/config:19:lxc.mount.entry = /opt/cu/apps/etc/dbus-1 etc/dbus-1 none rw,bind 0 0
+/opt/cu/framework/ufw/config:20:lxc.mount.entry = /opt/cu/framework/ufw/rootfs opt/rootfs none rw,bind 0 0
+/opt/cu/framework/ufw/config:21:lxc.mount.entry = /opt/cu/apps/info opt/info none rw,bind 0 0
+/opt/cu/framework/ufw/config:22:lxc.mount.entry = /lib map/lib none ro,bind 0 0
+/opt/cu/framework/ufw/config:23:lxc.mount.entry = /usr/lib map/usr/lib none ro,bind 0 0
+/opt/cu/framework/ufw/config:24:lxc.mount.entry = /proc map/proc none ro,bind 0 0
+/opt/cu/framework/ufw/config:25:lxc.mount.entry = /sys map/sys none ro,bind 0 0
+/opt/cu/framework/ufw/config:26:lxc.mount.entry = /var map/var none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/etc/lxc/default.conf:1:lxc.net.0.type = empty
+/opt/cu/framework/ufw/rootfs/etc/mtab:31:overlay /CuInform overlay rw,relatime,lowerdir=/usr/pre_plugin/pre_CuInform_G7615,upperdir=/opt/cu/apps/CuInformUpper,workdir=/opt/cu/apps/CuInformWork 0 0
+/opt/cu/framework/ufw/rootfs/etc/mtab:33:overlay /usr/sbin overlay rw,relatime,lowerdir=/usr/sbin,upperdir=/opt/cu/apps/usrsbin,workdir=/opt/cu/apps/usrsbin_work 0 0
+/opt/cu/framework/ufw/rootfs/etc/profile:8:	echo 'Your JFFS2-partition seems full and overlayfs is mounted read-only.'
+/opt/cu/framework/ufw/rootfs/lib/functions/preinit.sh:79:	/bin/mount -o noatime,lowerdir=/,upperdir=$1,workdir=$2 -t overlay "overlayfs:$1" /mnt
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6028:overlayfs:/tmp/root
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6029:overlayfs not supported by kernel
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6109:overlayfs:%s
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6110:lowerdir=/,upperdir=%s
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6111:overlayfs
+/opt/cu/framework/ufw/rootfs/lib/libfstools.so:6115:lowerdir=/,upperdir=%s,workdir=%s
+/opt/cu/framework/ufw/rootfs/sbin/hpsrv:15435:lxc.mount.entry
+/opt/cu/framework/ufw/rootfs/sbin/hpsrv:15506:sed -i '/lxc.mount.entry = \/uds/d' %s/%s/config
+/opt/cu/framework/ufw/rootfs/sbin/hpsrv:15552:lxc.net.0.type = none
+/opt/cu/framework/ufw/rootfs/sbin/jffs2mark:1391:overlayfs not supported by kernel
+/opt/cu/framework/ufw/rootfs/sbin/jffs2reset:1391:overlayfs not supported by kernel
+/opt/cu/framework/ufw/rootfs/sbin/sysupgrade:234:		mount -t overlay overlay -o lowerdir=$ETCBACKUP_DIR,upperdir=$RAMFS/upper,workdir=$RAMFS/work $ETCBACKUP_DIR &&
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-create:8031:overlayfs
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-info:3725:lxc.net.%d.type
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-info:3727:lxc.net.%d.veth.pair
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-info:3728:lxc.net.%d.link
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-ls:5624:lxc.rootfs.path
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:6518:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:6526:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34607:lxc_mount_auto_mounts
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34636:lxc_mount_rootfs
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34768:.lxc_mount_file
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34772:/tmp/.lxc_mount_file_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34790:/usr/lib/lxc/rootfs
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34820:.lxc_mountinfo
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:34829:/tmp/.lxc_mountinfo_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/bin/lxc-usernsexec:39310:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/libglib-2.0.so:239797:(workdir specified) 
+/opt/cu/framework/ufw/rootfs/usr/lib/libglib-2.0.so.0:239797:(workdir specified) 
+/opt/cu/framework/ufw/rootfs/usr/lib/libglib-2.0.so.0.5800.3:239797:(workdir specified) 
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13288:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13299:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13363:lxc_net_type_to_str
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13407:lxc_network_add
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13508:lxc_netdev_isup
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13509:lxc_netdev_down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13510:lxc_netdev_move_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13524:lxc_netdev_move_wlan
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13597:lxc_netdev_move_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13598:lxc_netdev_delete_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13599:lxc_netdev_delete_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13600:lxc_netdev_rename_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13601:lxc_netdev_rename_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13606:lxc_netdev_set_mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13607:lxc_netdev_up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13630:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13634:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13635:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13636:lxc_network_recv_name_and_ifindex_from_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13638:lxc_netns_set_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:13639:lxc_netns_get_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:148917:lxc_mount_auto_mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:148946:lxc_mount_rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:149063:.lxc_mount_file
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:149067:/tmp/.lxc_mount_file_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:149085:/usr/lib/lxc/rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:149115:.lxc_mountinfo
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:149124:/tmp/.lxc_mountinfo_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151524:lxc.net must not have a value
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151532:lxc.net.type
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151533:lxc.net.link
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151535:/dev/.lxc-mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151548:lxc.net.
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151565:lxc.mount.entry
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151584:lxc.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151591:lxc.rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151746:lxc.mount.auto
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151747:lxc.mount.fstab
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151751:lxc.net.flags
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151752:lxc.net.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151753:lxc.net.ipv4.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151754:lxc.net.ipv4.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151755:lxc.net.ipv6.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151756:lxc.net.ipv6.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151757:lxc.net.l2proxy
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151758:lxc.net.macvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151759:lxc.net.ipvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151760:lxc.net.ipvlan.isolation
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151761:lxc.net.mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151762:lxc.net.name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151763:lxc.net.script.down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151764:lxc.net.script.up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151765:lxc.net.vlan.id
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151766:lxc.net.veth.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151767:lxc.net.veth.pair
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151768:lxc.net.veth.ipv4.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151769:lxc.net.veth.ipv6.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151770:lxc.net
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151772:lxc.rootfs.managed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151773:lxc.rootfs.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151774:lxc.rootfs.options
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:151775:lxc.rootfs.path
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:153877:lxc.network.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:153878:lxc.net.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:153879:lxc.network.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:164253:lxc.network
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:164400:overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:164438:Failed to set "lxc.rootfs.path = %s"
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:168684:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:168685:lxc_network_setup_in_child_namespaces_common
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:168686:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:168687:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:168706:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191774:overlayfs:
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191783:nodev	overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191786:upperdir=%s,lowerdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191787:upperdir=%s,lowerdir=%s,workdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191788:upperdir=%s,lowerdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191789:upperdir=%s,lowerdir=%s,workdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191790:%s - Failed to mount "%s" on "%s" with options "%s". Retrying without workdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191793:upperdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191794:workdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191795:workdir=%s/%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:191796:upperdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so:204274:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13288:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13299:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13363:lxc_net_type_to_str
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13407:lxc_network_add
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13508:lxc_netdev_isup
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13509:lxc_netdev_down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13510:lxc_netdev_move_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13524:lxc_netdev_move_wlan
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13597:lxc_netdev_move_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13598:lxc_netdev_delete_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13599:lxc_netdev_delete_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13600:lxc_netdev_rename_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13601:lxc_netdev_rename_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13606:lxc_netdev_set_mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13607:lxc_netdev_up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13630:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13634:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13635:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13636:lxc_network_recv_name_and_ifindex_from_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13638:lxc_netns_set_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:13639:lxc_netns_get_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:148917:lxc_mount_auto_mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:148946:lxc_mount_rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:149063:.lxc_mount_file
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:149067:/tmp/.lxc_mount_file_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:149085:/usr/lib/lxc/rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:149115:.lxc_mountinfo
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:149124:/tmp/.lxc_mountinfo_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151524:lxc.net must not have a value
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151532:lxc.net.type
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151533:lxc.net.link
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151535:/dev/.lxc-mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151548:lxc.net.
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151565:lxc.mount.entry
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151584:lxc.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151591:lxc.rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151746:lxc.mount.auto
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151747:lxc.mount.fstab
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151751:lxc.net.flags
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151752:lxc.net.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151753:lxc.net.ipv4.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151754:lxc.net.ipv4.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151755:lxc.net.ipv6.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151756:lxc.net.ipv6.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151757:lxc.net.l2proxy
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151758:lxc.net.macvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151759:lxc.net.ipvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151760:lxc.net.ipvlan.isolation
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151761:lxc.net.mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151762:lxc.net.name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151763:lxc.net.script.down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151764:lxc.net.script.up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151765:lxc.net.vlan.id
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151766:lxc.net.veth.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151767:lxc.net.veth.pair
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151768:lxc.net.veth.ipv4.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151769:lxc.net.veth.ipv6.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151770:lxc.net
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151772:lxc.rootfs.managed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151773:lxc.rootfs.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151774:lxc.rootfs.options
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:151775:lxc.rootfs.path
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:153877:lxc.network.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:153878:lxc.net.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:153879:lxc.network.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:164253:lxc.network
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:164400:overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:164438:Failed to set "lxc.rootfs.path = %s"
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:168684:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:168685:lxc_network_setup_in_child_namespaces_common
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:168686:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:168687:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:168706:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191774:overlayfs:
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191783:nodev	overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191786:upperdir=%s,lowerdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191787:upperdir=%s,lowerdir=%s,workdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191788:upperdir=%s,lowerdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191789:upperdir=%s,lowerdir=%s,workdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191790:%s - Failed to mount "%s" on "%s" with options "%s". Retrying without workdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191793:upperdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191794:workdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191795:workdir=%s/%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:191796:upperdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1:204274:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13288:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13299:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13363:lxc_net_type_to_str
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13407:lxc_network_add
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13508:lxc_netdev_isup
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13509:lxc_netdev_down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13510:lxc_netdev_move_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13524:lxc_netdev_move_wlan
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13597:lxc_netdev_move_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13598:lxc_netdev_delete_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13599:lxc_netdev_delete_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13600:lxc_netdev_rename_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13601:lxc_netdev_rename_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13606:lxc_netdev_set_mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13607:lxc_netdev_up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13630:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13634:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13635:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13636:lxc_network_recv_name_and_ifindex_from_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13638:lxc_netns_set_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:13639:lxc_netns_get_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:148917:lxc_mount_auto_mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:148946:lxc_mount_rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:149063:.lxc_mount_file
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:149067:/tmp/.lxc_mount_file_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:149085:/usr/lib/lxc/rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:149115:.lxc_mountinfo
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:149124:/tmp/.lxc_mountinfo_XXXXXX
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151524:lxc.net must not have a value
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151532:lxc.net.type
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151533:lxc.net.link
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151535:/dev/.lxc-mounts
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151548:lxc.net.
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151565:lxc.mount.entry
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151584:lxc.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151591:lxc.rootfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151746:lxc.mount.auto
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151747:lxc.mount.fstab
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151751:lxc.net.flags
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151752:lxc.net.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151753:lxc.net.ipv4.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151754:lxc.net.ipv4.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151755:lxc.net.ipv6.address
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151756:lxc.net.ipv6.gateway
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151757:lxc.net.l2proxy
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151758:lxc.net.macvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151759:lxc.net.ipvlan.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151760:lxc.net.ipvlan.isolation
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151761:lxc.net.mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151762:lxc.net.name
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151763:lxc.net.script.down
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151764:lxc.net.script.up
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151765:lxc.net.vlan.id
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151766:lxc.net.veth.mode
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151767:lxc.net.veth.pair
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151768:lxc.net.veth.ipv4.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151769:lxc.net.veth.ipv6.route
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151770:lxc.net
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151772:lxc.rootfs.managed
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151773:lxc.rootfs.mount
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151774:lxc.rootfs.options
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:151775:lxc.rootfs.path
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:153877:lxc.network.hwaddr
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:153878:lxc.net.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:153879:lxc.network.%u.%6s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:164253:lxc.network
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:164400:overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:164438:Failed to set "lxc.rootfs.path = %s"
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:168684:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:168685:lxc_network_setup_in_child_namespaces_common
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:168686:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:168687:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:168706:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191774:overlayfs:
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191783:nodev	overlayfs
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191786:upperdir=%s,lowerdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191787:upperdir=%s,lowerdir=%s,workdir=%s,%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191788:upperdir=%s,lowerdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191789:upperdir=%s,lowerdir=%s,workdir=%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191790:%s - Failed to mount "%s" on "%s" with options "%s". Retrying without workdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191793:upperdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191794:workdir=
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191795:workdir=%s/%s
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:191796:upperdir
+/opt/cu/framework/ufw/rootfs/usr/lib/liblxc.so.1.7.0:204274:lxc_mount_proc_if_needed
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5482:lxc_netdev_rename_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5511:lxc_netns_set_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5537:lxc_netdev_isup
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5551:lxc_netdev_rename_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5553:lxc_netdev_set_mtu
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5554:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5561:lxc_netns_get_nsid
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5564:lxc_netdev_move_wlan
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5575:lxc_netdev_move_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5591:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5593:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5600:lxc_netdev_delete_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5608:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5611:lxc_netdev_move_by_index
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5631:lxc_netdev_delete_by_name
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5632:lxc_netdev_up
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5636:lxc_network_recv_name_and_ifindex_from_child
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5640:lxc_netdev_down
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:5648:lxc_net_type_to_str
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:29598:lxc_network_recv_from_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:29599:lxc_network_setup_in_child_namespaces_common
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:29600:lxc_network_move_created_netdev_priv
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:29601:lxc_network_send_name_and_ifindex_to_parent
+/opt/cu/framework/ufw/rootfs/usr/lib/lxc/lxc-user-nic:29620:lxc_network_send_to_child
+/opt/cu/framework/ufw/rootfs/usr/lib/opkg/info/lxc-common.list:3:/usr/lib/lxc/rootfs/README
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:63:    grep -q "^lxc.rootfs.path" $path/config 2>/dev/null || echo "lxc.rootfs.path = $rootfs" >> $path/config
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:67:lxc.mount.entry = /dev dev none rw,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:68:lxc.mount.entry = /lib lib none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:69:lxc.mount.entry = /bin bin none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:70:lxc.mount.entry = /usr usr none rw,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:71:lxc.mount.entry = /sbin sbin none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:72:lxc.mount.entry = proc proc proc nodev,noexec,nosuid 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:73:lxc.mount.entry = tmpfs tmp tmpfs size=2m
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:74:lxc.mount.entry = /tmp/.uci tmp/.uci none rw,rbind,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:75:lxc.mount.entry = /var/run/dbus/ var/run/dbus none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:76:lxc.mount.entry = /etc/config etc/config none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:77:lxc.mount.entry = /opt/apps/$3/files files none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:78:lxc.mount.entry = /opt/apps/$3/data data none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:141:    if grep -q '^lxc.rootfs.path' $config 2>/dev/null ; then
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-app:142:        rootfs=$(awk -F= '/^lxc.rootfs.path =/{ print $2 }' $config)
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:92:      echo "lxc.mount.entry = /dev/${dev} dev/${dev} none bind,optional,create=file 0 0" >> "${path}/config"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:225:grep -q "^lxc.rootfs.path" "${path}/config" 2>/dev/null || echo "lxc.rootfs.path = ${rootfs}" >> "${path}/config"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:237:lxc.mount.auto = cgroup:mixed proc:mixed sys:mixed
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:238:lxc.mount.entry = shm dev/shm tmpfs defaults,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:239:lxc.mount.entry = mqueue dev/mqueue mqueue defaults,optional,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:250:      echo "lxc.mount.entry = /${dir} ${dir} none ro,bind 0 0" >> "${path}/config"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:253:  echo "lxc.mount.entry = /sys/kernel/security sys/kernel/security none ro,bind,optional 0 0" >> "${path}/config"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:335:  if grep -q '^lxc.rootfs.path' "${config}" 2> /dev/null ; then
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-busybox:336:    rootfs=$(awk -F= '/^lxc.rootfs.path =/{ print $2 }' "${config}")
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-download:522:sed -i -e "/lxc.net.0/{w ${LXC_PATH}/config-network" -e "d}" "${LXC_PATH}/config"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-download:543:    echo "lxc.mount.fstab = ${LXC_PATH}/fstab"
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:63:    grep -q "^lxc.rootfs.path" $path/config 2>/dev/null || echo "lxc.rootfs.path = $rootfs" >> $path/config
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:67:lxc.mount.entry = /dev dev none rw,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:68:lxc.mount.entry = /lib lib none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:69:lxc.mount.entry = /bin bin none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:70:lxc.mount.entry = /usr usr none rw,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:71:lxc.mount.entry = /sbin sbin none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:72:lxc.mount.entry = proc proc proc nodev,noexec,nosuid 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:73:lxc.mount.entry = tmpfs tmp tmpfs size=2m
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:74:lxc.mount.entry = /tmp/.uci tmp/.uci none rw,rbind,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:75:lxc.mount.entry = /var/run/dbus/ var/run/dbus none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:76:lxc.mount.entry = /etc/config etc/config none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:77:lxc.mount.entry = /opt/preinstall/$3/files files none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:78:lxc.mount.entry = /opt/preinstall/$3/data data none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:141:    if grep -q '^lxc.rootfs.path' $config 2>/dev/null ; then
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-essapp:142:        rootfs=$(awk -F= '/^lxc.rootfs.path =/{ print $2 }' $config)
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:63:    grep -q "^lxc.rootfs.path" $path/config 2>/dev/null || echo "lxc.rootfs.path = $rootfs" >> $path/config
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:66:lxc.mount.entry = /dev dev none ro,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:67:lxc.mount.entry = /lib lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:68:lxc.mount.entry = /bin bin none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:69:lxc.mount.entry = /usr usr none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:70:lxc.mount.entry = /sbin sbin none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:71:lxc.mount.entry = proc proc proc nodev,noexec,nosuid 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:72:lxc.mount.entry = sysfs sys sysfs ro 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:73:lxc.mount.entry = tmpfs tmp tmpfs size=2m
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:74:lxc.mount.entry = /tmp/.uci tmp/.uci none rw,rbind,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:75:lxc.mount.entry = /var/run/dbus/ var/run/dbus none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:76:lxc.mount.entry = /etc/config etc/config none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:77:lxc.mount.entry = /opt/apps/$3/files files none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:78:lxc.mount.entry = /opt/apps/$3/data data none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:79:lxc.mount.entry = /map/lib map/lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:80:lxc.mount.entry = /map/usr/lib map/usr/lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:81:lxc.mount.entry = /map/proc map/proc none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:82:lxc.mount.entry = /map/sys map/sys none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:144:    if grep -q '^lxc.rootfs.path' $config 2>/dev/null ; then
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootapp:145:        rootfs=$(awk -F= '/^lxc.rootfs.path =/{ print $2 }' $config)
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:63:    grep -q "^lxc.rootfs.path" $path/config 2>/dev/null || echo "lxc.rootfs.path = $rootfs" >> $path/config
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:66:lxc.mount.entry = /dev dev none ro,rbind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:67:lxc.mount.entry = /lib lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:68:lxc.mount.entry = /bin bin none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:69:lxc.mount.entry = /usr usr none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:70:lxc.mount.entry = /sbin sbin none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:71:lxc.mount.entry = proc proc proc nodev,noexec,nosuid 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:72:lxc.mount.entry = sysfs sys sysfs ro 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:73:lxc.mount.entry = tmpfs tmp tmpfs size=2m
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:74:lxc.mount.entry = /tmp/.uci tmp/.uci none rw,rbind,create=dir 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:75:lxc.mount.entry = /var/run/dbus/ var/run/dbus none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:76:lxc.mount.entry = /etc/config etc/config none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:77:lxc.mount.entry = /opt/preinstall/$3/files files none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:78:lxc.mount.entry = /opt/preinstall/$3/data data none rw,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:79:lxc.mount.entry = /map/lib map/lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:80:lxc.mount.entry = /map/usr/lib map/usr/lib none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:81:lxc.mount.entry = /map/proc map/proc none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:82:lxc.mount.entry = /map/sys map/sys none ro,bind 0 0
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:144:    if grep -q '^lxc.rootfs.path' $config 2>/dev/null ; then
+/opt/cu/framework/ufw/rootfs/usr/share/lxc/templates/lxc-rootess:145:        rootfs=$(awk -F= '/^lxc.rootfs.path =/{ print $2 }' $config)
+/opt/cu/apps/apps/etc/profile:8:	echo 'Your JFFS2-partition seems full and overlayfs is mounted read-only.'
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:6:lxc.net.0.type = none
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:7:lxc.rootfs.path = dir:/opt/preinstall/cuinform/cuinform/rootfs
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:9:lxc.mount.entry = /dev dev none ro,rbind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:10:lxc.mount.entry = /lib lib none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:11:lxc.mount.entry = /bin bin none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:12:lxc.mount.entry = /usr usr none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:13:lxc.mount.entry = /sbin sbin none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:14:lxc.mount.entry = proc proc proc nodev,noexec,nosuid 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:15:lxc.mount.entry = sysfs sys sysfs ro 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:16:lxc.mount.entry = tmpfs tmp tmpfs size=2m
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:17:lxc.mount.entry = /tmp/.uci tmp/.uci none rw,rbind,create=dir 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:18:lxc.mount.entry = /var/run/dbus/ var/run/dbus none rw,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:19:lxc.mount.entry = /etc/config etc/config none rw,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:20:lxc.mount.entry = /opt/preinstall/cuinform/files files none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:21:lxc.mount.entry = /opt/preinstall/cuinform/data data none rw,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:22:lxc.mount.entry = /map/lib map/lib none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:23:lxc.mount.entry = /map/usr/lib map/usr/lib none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:24:lxc.mount.entry = /map/proc map/proc none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/cuinform/config:25:lxc.mount.entry = /map/sys map/sys none ro,bind 0 0
+/opt/cu/apps/apps/opt/preinstall/cuinform/default.conf:1:lxc.net.0.type = none

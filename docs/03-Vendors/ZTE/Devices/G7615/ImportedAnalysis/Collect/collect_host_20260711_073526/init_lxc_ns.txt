@@ -1,0 +1,8 @@
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 cgroup -> cgroup:[4026532574]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 ipc -> ipc:[4026532572]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 mnt -> mnt:[4026532570]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 net -> net:[4026531906]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 pid -> pid:[4026532573]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 pid_for_children -> pid:[4026532573]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 user -> user:[4026531837]
+lrwxrwxrwx    1 root     root             0 Jul 11 07:29 uts -> uts:[4026532571]

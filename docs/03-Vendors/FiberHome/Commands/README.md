@@ -1,14 +1,12 @@
 # Commands
 
-本目录优先建设命令索引，区分“已验证的通用诊断命令”和“社区资料中的待验证条目”。
+本目录优先建设命令入口，避免再按 `Telnet`、`SSH`、`Debug` 拆成多个碎片页面。
 
 ## 命令索引
 
 | 分类 | 页面 | 范围 |
 | --- | --- | --- |
-| `Telnet` | [Telnet](./Telnet.md) | 已获得 shell 后的只读巡检与基础维护 |
-| `SSH` | [SSH](./SSH.md) | 已开放 SSH 时的会话与巡检 |
-| `Debug` | [Debug](./Debug.md) | 串口、bootlog、分区、启动参数 |
+| `Shell` | [shell](./shell.md) | Telnet/SSH 进入后的巡检、串口、bootlog、启动参数 |
 
 ## 统一字段
 

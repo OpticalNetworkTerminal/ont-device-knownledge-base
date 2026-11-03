@@ -1,0 +1,12 @@
+### CMD: sh -c brctl show 2>/dev/null || bridge link 2>/dev/null || true
+
+bridge name	bridge id		STP enabled	interfaces
+br0		8000.e84368a99cf6	no		eth0
+							nbif2
+							wlan4
+							wlan0
+							eth3
+							eth1
+							wlan7
+							eth4
+							eth2

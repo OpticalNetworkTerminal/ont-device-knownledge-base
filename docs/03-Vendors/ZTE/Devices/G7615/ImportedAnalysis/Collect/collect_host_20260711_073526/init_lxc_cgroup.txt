@@ -1,0 +1,9 @@
+9:net_prio:/lxc.payload.ufw/lxc.payload.cuinform
+8:net_cls:/lxc.payload.ufw/lxc.payload.cuinform
+7:memory:/lxc.payload.ufw/lxc.payload.cuinform
+6:freezer:/lxc.payload.ufw/lxc.payload.cuinform
+5:devices:/lxc.payload.ufw/lxc.payload.cuinform
+4:cpuset:/lxc.payload.ufw/lxc.payload.cuinform
+3:cpuacct:/lxc.payload.ufw/lxc.payload.cuinform
+2:cpu:/lxc.payload.ufw/lxc.payload.cuinform
+1:blkio:/lxc.payload.ufw/lxc.payload.cuinform

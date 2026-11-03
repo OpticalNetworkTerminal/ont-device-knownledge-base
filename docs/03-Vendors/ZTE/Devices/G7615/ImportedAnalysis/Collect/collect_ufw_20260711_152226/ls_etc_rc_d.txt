@@ -1,0 +1,16 @@
+### CMD: ls -l /etc/rc.d
+
+lrwxrwxrwx    1 root     root            13 Sep  1  2023 K89log -> ../init.d/log
+lrwxrwxrwx    1 root     root            14 Sep  1  2023 K98boot -> ../init.d/boot
+lrwxrwxrwx    1 root     root            16 Sep  1  2023 K99umount -> ../init.d/umount
+lrwxrwxrwx    1 root     root            14 Sep  1  2023 S10boot -> ../init.d/boot
+lrwxrwxrwx    1 root     root            16 Sep  1  2023 S10system -> ../init.d/system
+lrwxrwxrwx    1 root     root            14 Sep  1  2023 S12rpcd -> ../init.d/rpcd
+lrwxrwxrwx    1 root     root            13 Sep  1  2023 S13log -> ../init.d/log
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S20hpsrv -> ../init.d/hpsrv
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S30proxy -> ../init.d/proxy
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S31local -> ../init.d/local
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S31pushd -> ../init.d/pushd
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S31taskd -> ../init.d/taskd
+lrwxrwxrwx    1 root     root            15 Sep  1  2023 S32uappd -> ../init.d/uappd
+lrwxrwxrwx    1 root     root            14 Sep  1  2023 S95done -> ../init.d/done

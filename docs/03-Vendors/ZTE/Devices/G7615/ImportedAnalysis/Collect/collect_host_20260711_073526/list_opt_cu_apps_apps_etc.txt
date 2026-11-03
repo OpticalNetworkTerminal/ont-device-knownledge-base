@@ -1,0 +1,8 @@
+### CMD: ls -l /opt/cu/apps/apps/etc 2>/dev/null
+
+-rw-rw-rw-    1 root     root            35 Nov  3  2023 CheckVersion.conf
+drwxrwxrwx    2 root     root           416 Jul 11 02:10 config
+drwxrwxrwx    2 root     root           224 Nov  3  2023 init.d
+-rw-r--r--    1 root     root          1546 Nov  3  2023 profile
+-rw-------    1 root     root           240 Nov  3  2023 shadow
+-rw-------    1 root     root           153 Nov  3  2023 shadow-

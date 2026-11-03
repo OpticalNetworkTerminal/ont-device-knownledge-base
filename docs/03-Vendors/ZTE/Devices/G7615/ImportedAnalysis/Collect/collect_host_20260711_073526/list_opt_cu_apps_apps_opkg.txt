@@ -1,0 +1,5 @@
+### CMD: ls -l /opt/cu/apps/apps/usr/lib/opkg 2>/dev/null
+
+drwxr-xr-x    2 root     root           312 Nov  3  2023 info
+-rw-r--r--    1 root     root         23526 Nov  3  2023 status
+-rw-rw-rw-    1 root     root         23339 Nov  3  2023 status.bk

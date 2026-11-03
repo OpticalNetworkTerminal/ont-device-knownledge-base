@@ -1,0 +1,3 @@
+### CMD: cat /proc/cmdline
+
+console=ttyAMA0,115200n8 swiotlb=128 root=/dev/mtdblock13 ro rootfstype=jffs2 pcie_pme=nomsi vid=141 mem=512M patch=9ef80000

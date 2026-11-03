@@ -1,0 +1,142 @@
+### CMD: ls -l /etc /usr/etc /var/lib /usr/var /opt/cu 2>/dev/null
+
+/etc:
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_109.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_117.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_141.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_143.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_149.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_57.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_EPON_ZX279132_59.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_109.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_117.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_141.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_143.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_149.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_57.bin
+-rwxr-xr-x    1 root     root          1024 Nov  3  2023 BOB_GN28L95_GPON_ZX279132_59.bin
+-rwxr-xr-x    1 root     root          1344 Nov  3  2023 BOB_UX3326.bin
+drwxr-xr-x    2 root     root             0 Nov  3  2023 Install_gram
+-rwxr-xr-x    1 root     root          1512 Nov  3  2023 aliases
+-rwxr-xr-x    1 root     root           414 Nov  3  2023 bashrc
+-rwxr-xr-x    1 root     root          2008 Nov  3  2023 ca.crt
+-rwxr-xr-x    1 root     root          1614 Nov  3  2023 cloudserver.crt
+-rwxr-xr-x    1 root     root          1766 Nov  3  2023 cloudserver.key
+-rw-r--r--    1 root     root           209 Nov  3  2023 component
+-rwxr-xr-x    1 root     root        134237 Nov  3  2023 ctadmin
+-rwxr-xr-x    1 root     root          6184 Nov  3  2023 db_default_Anhui_cfg.xml
+-rwxr-xr-x    1 root     root          7944 Nov  3  2023 db_default_Beijing_cfg.xml
+-rwxr-xr-x    1 root     root          5624 Nov  3  2023 db_default_Chongqing_cfg.xml
+-rwxr-xr-x    1 root     root          5576 Nov  3  2023 db_default_Fujian_cfg.xml
+-rwxr-xr-x    1 root     root          7192 Nov  3  2023 db_default_Gansu_cfg.xml
+-rwxr-xr-x    1 root     root          6328 Nov  3  2023 db_default_Guangdong_cfg.xml
+-rwxr-xr-x    1 root     root          5560 Nov  3  2023 db_default_Guangxi_cfg.xml
+-rwxr-xr-x    1 root     root          6936 Nov  3  2023 db_default_Guizhou_cfg.xml
+-rwxr-xr-x    1 root     root          7496 Nov  3  2023 db_default_Hainan_cfg.xml
+-rwxr-xr-x    1 root     root          5640 Nov  3  2023 db_default_Hebei_cfg.xml
+-rwxr-xr-x    1 root     root          5560 Nov  3  2023 db_default_Heilongjiang_cfg.xml
+-rwxr-xr-x    1 root     root          5896 Nov  3  2023 db_default_Henan_cfg.xml
+-rwxr-xr-x    1 root     root          7016 Nov  3  2023 db_default_Hubei_cfg.xml
+-rwxr-xr-x    1 root     root          7256 Nov  3  2023 db_default_Hunan_cfg.xml
+-rwxr-xr-x    1 root     root          7560 Nov  3  2023 db_default_Jiangsu_cfg.xml
+-rwxr-xr-x    1 root     root          7240 Nov  3  2023 db_default_Jiangxi_cfg.xml
+-rwxr-xr-x    1 root     root          7288 Nov  3  2023 db_default_Jilin_cfg.xml
+-rwxr-xr-x    1 root     root          5896 Nov  3  2023 db_default_Liaoning_cfg.xml
+-rwxr-xr-x    1 root     root          5496 Nov  3  2023 db_default_Neimeng_cfg.xml
+-rwxr-xr-x    1 root     root          7272 Nov  3  2023 db_default_Ningxia_cfg.xml
+-rwxr-xr-x    1 root     root          7304 Nov  3  2023 db_default_Qinghai_cfg.xml
+-rwxr-xr-x    1 root     root         13352 Nov  3  2023 db_default_Shandong_cfg.xml
+-rwxr-xr-x    1 root     root          5352 Nov  3  2023 db_default_Shanghai_cfg.xml
+-rwxr-xr-x    1 root     root          5624 Nov  3  2023 db_default_Shanxi2_cfg.xml
+-rwxr-xr-x    1 root     root          7096 Nov  3  2023 db_default_Shanxi_cfg.xml
+-rwxr-xr-x    1 root     root          7768 Nov  3  2023 db_default_Sichuan_cfg.xml
+-rwxr-xr-x    1 root     root          6008 Nov  3  2023 db_default_Tianjin_cfg.xml
+-rwxr-xr-x    1 root     root          7400 Nov  3  2023 db_default_Xinjiang_cfg.xml
+-rwxr-xr-x    1 root     root          5272 Nov  3  2023 db_default_Xizang_cfg.xml
+-rwxr-xr-x    1 root     root          6648 Nov  3  2023 db_default_Yunnan_cfg.xml
+-rwxr-xr-x    1 root     root          5544 Nov  3  2023 db_default_Zhejiang_cfg.xml
+-rwxr-xr-x    1 root     root          5352 Nov  3  2023 db_default_cfg.xml
+-rwxr-xr-x    1 root     root          5032 Nov  3  2023 db_default_normal_cfg.xml
+drwxr-xr-x    2 root     root             0 Nov  3  2023 dbus-1
+drwxr-xr-x    2 root     root             0 Nov  3  2023 default
+-rwxr-xr-x    1 root     root        151667 Nov  3  2023 device.xml
+-rwxr-xr-x    1 root     root        100111 Nov  3  2023 device_big.xml
+-rwxr-xr-x    1 root     root         99432 Nov  3  2023 device_big_shandong.xml
+-rwxr-xr-x    1 root     root         92514 Nov  3  2023 device_h248.xml
+-rwxr-xr-x    1 root     root         91836 Nov  3  2023 device_h248_beijing.xml
+-rwxr-xr-x    1 root     root         92009 Nov  3  2023 device_h248_shandong.xml
+-rwxr-xr-x    1 root     root         89244 Nov  3  2023 device_h248_shanghai.xml
+-rwxr-xr-x    1 root     root         94204 Nov  3  2023 device_sip.xml
+-rwxr-xr-x    1 root     root         93526 Nov  3  2023 device_sip_beijing.xml
+-rwxr-xr-x    1 root     root         93699 Nov  3  2023 device_sip_shandong.xml
+-rwxr-xr-x    1 root     root         90651 Nov  3  2023 device_sip_shanghai.xml
+drwxr-xr-x    2 root     root             0 Nov  3  2023 dms
+-rwxr-xr-x    1 root     root            59 Nov  3  2023 filesystems
+-rwxr-xr-x    1 root     root           752 Nov  3  2023 fstab
+-rwxr-xr-x    1 root     root         13418 Nov  3  2023 gateconnSCPD.xml
+-rwxr-xr-x    1 root     root          2861 Nov  3  2023 gatedesc.skl
+-rwxr-xr-x    1 root     root          4570 Nov  3  2023 gateicfgSCPD.xml
+-rwxr-xr-x    1 root     root           734 Nov  3  2023 gateinfoSCPD.xml
+-rwxr-xr-x    1 root     root           757 Nov  3  2023 group
+-rwxr-xr-x    1 root     root           644 Nov  3  2023 gshadow
+-rw-r--r--    1 root     root            73 Nov  3  2023 hardcode
+drwxr-xr-x    2 root     root             0 Nov  3  2023 hardcodefile
+-rwxr-xr-x    1 root     root            10 Nov  3  2023 hostname
+lrwxrwxrwx    1 root     root            14 Nov  3  2023 hosts -> /var/tmp/hosts
+drwxr-xr-x    2 root     root             0 Nov  3  2023 init.d
+-rwxr-xr-x    1 root     root           587 Nov  3  2023 inittab
+drwxr-xr-x    2 root     root             0 Nov  3  2023 iproute2
+-rwxr-xr-x    1 root     root          4944 Nov  3  2023 login.defs
+drwxr-xr-x    2 root     root             0 Nov  3  2023 mcode
+-rwxr-xr-x    1 root     root             0 Nov  3  2023 mdev.conf
+-rwxr-xr-x    1 root     root            35 Nov  3  2023 modules
+-rwxr-xr-x    1 root     root             0 Nov  3  2023 mtab
+-rwxr-xr-x    1 root     root          3318 Nov  3  2023 onucfg
+-rwxr-xr-x    1 root     root           633 Nov  3  2023 ovs_test.sh
+-rwxr-xr-x    1 root     root          1578 Nov  3  2023 passwd
+-rw-r--r--    1 root     root          1766 Nov  3  2023 private-key.pem
+-rwxr-xr-x    1 root     root           393 Nov  3  2023 profile
+-rwxr-xr-x    1 root     root          6108 Nov  3  2023 protocols
+drwxr-xr-x    2 root     root             0 Nov  3  2023 rcS.d
+lrwxrwxrwx    1 root     root            28 Nov  3  2023 resolv.conf -> /var/tmp/default_resolv.conf
+-rwxr-xr-x    1 root     root          1615 Nov  3  2023 rpc
+-rwxr-xr-x    1 root     root             0 Nov  3  2023 sctypech
+-rwxr-xr-x    1 root     root           477 Nov  3  2023 sdn.sh
+-rwxr-xr-x    1 root     root            79 Nov  3  2023 sdnmgr_closeovs.sh
+-rwxr-xr-x    1 root     root           703 Nov  3  2023 sdnmgr_initovs.sh
+-rw-r--r--    1 root     root          1238 Nov  3  2023 server-cert.pem
+-rw-r--r--    1 root     root          1794 Nov  3  2023 server-key.pem
+-rwxr-xr-x    1 root     root          8205 Nov  3  2023 services
+-rwxr-xr-x    1 root     root          1005 Nov  3  2023 shadow
+-rwxr-xr-x    1 root     root            18 Nov  3  2023 shells
+drwxr-xr-x    2 root     root             0 Nov  3  2023 svcOnekeyCollect
+drwxr-xr-x    3 root     root             0 Nov  3  2023 sysconfig
+drwxr-xr-x    2 root     root             0 Nov  3  2023 tdsec
+-rwxr-xr-x    1 root     root         11733 Nov  3  2023 tr64action.xml
+-rw-r--r--    1 root     root            56 Nov  3  2023 ver_num_des
+-rw-r--r--    1 root     root            28 Nov  3  2023 version
+-rwxr-xr-x    1 root     root          8127 Nov  3  2023 versioncode_G7611
+-rwxr-xr-x    1 root     root          8127 Nov  3  2023 versioncode_G7615
+-rwxr-xr-x    1 root     root          8127 Nov  3  2023 versioncode_G8615
+drwxr-xr-x    3 root     root             0 Nov  3  2023 wireless
+drwxr-xr-x    2 root     root             0 Nov  3  2023 woe
+-rw-r--r--    1 root     root       1218416 Nov  3  2023 xDpi_SigLibSoft.tar.gz
+
+/opt/cu:
+drwxr-xr-x   13 root     root          1032 Dec 25  2023 apps
+drwxr-xr-x    3 root     root            26 Sep  1  2023 framework
+drwxr-xr-x    2 root     root             0 Nov  3  2023 framework1
+drwxr-xr-x    2 root     root             0 Nov  3  2023 framework2
+
+/usr/etc:
+drwxr-xr-x    2 root     root             0 Nov  3  2023 lxc
+drwxr-xr-x    3 root     root             0 Nov  3  2023 rc.d
+drwxr-xr-x    2 root     root             0 Nov  3  2023 sysconfig
+
+/usr/var:
+drwxr-xr-x    3 root     root             0 Nov  3  2023 cache
+drwxr-xr-x    3 root     root             0 Nov  3  2023 lib
+
+/var/lib:
+drwxr-xr-x    2 root     root            60 Jan  1  1970 dbus
+drwxr-xr-x    2 root     root            40 Jul 11 02:09 lxc

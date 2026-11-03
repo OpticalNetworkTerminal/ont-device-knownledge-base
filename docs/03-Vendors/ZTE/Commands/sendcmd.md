@@ -2,30 +2,37 @@
 
 ## 功能
 
-`sendcmd` 是当前 ZTE 研究中最核心的维护命令入口之一，公开资料显示它常被用于：
+`sendcmd` 是当前 ZTE ONT 资料里最核心的维护命令入口之一。公开资料显示，它常被用于：
 
 - 查询配置数据库
 - 修改配置数据库
 - 保存配置
-- 触发重启或恢复类动作
-- 查看部分调试信息
-- 在部分资料中处理配置文件解密
+- 重启或恢复默认配置
+- 查看调试信息
+- 处理配置文件解密
+- 配合 `TelnetCfg`、`DevAuthInfo`、`MgtServer`、`WANC`、`PortControl` 等表完成维护入口、远程管理、桥接与运营商定制相关修改
 
 ## Evidence
 
 - `DB all / p / set / save`：B/C
 - `DB reboot / DB rreset`：C
 - `DB decry`：C
-- `p all`、`-task`、`-socket` 等调试分支：D
+- `p all`、`-task`、`-socket`：D
 
-说明：
+## 常见适用范围
 
-- 本页优先吸收你提供的昨天资料，再结合仓库中已有社区来源做交叉整理。
-- 没有统一写成“所有机型都支持”，而是按命令分支分别标注 Evidence。
+公开资料里，`sendcmd` 常见于以下型号或型号族：
+
+- F460 / F660
+- F7610M
+- G7615 / F7607P 一类较新 ZXHN 机型
+- 多个移动、电信、联通定制版本
+
+这不等于所有 ZTE ONT 都开放 `sendcmd`，也不等于所有字段、行号和持久化行为完全一致。
 
 ## 语法
 
-公开资料中高频出现的形式：
+高频形式：
 
 ```sh
 sendcmd 1 DB all
@@ -48,82 +55,364 @@ sendcmd 1 p all
 | `all` | 列出数据库表或对象 | B/C |
 | `p` | 打印指定表或对象 | B/C |
 | `set` | 修改字段值 | B/C |
-| `delr` | 删除指定行，风险极高 | C |
+| `delr` | 删除指定行 | C |
 | `save` | 保存当前改动 | B/C |
 | `reboot` | 通过数据库命令触发重启 | C |
-| `rreset` | 恢复出厂相关动作 | C |
+| `rreset` | 恢复默认配置相关动作 | C |
 | `decry` | 设备侧解密配置文件 | C |
+
+## 返回值
+
+当前没有形成跨型号统一的返回值规范。实践上应优先读取本机输出，而不是假定固定格式。
 
 ## 分类索引
 
 | 分类 | 典型命令 | 用途 | Evidence |
 | --- | --- | --- | --- |
-| DB 枚举 | `sendcmd 1 DB all` | 看有哪些表 | B/C |
+| DB 枚举 | `sendcmd 1 DB all` | 查看表或对象 | B/C |
 | DB 查询 | `sendcmd 1 DB p TelnetCfg` | 查看记录与字段 | B/C |
-| DB 修改 | `sendcmd 1 DB set DevAuthInfo 0 Pass xxx` | 改配置 | B/C |
+| DB 修改 | `sendcmd 1 DB set DevAuthInfo 0 Pass xxx` | 修改字段 | B/C |
 | DB 删除 | `sendcmd 1 DB delr <table> <row>` | 删除记录 | C |
 | DB 保存 | `sendcmd 1 DB save` | 持久化改动 | B/C |
 | DB 重启 | `sendcmd 1 DB reboot` | 重启设备 | C |
-| DB 恢复 | `sendcmd 1 DB rreset` | 恢复出厂相关动作 | C |
+| DB 恢复 | `sendcmd 1 DB rreset` | 恢复默认配置 | C |
 | DB 解密 | `sendcmd 1 DB decry /userconfig/cfg/db_user_cfg.xml` | 处理配置文件 | C |
 | 调试输出 | `sendcmd 1 p all` | 观察调试信息 | D |
 
-## 返回值
+## DB
 
-当前没有形成跨型号统一的返回值规范。实践上应把 `sendcmd` 看成“读本机输出”的命令，而不是“输出固定格式”的命令。
+### 当前结论
 
-## 风险
+公开资料稳定指向一种“表 + 行 + 字段”的配置数据库模型，但表结构、字段名、行号和持久化方式不保证跨型号一致。
 
-风险等级：高
+### 高优先级表
 
-高风险原因：
+| 表名 | 常见用途 | 示例 | Evidence |
+| --- | --- | --- | --- |
+| `TelnetCfg` | Telnet 开关、端口、账号、连接数 | `sendcmd 1 DB p TelnetCfg` | B/C |
+| `DevAuthInfo` | Web 管理账户、密码、权限级别 | `sendcmd 1 DB set DevAuthInfo 0 Pass xxx` | B/C |
+| `TelnetUser` | Telnet 用户名与密码 | `sidbg 1 DB set TelnetUser 0 Username root` | C |
+| `MgtServer` | TR-069 / ACS 管理配置 | `sendcmd 1 DB p MgtServer` | C |
+| `WANC` | WAN 连接与业务配置 | `sendcmd 1 DB p WANC` | C |
+| `PortControl` | 端口或服务开放控制 | `sendcmd 1 DB p PortControl` | C |
+| `DevInfo` | 设备基本信息 | `sendcmd 1 DB p DevInfo` | C |
+| `CltLmt` | 用户数限制 | `sendcmd 1 DB p CltLmt` | C |
+| `FWBase` | 连接数限制 | `sendcmd 1 DB p FWBase` | C |
+| `PDTCTUSERINFO` | 注册状态、LOID 页面逻辑 | `sendcmd 1 DB p PDTCTUSERINFO` | C |
+| `WLANCfg` | 无线配置 | `sendcmd 1 DB p WLANCfg` | C |
+| `WLCInfo` | 无线控制状态 | `sendcmd 1 DB p WLCInfo` | C |
+| `FTPUser` | FTP 用户或权限 | `sendcmd 1 DB p FTPUser` | D |
+| `VoIPSIPLine` | 语音线索 | `sendcmd 1 DB p VoIPSIPLine all` | D |
 
-- 能直接改认证、管理口、网络与 PON 相关数据
-- `delr`、`rreset`、错误 `set` 都可能导致无法登录、断网、配置损坏
-- 表名、字段名、行号不保证跨型号一致
+### 配置文件线索
 
-## 示例
+| 文件名 | 角色猜测 | Evidence |
+| --- | --- | --- |
+| `/userconfig/cfg/db_user_cfg.xml` | 用户配置 XML | B/C |
+| `db_backup_cfg.xml` | 备份配置 | C |
+| `db_default_cfg.xml` | 默认配置 | C |
+| `db_default_auto_cfg.xml` | 默认自动配置 | B/C |
+| `config.bin` | 导出/封装配置文件 | B/C |
 
-只读类：
+## Telnet
+
+Telnet 是 `sendcmd` 资料里最常见的维护入口主题之一。
+
+### 常见字段
+
+| 字段 | 常见含义 | Evidence |
+| --- | --- | --- |
+| `TS_Enable` | Telnet 总开关 | C |
+| `Wan_Enable` | WAN 侧开关 | C |
+| `Lan_Enable` | LAN 侧开关 | B/C |
+| `TS_Port` | Telnet 端口 | C |
+| `TSLan_Port` | LAN Telnet 端口 | C |
+| `TS_UName` / `TS_UPwd` | 一组账号密码 | C |
+| `TSLan_UName` / `TSLan_UPwd` | LAN 侧账号密码 | C |
+| `Max_Con_Num` | 最大连接数 | C |
+| `Lan_EnableAfterOlt` | 插光注册后是否保持 LAN Telnet | C |
+
+### 常见命令样本
 
 ```sh
-sendcmd 1 DB all
-sendcmd 1 DB p DevInfo
 sendcmd 1 DB p TelnetCfg
-```
-
-修改类：
-
-```sh
+sendcmd 1 DB set TelnetCfg 0 TS_Enable 1
+sendcmd 1 DB set TelnetCfg 0 Wan_Enable 0
 sendcmd 1 DB set TelnetCfg 0 Lan_Enable 1
-sendcmd 1 DB set DevAuthInfo 0 Pass 'new-password'
+sendcmd 1 DB set TelnetCfg 0 Lan_EnableAfterOlt 1
 sendcmd 1 DB save
 ```
 
-恢复类：
+具体开启步骤见 [开启Telnet](../Guides/开启Telnet.md)。
+
+## 高权限账户
+
+### 高频表
+
+- `DevAuthInfo`
+- `TelnetCfg`
+- `TelnetUser`
+
+### 常见命令样本
 
 ```sh
-sendcmd 1 DB reboot
-sendcmd 1 DB rreset
+sendcmd 1 DB p DevAuthInfo
+sendcmd 1 DB set DevAuthInfo 0 User telecomadmin
+sendcmd 1 DB set DevAuthInfo 0 Pass nE7jA%5m
+sendcmd 1 DB set DevAuthInfo 1 Level 1
+sendcmd 1 DB save
 ```
 
-## 适用范围
+### 当前整理共识
 
-- 已知广泛见于 ZTE ONT 社区资料
-- 是否默认开放、是否能通过 Web / Telnet / 串口拿到入口，仍需按设备目录记录
-- 与 `sidbg` 的关系目前看是“高度相似但不保证等价”
+- `DevAuthInfo` 常用于 Web 管理账号、密码和权限级别。
+- 社区里反复出现 `telecomadmin`、`CMCCAdmin`、`CUAdmin` 一类运营商定制账号。
+- `user` 提权到更高等级是常见玩法，但字段、行号和是否会被覆盖依型号不同。
+
+## SSH
+
+Evidence：D
+
+目前没有足够稳定的公开资料表明 ZTE ONT 普遍默认开放 SSH，或存在统一的 SSH 开启命令集。
+
+## FTP
+
+Evidence：D
+
+### 当前公开线索
+
+- 有资料提到 `FTPUser`、`FTPServerCfg` 一类对象
+- 有 GitHub 样本提到通过 `sendcmd 1 DB p FTPUser` 查看相关信息
+- ChinaDSL 资料中也出现过通过修改 XML 方式开启 FTP 的讨论
+
+### 待验证
+
+- `sendcmd` 是否能直接启用 FTP
+- FTP 在不同运营商版本中的默认状态
+- FTP 与 TFTP / Telnet 的关系
+
+## TFTP
+
+Evidence：C
+
+### 常见样本
+
+```sh
+tftp -p -l userconfig/cfg/db_user_cfg.xml -r db_user_cfg.xml 192.168.1.2
+tftp -g -r db_user_cfg.xml 192.168.1.2
+```
+
+### 当前整理共识
+
+- TFTP 在 ZTE 折腾场景中很常见
+- 但其入口位于用户态、Telnet 环境还是 Bootloader，取决于具体型号
+
+## TR-069 与运营商远程管理
+
+### 高频表
+
+- `MgtServer`
+- `WANC`
+
+### 常见命令样本
+
+```sh
+sendcmd 1 DB p MgtServer
+sendcmd 1 DB set MgtServer 0 URL http://127.0.0.1
+sendcmd 1 DB set MgtServer 0 Tr069Enable 0
+sendcmd 1 DB set MgtServer 0 PeriodicInformEnable 0
+sendcmd 1 DB save
+```
+
+```sh
+sendcmd 1 DB p WANC
+sendcmd 1 DB set WANC x ServList 8
+sendcmd 1 DB set WANC x StrServList OTHER
+```
+
+### 当前整理共识
+
+- `MgtServer` 多与 ACS / TR-069 地址和上报开关有关
+- `WANC` 多与 WAN 业务类型、端口服务类型、桥接/路由业务状态有关
+- 社区对“直接删除 TR-069”和“先改成 OTHER 再从页面删”两种做法都保留了样本
+
+## 桥接
+
+### 当前整理共识
+
+- 桥接不只是“改一个开关”
+- 常见入口是 `WANC`、服务类型、隐藏页面和高权限账户
+- 电信、移动、联通定制版本差异明显
+
+### 高频命令线索
+
+```sh
+sendcmd 1 DB p WANC
+sendcmd 1 DB set WANC x ServList 8
+sendcmd 1 DB set WANC x StrServList OTHER
+```
+
+## 配置文件与解密
+
+### 常见命令样本
+
+```sh
+sendcmd 1 DB decry /userconfig/cfg/db_user_cfg.xml
+```
+
+### 当前整理共识
+
+- `db_user_cfg.xml` 是最常见的用户配置文件线索
+- `config.bin` 与 XML 之间存在导出/封装关系
+- `sendcmd ... decry` 在 F680、F6600R 等讨论中反复出现，但不同机型结果并不一致
+
+## 认证参数：SN / MAC / LOID
+
+### 当前整理共识
+
+- `SN`、`MAC`、`LOID` 修改都属于高风险主题
+- 有的资料经由 `sendcmd`
+- 有的资料经由 `setmac`
+- 有的资料经由下载、解密、编辑、回传 `db_user_cfg.xml`
+
+### 参考
+
+- [修改SN](../Research/修改SN.md)
+- [修改MAC](../Research/修改MAC.md)
+- [修改LOID](../Research/修改LOID.md)
+- [setmac-index](../Research/Commands/setmac-index.md)
+
+## 无线、Mesh、LED、双模
+
+### 当前已整理内容
+
+- `WLANCfg` 常用于 SSID 前缀、无线名称一类字段
+- `WLCInfo` 在部分 G7615 / F7607P 研究稿中出现
+
+### 样本
+
+```sh
+sendcmd 1 DB p WLANCfg
+sendcmd 1 DB set WLANCfg 0 ESSIDPrefix ""
+sendcmd 1 DB set WLANCfg 4 ESSIDPrefix ""
+sendcmd 1 DB p WLCInfo
+sendcmd 1 DB set WLCInfo 0 WLCStatus 0
+```
+
+## 调试
+
+### 当前已见命令
+
+```sh
+sendcmd 1 p all
+sendcmd 1 -task
+sendcmd 1 -socket
+```
+
+### 当前结论
+
+- 这些命令在线索里确实存在
+- 但公开资料对参数语义、输出格式和可用型号的说明很少
+
+## 通用查看命令
+
+虽然这些命令不都属于 `sendcmd` 本体，但它们经常和 `sendcmd` 一起使用。
+
+```sh
+upgradetest getver
+cat /proc/capability/boardinfo
+sendcmd 1 DB p DevInfo
+setmac show2
+date
+cat /proc/cpuusage
+cat /proc/tempsensor
+```
+
+### 当前整理共识
+
+- `upgradetest getver` 常用于查看固件版本或主备版本线索
+- `cat /proc/capability/boardinfo` 常用于查看硬件信息
+- `sendcmd 1 DB p DevInfo` 常用于查看设备总览
+- `setmac show2` 常用于查看 PONMAC、LOID、SN、MAC、SSID 等关键参数
+
+## 地区码显示、修改与恢复
+
+地区码切换在较新的社区资料里反复出现，常与 `G7615V2`、`F7610M`、联通/电信定制页面切换、Telnet 固化和管理员页面可见性相关。
+
+### Evidence
+
+C
+
+### 常见命令
+
+```sh
+cat /etc/init.d/regioncode
+cat /userconfig/flag_type
+upgradetest sdefconf <地区号>
+```
+
+### 常见用途
+
+| 动作 | 命令 | 说明 |
+| --- | --- | --- |
+| 显示可用地区号 | `cat /etc/init.d/regioncode` | 查看设备内置地区码表 |
+| 显示当前地区 | `cat /userconfig/flag_type` | 查看当前地区标记 |
+| 更新地区 | `upgradetest sdefconf <地区号>` | 将设备切到指定地区 |
+| 重置回原地区 | `upgradetest sdefconf <原地区号>` | 重新切回原来的地区代码 |
+
+### 当前整理共识
+
+- `upgradetest sdefconf <地区号>` 是目前公开资料里最常见的地区切换命令
+- 执行后设备通常会重启，Telnet 入口可能需要重新开启或重新固化
+- 某些地区切换后，隐藏管理页、默认管理账户或运营商定制页面会发生变化
+- “重置地区”目前没有看到独立于 `sdefconf` 的统一命令，社区通常就是重新写回原地区号
+
+### 常用地区码样本
+
+| 地区 | 代码 | 说明 |
+| --- | --- | --- |
+| 广东 | `210` | 社区资料高频出现 |
+| 湖南 | `216` | 社区资料高频出现 |
+
+## 风险等级
+
+总体风险等级：高
+
+说明：
+
+- `sendcmd` 同时覆盖只读查询、中风险修改和高风险恢复/认证操作
+- `delr`、`rreset`、认证参数修改、TR-069/WAN 删除、地区切换都应按高风险看待
+
+## 待验证
+
+- 是否存在统一的 `SSH` 开关命令集
+- `FTPUser` / `FTPServerCfg` 的具体行为
+- `sendcmd` 与 `sidbg` 在不同平台中的对应关系
+- `save`、`saveasy`、配置回写和重启之间的准确持久化逻辑
+- `decry` 的输出路径、权限要求和机型差异
+- `Mesh`、`LED`、`双模切换` 是否存在可稳定归类到 `sendcmd` 的命令族
 
 ## 交叉引用
 
-- 配置表请看 [Database/配置表索引](../Database/配置表索引.md)
-- 结构化索引请看 [Database/sendcmd-command-index.yaml](../Database/sendcmd-command-index.yaml)
-- 未升级命令收集请看 [Research/sendcmd社区命令收集](../Research/sendcmd社区命令收集.md)
-- 如何开启相关入口请看 [Guides/开启Telnet](../Guides/开启Telnet.md)
+- [sidbg](./sidbg.md)
+- [开启Telnet](../Guides/开启Telnet.md)
+- [sendcmd-command-index.yaml](../Database/sendcmd-command-index.yaml)
+- [sendcmd-index](../Research/Commands/sendcmd-index.md)
+- [setmac-index](../Research/Commands/setmac-index.md)
+- [upgradetest-index](../Research/Commands/upgradetest-index.md)
 
 ## 来源
 
-- 用户提供资料：`/Users/jonhy/Downloads/zte-ont-telnet-sendcmd-command-reference-v2.md`
-- <https://www.right.com.cn/forum/thread-8264472-1-1.html>
-- <https://www.chinadsl.net/thread-174301-1-1.html>
-- <https://www.chinadsl.net/thread-179762-1-1.html>
-- <https://github.com/mkst/zte-config-utility/issues/153>
+- 中兴官方文档地图
+- GitHub `mkst/zte-config-utility`
+- GitHub `douniwan5788/zte_modem_tools`
+- GitHub `Septrum101/zteOnu`
+- 恩山论坛
+- ChinaDSL
+- OpenWrt Forum
+- OpenWrt Wiki
+- <https://hackliu.com/?p=258>
+- <https://dmm.ink/2024/06/01/snmac2/>
+- <https://www.right.com.cn/forum/thread-8404346-1-1.html>
+- <https://www.right.com.cn/forum/thread-8379699-1-1.html>
+- <https://blog.csdn.net/weixin_46337464/article/details/153938831>

@@ -1,6 +1,8 @@
 # Commands
 
-本页为华为光猫命令索引第一版，只收录当前已整理的高频命令。所有条目统一采用以下字段：
+本页为华为光猫命令参考。整理原则是：优先收录多来源一致、已经能看出作用边界的命令；对社区已经公开但仍缺参数或缺上下文的命令，统一放到文末 `待验证 / 待整理命令`。
+
+所有正式条目统一采用以下字段：
 
 - `功能`
 - `参数`
@@ -10,6 +12,16 @@
 - `风险等级`
 - `验证状态`
 - `来源`
+
+## 命令环境
+
+当前资料里的华为命令大致分三层：
+
+- `WAP>` 维护命令环境：如 `display version`
+- `Dopra Linux` Shell：如 `shell`、`cd /mnt/jffs2`、`tftp`
+- 配置处理工具：如 `aescrypt2`
+
+理解这三层很重要，因为很多“命令不存在”的情况，本质上只是命令出现在不同上下文里。
 
 ## 命令索引
 
@@ -23,14 +35,42 @@
 | `tftp -g -l <file> -r <file> <server_ip>` | 上传配置到设备 | 高 | `社区资料` `多源一致` `待实机验证` |
 | `touch /mnt/jffs2/Equip.sh` | 社区资料中的 root 开关手段之一 | 高 | `社区资料` `待实机验证` |
 | `rm /mnt/jffs2/Equip.sh` | 关闭上述 root 开关 | 中 | `社区资料` `待实机验证` |
-| `aescrypt2 1 <in> <out>` | 解密华为配置文件 | 中 | `社区资料` `多源一致` `待实机验证` |
-| `aescrypt2 0 <in> <out>` | 加密华为配置文件 | 高 | `社区资料` `多源一致` `待实机验证` |
-| `load pack by tftp ...` | 导入升级包或补全包 | 高 | `社区资料` `待实机验证` |
+| `aescrypt2 1 <input> <output>` | 解密华为配置文件 | 中 | `社区资料` `多源一致` `待实机验证` |
+| `aescrypt2 0 <input> <output>` | 加密华为配置文件 | 高 | `社区资料` `多源一致` `待实机验证` |
+| `load pack by tftp svrip <server_ip> remotefile <file>` | 导入升级包或补全包 | 高 | `社区资料` `待实机验证` |
 | `display version` | 查看版本信息 | 低 | `社区资料` `待实机验证` |
 | `display sysinfo` | 查看 CPU、内存、系统时间 | 低 | `社区资料` `待实机验证` |
 | `display deviceInfo` | 查看 ONU 设备信息 | 低 | `社区资料` `待实机验证` |
 | `restorehwmode.sh` | 恢复华为原厂模式的社区命令名 | 高 | `社区资料` `待实机验证` |
 | `reboot` | 重启设备 | 中 | `社区资料` `多源一致` `待实机验证` |
+
+## 命令分组
+
+### 接入与切换
+
+- `telnet <ip>`
+- `su`
+- `shell`
+
+### 文件与配置
+
+- `cd /mnt/jffs2`
+- `tftp -p -l <file> -r <file> <server_ip>`
+- `tftp -g -l <file> -r <file> <server_ip>`
+- `aescrypt2 1 <input> <output>`
+- `aescrypt2 0 <input> <output>`
+
+### 维护与恢复
+
+- `load pack by tftp svrip <server_ip> remotefile <file>`
+- `restorehwmode.sh`
+- `reboot`
+
+### 查询类
+
+- `display version`
+- `display sysinfo`
+- `display deviceInfo`
 
 ## 详细条目
 
@@ -257,15 +297,44 @@
   - https://www.chinadsl.net/thread-170109-1-1.html
   - https://github.com/QingNetwork/FuckingHuaweiHG8321R/blob/main/shell%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%28telnet%20%E5%91%BD%E4%BB%A4%29.md
 
-## 尚未纳入正式条目的命令
+## 社区已公开但尚未完成正式整理的命令
 
-以下主题已被记录，但因来源冲突或说明不足，暂不作为正式命令条目：
+以下命令已经在研究库中有公开出现记录，因此保留在正式知识库中，但目前只作为“已出现对象”，不对参数和行为下结论：
 
-- `descrypt`
-- `reset`
-- `getcustominfo.sh`
-- `display optic`
-- `display access mode`
-- `get rogue status`
+| 命令 | 已知上下文 | 主要来源 | 当前状态 |
+| --- | --- | --- | --- |
+| `descrypt` | 配置处理相关讨论 | ChinaDSL / 恩山搜索结果 | `社区资料` `待验证` |
+| `cfg` | 命令索引线索 | 恩山搜索结果 | `社区资料` `待验证` |
+| `cfgtool` | 命令索引线索 | ChinaDSL 搜索结果 | `社区资料` `待验证` |
+| `hwcli` | 命令索引线索 | 恩山搜索结果 | `社区资料` `待验证` |
+| `hwcfg` | 命令索引线索 | ChinaDSL 搜索结果 | `社区资料` `待验证` |
+| `hw_diag` | 命令索引线索 | 恩山搜索结果 | `社区资料` `待验证` |
+| `debug` | 调试页/调试口令线索 | ChinaDSL 搜索结果 | `社区资料` `待验证` |
+| `display inner version` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `display optic` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `display access mode` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `display flow id all` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `display wifichip` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `display zsp version` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `get ont oamfrequency` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `get rogue status` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `get wlan txpower` | `WAP>` 查询命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `getcustominfo.sh` | Shell 脚本 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `reset` | `WAP>` 复位命令 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `mount --bind` | Shell 技巧 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
+| `ez-ipupdate` | 被劫持目标 | `FuckingHuaweiHG8321R` | `社区资料` `待整理` |
 
-后续待补充参数、返回值和适用型号后再转入正式条目。
+## 待验证 / 待整理命令
+
+- 缺统一参数说明：`descrypt`、`cfg`、`cfgtool`、`hwcli`、`hwcfg`、`hw_diag`
+- 缺多型号上下文：`restorehwmode.sh`、`reset`、`getcustominfo.sh`
+- 已知存在但未正式展开：`display optic`、`display access mode`、`display flow id all`、`get rogue status`
+
+## 来源
+
+- 恩山无线论坛
+- ChinaDSL
+- GitHub：`FuckingHuaweiHG8321R`
+- GitHub：`AESCrypt2`
+- GitHub：`Hacking_Huawei_HG8012H_ONT`
+- 华为官方管理文档入口

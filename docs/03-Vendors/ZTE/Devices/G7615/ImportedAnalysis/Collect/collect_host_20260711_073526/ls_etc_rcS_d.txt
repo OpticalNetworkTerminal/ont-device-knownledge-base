@@ -1,0 +1,7 @@
+### CMD: ls -l /etc/rcS.d
+
+-rwxr-xr-x    1 root     root           280 Nov  3  2023 S02wlan
+-rwxr-xr-x    1 root     root           858 Nov  3  2023 S20tsmac
+-rwxr-xr-x    1 root     root          3561 Nov  3  2023 S30network
+-rwxr-xr-x    1 root     root           936 Nov  3  2023 S43BSPDriver
+-rwxr-xr-x    1 root     root          2476 Nov  3  2023 S99modules

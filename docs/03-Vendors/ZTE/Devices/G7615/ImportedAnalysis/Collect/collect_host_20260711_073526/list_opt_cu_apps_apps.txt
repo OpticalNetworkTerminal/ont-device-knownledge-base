@@ -1,0 +1,10 @@
+### CMD: ls -l /opt/cu/apps/apps 2>/dev/null
+
+drwxr-xr-x    4 root     root           632 Nov  3  2023 etc
+drwxrwxrwx    2 root     root           304 Nov  3  2023 lib
+drwxr-xr-x    4 1001     1001           368 Nov  3  2023 opt
+drwxrwxrwx    3 root     root           224 Nov  3  2023 root
+drwxrwxrwx    2 root     root           232 Nov  3  2023 sbin
+drwxr-xr-x    3 root     root           232 Nov  3  2023 uds
+drwxr-xr-x    3 root     root           224 Feb 15  2021 usr
+drwxr-xr-x    7 root     root           488 Nov  3  2023 var
